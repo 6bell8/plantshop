@@ -4,4 +4,7 @@ export { default as FooterBanner } from "./FooterBanner";
 export { default as HeroBanner } from "./HeroBanner";
 export { default as Layout } from "./Layout";
 export { default as Navbar } from "./Navbar";
-export { default as Product } from "./Product";
+export { default as Plant } from "./Plant";
+export { default as Flowerpot } from "./Flowerpot";
+export { default as ProductCustom } from "./ProductCustom";
+export { default as ProductCustom02 } from "./ProductCustom02";

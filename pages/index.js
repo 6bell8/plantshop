@@ -11,14 +11,22 @@ import {
 } from "../components";
 
 import { Swiper, SwiperSlide } from "swiper/react"; // basic
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Autoplay, Pagination]);
+
+const settings = {
+  // spaceBetween: 20,
+  direction: "vertical",
+  scrollbar: { draggable: true, el: null },
+  slidesPerView: 4,
+  loop: true,
+};
 
 const Home = ({
   plant,
@@ -38,38 +46,33 @@ const Home = ({
         <div className="custom-boxs">
           {/* 커스텀 식물 */}
 
-          <Swiper>
+          {/* <Swiper>
             {customplant?.map((customplant) => (
               <SwiperSlide>
-                <ProductCustom customplant={customplant} />
+                <ProductCustom
+                  key={customplant._id}
+                  customplant={customplant}
+                />
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper> */}
 
           {/* 커스텀 화병 */}
-          <Swiper>
+          {/* <Swiper>
             {customFlowerpot?.map((customFlowerpot) => (
               <SwiperSlide>
-                <ProductCustom02 customFlowerpot={customFlowerpot} />
+                <ProductCustom02
+                  key={customFlowerpot._id}
+                  customFlowerpot={customFlowerpot}
+                />
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper> */}
         </div>
 
         <div className="products-wrap">
           {/*  식물 리스트*/}
-          <Swiper
-            // spaceBetween={0}
-            // direction={{ verical: true }}
-            // scrollbar={{ draggable: true }}
-            // navigation
-            // loop={true}
-            // autoplay={true}
-            // slidesPerView={1}
-            // pagination={{ clickable: true }}
-            // breakpoints={{}}
-            className="products-box"
-          >
+          <Swiper className="products-box" {...settings}>
             {plant?.map((plant) => (
               <SwiperSlide>
                 <Plant key={plant._id} plant={plant} />

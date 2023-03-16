@@ -217,7 +217,7 @@ span.text-red {
           justify-content: center;
   margin: 20px auto 0;
   max-width: 1280px;
-  background: linear-gradient(320deg, rgba(225, 240, 187, 0.796604) 0%, rgba(235, 237, 218, 0.502486) 100%);
+  background: url(../image/custom-bg.jpg) no-repeat center/cover;
 }
 
 .products-container .products-wrap {
@@ -251,7 +251,7 @@ span.text-red {
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-  padding: 0.5vw 1vw;
+  padding: 0.5vw 0;
   color: #324d67;
 }
 
@@ -273,9 +273,17 @@ span.text-red {
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
+.product-card.right {
+  padding: 0 20px 0 70px;
+}
+
 .product-card.right :hover {
   -webkit-transform: translateX(-50px);
           transform: translateX(-50px);
+}
+
+.product-card.left {
+  padding: 0 70px 0 20px;
 }
 
 .product-card.left :hover {
@@ -1077,4 +1085,16 @@ span.text-red {
   html {
     color-scheme: dark;
   }
+}
+
+.swiper-wrapper, .swiper-container {
+  width: 300px;
+}
+
+.swiper-container {
+  margin: 0;
+}
+
+.swiper-button-disabled {
+  visibility: hidden;
 }

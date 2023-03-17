@@ -16,16 +16,10 @@ const HeroBanner = ({ heroBanner }) => {
         />
       </div>
 
-      {/* 연결 할 대상의 plant or  flowerpot*/}
-      <div>
-        <Link href={`/plant/${heroBanner.plant}`}>
-          <button type="button">{heroBanner.buttonText}</button>
-        </Link>
-        <div className="desc">
-          <h5>description</h5>
-          <p>{heroBanner.desc}</p>
-        </div>
-      </div>
+      {/* 연결 할 대상의 plant or flowerpot*/}
+      <Link href={`/plant/${heroBanner.plant}`}>
+        <button type="button">{heroBanner.buttonText}</button>
+      </Link>
     </div>
   );
 };

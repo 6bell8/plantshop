@@ -8,17 +8,15 @@ const Flowerpot = ({ flowerpot: { image, name, slug, price } }) => {
     <>
       {/* 링크 태그 안에 태그를 추가해야 오류가 풀림 */}
 
-      <Link href={`/flowerpot/${slug.current}`}>
-        <div className="product-card right">
-          <img
-            src={urlFor(image && image[0])}
-            width={200}
-            height={200}
-            alt=""
-            className="product-image"
-          />
-        </div>
-      </Link>
+      <div className="product-card right">
+        <img
+          src={urlFor(image && image[0])}
+          alt=""
+          width={200}
+          height={200}
+          className="product-image"
+        />
+      </div>
     </>
   );
 };

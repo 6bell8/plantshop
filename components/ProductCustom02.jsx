@@ -7,11 +7,11 @@ const ProductCustom02 = ({ customFlowerpot: { image, name, slug, price } }) => {
     <>
       {/* 링크 태그 안에 태그를 추가해야 오류가 풀림 */}
       <Link href={`/flowerpot/${slug.current}`}>
-        <div className="custom-box">
+        <div className="custom-box02">
           <img
             src={urlFor(image && image[0])}
-            width={400}
-            height={500}
+            width={450}
+            // height={400}
             alt=""
             className="custom-box-image"
           />

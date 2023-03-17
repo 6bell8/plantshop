@@ -8,3 +8,4 @@ export { default as Plant } from "./Plant";
 export { default as Flowerpot } from "./Flowerpot";
 export { default as ProductCustom } from "./ProductCustom";
 export { default as ProductCustom02 } from "./ProductCustom02";
+export { default as PlantDetail } from "./PlantDetail";

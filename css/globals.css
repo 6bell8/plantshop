@@ -322,6 +322,31 @@ span.text-red {
   max-width: 1280px;
 }
 
+.products-container-02 .container-02-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.products-container-02 .container-02-box h1 {
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.products-container-02 .container-02-box p {
+  font-size: 20px;
+  font-weight: 200;
+  text-align: center;
+  color: #333;
+}
+
 .products-container-02 .custom-boxs {
   max-height: 1200px;
   overflow: hidden;
@@ -499,6 +524,8 @@ span.text-red {
 .hero-banner-container h3 {
   font-size: 4rem;
   margin-top: 10px;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-banner-container h1 {

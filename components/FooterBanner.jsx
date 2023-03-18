@@ -5,11 +5,11 @@ const FooterBanner = () => {
   return (
     <div id="footer">
       <Link href={"/"}>
-        <span class="nameLogo" alt=""></span>
+        <span className="nameLogo" alt=""></span>
       </Link>
-      <p class="email">email.&nbsp; parkgutime@gmail.com</p>
-      <span class="gitLogo"></span>
-      <p class="copyright">Copyright © parkjinsung. All Rights Reserved.</p>
+      <p className="email">email.&nbsp; parkgutime@gmail.com</p>
+      <span className="gitLogo"></span>
+      <p className="copyright">Copyright © parkjinsung. All Rights Reserved.</p>
     </div>
   );
 };

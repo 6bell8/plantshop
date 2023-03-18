@@ -36,7 +36,7 @@ const Home = ({
   bannerData,
   customplant,
   customFlowerpot,
-  productBanner,
+  slideBanner,
 }) => {
   const [activeThumb, setAcitiveThumb] = useState(null);
   const [activeThumb02, setAcitiveThumb02] = useState(null);
@@ -141,11 +141,15 @@ const Home = ({
       {/* 두번째 product container slide */}
 
       <div className="products-container-02">
-        {productBanner?.map((productBanner, index) => (
+        <div className="container-02-box">
+          <h1>Best Seller Products</h1>
+          <p>이 달의 베스트 상품을 만나보세요.</p>
+        </div>
+        {slideBanner?.map((slideBanner, index) => (
           <PlantDetail
             className="product-wrapper-02"
             key={index}
-            productBanner={productBanner}
+            slideBanner={slideBanner}
           />
         ))}
       </div>
@@ -172,9 +176,9 @@ export const getServerSideProps = async () => {
   const customQuery02 = '*[_type == "flowerpot"]';
   const customFlowerpot = await client.fetch(customQuery02);
 
-  // 모든 종류를 한번에 볼 수 있도록 슬라이드 배너
-  const productBannerQuery = '*[_type == "slideBanner"]';
-  const productBanner = await client.fetch(productBannerQuery);
+  // 모든 종류를 한번에 볼 수 있는 슬라이드 배너
+  const slideBannerQuery = '*[_type == "slideBanner"]';
+  const slideBanner = await client.fetch(slideBannerQuery);
 
   return {
     props: {
@@ -183,7 +187,7 @@ export const getServerSideProps = async () => {
       bannerData,
       customplant,
       customFlowerpot,
-      productBanner,
+      slideBanner,
     },
   };
 };

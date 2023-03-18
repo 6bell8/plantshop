@@ -3,11 +3,11 @@ import Link from "next/link"; // 제품에 연결하기위해서 next link를 �
 
 import { urlFor } from "../lib/client";
 
-const PlantDetail = ({ productBanner: { image, name, slug, price } }) => {
+const PlantDetail = ({ slideBanner: { image, name, slug, price } }) => {
   return (
     <div>
       {/* 링크 태그 안에 태그를 추가해야 오류가 풀림 */}
-      <Link href={`/productBanner/${slug.current}`}>
+      <Link href={`/slideBanner/${slug.current}`}>
         <div className="product-card product-card-02">
           <img
             src={urlFor(image && image[0])}

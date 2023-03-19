@@ -42,7 +42,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-// 정적 렌더링 params는 slug명으로 내려줌
+// 정적 렌더링 params는 slug명으로 내려줌, params를 slug 인자 값으로 전달
 export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "slideBanner" && slug.current == '${slug}'][0]`;
   const productsQuery = '*[_type == "slideBanner"]';

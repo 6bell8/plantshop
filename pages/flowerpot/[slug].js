@@ -1,16 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
 import { client, urlFor } from "../../lib/client";
-
-// 라우팅할 때 저장 폴더에 따라서 slug가 뒤바뀜(주의) 따라서 지정하는 폴더명을 변수 or 함수명과 일치시켜야된다.
+import {
+  AiOutlineMinus,
+  AiOutlinePlus,
+  AiFillStar,
+  AiOutlineStar,
+} from "react-icons/ai";
+import { Flowerpot } from "../../components";
 
 const ProductDesc = ({ flowerpot, flowerpots }) => {
-  const { image, name, detail, price } = flowerpot;
+  const { image, name, details, price } = flowerpot;
+
+  const [index, setIndex] = useState(0);
   return (
     <div>
-      <div className="pordict-detail-container">
+      <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img src={urlFor(image && image[0])} />
+            <img
+              src={urlFor(image && image[index])}
+              className="product-detail-image"
+            />
+          </div>
+          <div className="small-images-container">
+            {image?.map((item, i) => (
+              <img
+                src={urlFor(item)}
+                className={
+                  i === index ? "small-image selected-image" : "small-image"
+                }
+                onMouseEnter={() => setIndex(i)}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="product-detail-desc">
+          <h1>{name}</h1>
+          <div className="reviews">
+            <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
+            <AiOutlineStar />
+            <p>(20)</p>
+          </div>
+
+          <h4>상세정보</h4>
+          <p>{details}</p>
+          <p className="price">{price}원</p>
+          <div className="quantity">
+            {/* <h3>수량</h3> */}
+            <p className="quantity-desc">
+              <span className="minus" onClick="">
+                <AiOutlineMinus />
+              </span>
+              <span className="num" onClick="">
+                0
+              </span>
+              <span className="plus" onClick="">
+                <AiOutlinePlus />
+              </span>
+            </p>
+          </div>
+
+          <div className="buttons">
+            <button type="button" className="add-to-cart" onClick="">
+              장바구니 추가
+            </button>
+            <button type="button" className="buy-now" onClick="">
+              지금 구매하기
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="maylike-products-wrapper">
+        <h2>관심 가질 만한 상품</h2>
+        <div className="marquee">
+          <div className="maylike-products-container track">
+            {flowerpots.map((item) => (
+              <Flowerpot key={item._id} flowerpot={item} />
+            ))}
           </div>
         </div>
       </div>
@@ -18,7 +88,8 @@ const ProductDesc = ({ flowerpot, flowerpots }) => {
   );
 };
 
-// 해당 type slideBanner로 바꾸기
+// 해당 getServerSideProps까지도 type name을 통일해주어야 라우팅이 제대로 설정이 됨
+// paths로 slideBanner마다 slug명으로 params 설정
 export const getStaticPaths = async () => {
   const query = `*[_type == "flowerpot"] {
       slug {
@@ -27,8 +98,10 @@ export const getStaticPaths = async () => {
     }
     `;
 
+  // 상단 client에 있는 정보로 fetch해서 slideBanner를 경로지정
   const flowerpots = await client.fetch(query);
 
+  //slideBanner에 있는 경로를 slug명으로 매핑해서 리턴
   const paths = flowerpots.map((flowerpot) => ({
     params: {
       slug: flowerpot.slug.current,
@@ -41,10 +114,12 @@ export const getStaticPaths = async () => {
   };
 };
 
+// 정적 렌더링 params는 slug명으로 내려줌, params를 slug 인자 값으로 전달
 export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "flowerpot" && slug.current == '${slug}'][0]`;
   const productsQuery = '*[_type == "flowerpot"]';
 
+  // 마찬가지로 flowerpot 받아와서 props로 내려주는 과정
   const flowerpot = await client.fetch(query);
   const flowerpots = await client.fetch(productsQuery);
 

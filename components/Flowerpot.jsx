@@ -16,6 +16,8 @@ const Flowerpot = ({ flowerpot: { image, name, slug, price } }) => {
           height={200}
           className="product-image"
         />
+        <p className="product-name">{name}</p>
+        <p className="product-price">{price} 원</p>
       </div>
     </>
   );

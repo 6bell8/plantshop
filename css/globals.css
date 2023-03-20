@@ -259,7 +259,7 @@ span.text-red {
 .products-container .products-wrap {
   width: 100%;
   height: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -410,8 +410,14 @@ span.text-red {
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  margin-top: 10px;
   padding: 0.5vw 0;
   color: #324d67;
+}
+
+.product-card p,
+.product-card-02 p {
+  pointer-events: none;
 }
 
 .product-card:hover,
@@ -437,6 +443,7 @@ span.text-red {
 .product-card.right,
 .product-card-02.right {
   padding: 0 20px 0 70px;
+  text-align: right;
 }
 
 .product-card.right :hover,
@@ -815,7 +822,7 @@ span.text-red {
 }
 
 .product .cart-product-image {
-  width: 180px;
+  width: 150px;
   height: 150px;
   border-radius: 15px;
   background-color: #ebebeb;
@@ -868,8 +875,9 @@ span.text-red {
 .cart-bottom {
   position: absolute;
   bottom: 12px;
-  right: 5px;
+  right: 0;
   width: 100%;
+  background-color: #dde9cf;
   padding: 30px 65px;
 }
 
@@ -909,14 +917,17 @@ span.text-red {
   display: -ms-flexbox;
   display: flex;
   gap: 40px;
-  margin: 40px;
-  margin-top: 60px;
+  margin: 80px 40px 40px 40px;
   color: #324d67;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .product-detail-image {
   border-radius: 15px;
   background-color: #ebebeb;
+  padding: 20px;
   width: 400px;
   height: 400px;
   cursor: pointer;
@@ -998,6 +1009,10 @@ span.text-red {
           align-items: center;
 }
 
+.product-detail-desc .quantity h3 {
+  vertical-align: 1px;
+}
+
 .product-detail-desc .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1008,6 +1023,7 @@ span.text-red {
 .buttons .add-to-cart {
   padding: 10px 20px;
   border: 1px solid #50d76e;
+  border-radius: 10px;
   margin-top: 40px;
   font-size: 18px;
   font-weight: 500;
@@ -1030,6 +1046,7 @@ span.text-red {
 
 .buttons .buy-now {
   width: 200px;
+  border-radius: 10px;
   padding: 10px 20px;
   background-color: #50d76e;
   color: white;
@@ -1053,6 +1070,7 @@ span.text-red {
 
 .quantity-desc {
   border: 1px solid gray;
+  border-radius: 10px;
   padding: 6px;
 }
 
@@ -1064,6 +1082,7 @@ span.text-red {
 
 .quantity-desc .minus {
   border-right: 1px solid gray;
+  font-size: 20px;
   color: #50d76e;
 }
 
@@ -1082,9 +1101,10 @@ span.text-red {
 
 .maylike-products-wrapper h2 {
   text-align: center;
-  margin: 50px;
+  margin: 30px 50px 15px;
   color: #324d67;
-  font-size: 28px;
+  font-size: 32px;
+  font-weight: 400;
 }
 
 .maylike-products-container {
@@ -1326,6 +1346,10 @@ span.text-red {
 
 .swiper {
   margin: 0 30px !important;
+}
+
+.swiper-wrapper {
+  cursor: pointer !important;
 }
 
 .swiper-button-prev {

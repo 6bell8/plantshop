@@ -16,6 +16,8 @@ const Plant = ({ plant: { image, name, slug, price } }) => {
           alt=""
           className="product-image"
         />
+        <p className="product-name">{name}</p>
+        <p className="product-price">{price} 원</p>
       </div>
     </div>
   );

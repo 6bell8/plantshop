@@ -16,19 +16,8 @@ import SwiperCore, { Navigation, Pagination, Autoplay, Thumbs } from "swiper";
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-// import "swiper/components/navigation/navigation.min.css";
-// import "swiper/components/thumbs/thumbs.min.css";
-// import "swiper/components/pagination/pagination.min.css";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
-
-// const settings = {
-//   spaceBetween: 20,
-//   direction: "vertical",
-//   scrollbar: { draggable: true, el: null },
-//   slidesPerView: 4,
-//   loop: true,
-// };
 
 const Home = ({
   plant,

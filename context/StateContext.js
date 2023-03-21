@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
+import { useRouter } from "next/router";
 
 // createContext 생성 훅
 const Context = createContext();
@@ -18,6 +19,20 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
+
+  let foundProduct;
+  let index;
+
+  //next에서 페이지 변화 감지 할 때마다 next/router 함수로 변화 시킴
+
+  // 동적 변화는 context에서 직접 변화
+  const router = useRouter();
+
+  useEffect(() => {
+    return () => {
+      setQty(1);
+    };
+  }, [router]);
 
   // 동적 상태변경 함수
   const incQty = () => {
@@ -65,7 +80,54 @@ export const StateContext = ({ children }) => {
     toast.success(`[ ${qty} ] 개 ${product.name} 장바구니에 담았습니다.`);
   };
 
-  //export 내에서 value 값 내에 usestate 다 떄려 넣기
+  const onRemove = (product) => {
+    foundProduct = cartItems.find((item) => item._id === product._id);
+    const newCartItems = cartItems.filter((item) => item._id !== product._id);
+
+    setTotalPrice(
+      (prevTotalPrice) =>
+        prevTotalPrice - foundProduct.price * foundProduct.quantity
+    );
+    setTotalQuantities(
+      (prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity
+    );
+    setCartItems(newCartItems);
+  };
+
+  const toggleCartItemQuanitity = (id, value) => {
+    foundProduct = cartItems.find((item) => item._id === id);
+    // index = cartItems.findIndex((product) => product._id === id);
+    console.log(foundProduct);
+
+    const newCartItems = cartItems.filter((item) => item._id !== id);
+    if (value === "inc") {
+      // useState에서 배열 수량을 올리는 올바른 방법
+
+      setCartItems([
+        ...newCartItems,
+        {
+          ...foundProduct,
+          quantity: foundProduct.quantity + 1,
+        },
+      ]);
+
+      setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
+
+      setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
+    } else if (value === "dec") {
+      if (foundProduct.quantity > 1) {
+        setCartItems([
+          ...newCartItems,
+          { ...foundProduct, quantity: foundProduct.quantity - 1 },
+        ]);
+        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
+
+        setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1);
+      }
+    }
+  };
+
+  //export Context.Provider 내에서 value 값 내에 usestate 다 떄려 넣기
   return (
     <Context.Provider
       value={{
@@ -78,6 +140,8 @@ export const StateContext = ({ children }) => {
         incQty,
         decQty,
         onAdd,
+        toggleCartItemQuanitity,
+        onRemove,
       }}
     >
       {children}

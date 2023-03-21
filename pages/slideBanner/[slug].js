@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { client, urlFor } from "../../lib/client";
 import {
   AiOutlineMinus,
@@ -16,6 +16,7 @@ const ProductDesc = ({ slideBanner, slideBanners }) => {
   const [index, setIndex] = useState(0);
   // 2. 전역변수 바인딩을 위한 콜백함수 전달
   const { decQty, incQty, qty, onAdd } = useStateContext();
+
   return (
     <div>
       <div className="product-detail-container">
@@ -69,7 +70,7 @@ const ProductDesc = ({ slideBanner, slideBanners }) => {
           </div>
 
           <div className="buttons">
-            {/* 3. onAdd에 배열에서 나타내주는 (slideBanner)를 넣어주어야 전역관리함수 사용가능, 파라미터 활용하기 위해 화살표 함수 사용, */}
+            {/* 3. onAdd에 배열에서 나타내주는 배열(slideBanner)를 넣어주어야 전역관리함수 사용가능, 파라미터 활용하기 위해 화살표 함수 사용, */}
             <button
               type="button"
               className="add-to-cart"

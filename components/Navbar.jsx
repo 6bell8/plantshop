@@ -20,7 +20,6 @@ const Navbar = () => {
       >
         <AiOutlineShopping />
         <span className="cart-item-qty">{totalQuantities}</span>
-        {console.log(totalQuantities)}
       </button>
       {/* toggle 할 때 컴포넌트 숨기고 감추는 법  */}
       {showCart && <Cart />}

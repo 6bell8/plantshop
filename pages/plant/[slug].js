@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { client, urlFor } from "../../lib/client";
 import {
   AiOutlineMinus,
@@ -7,11 +7,16 @@ import {
   AiOutlineStar,
 } from "react-icons/ai";
 import { Plant } from "../../components";
+// 1. 전역변수에 대한 해당 컴포넌트 가져오기
+import { useStateContext } from "../../context/StateContext";
 
 const ProductDesc = ({ plant, plants }) => {
   const { image, name, details, price } = plant;
 
   const [index, setIndex] = useState(0);
+  // 2. 전역변수 바인딩을 위한 콜백함수 전달
+  const { decQty, incQty, qty, onAdd } = useStateContext();
+
   return (
     <div>
       <div className="product-detail-container">
@@ -51,20 +56,26 @@ const ProductDesc = ({ plant, plants }) => {
           <div className="quantity">
             {/* <h3>수량</h3> */}
             <p className="quantity-desc">
-              <span className="minus" onClick="">
+              {/* useContext에서의 함수를 onclick에 걸어놓기 */}
+              <span className="minus" onClick={decQty}>
                 <AiOutlineMinus />
               </span>
               <span className="num" onClick="">
-                0
+                {qty}
               </span>
-              <span className="plus" onClick="">
+              <span className="plus" onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </p>
           </div>
 
           <div className="buttons">
-            <button type="button" className="add-to-cart" onClick="">
+            {/* 3. onAdd에 배열에서 나타내주는 배열(plant)를 넣어주어야 전역관리함수 사용가능, 파라미터 활용하기 위해 화살표 함수 사용, */}
+            <button
+              type="button"
+              className="add-to-cart"
+              onClick={() => onAdd(plant, qty)}
+            >
               장바구니 추가
             </button>
             <button type="button" className="buy-now" onClick="">
@@ -89,7 +100,7 @@ const ProductDesc = ({ plant, plants }) => {
 };
 
 // 해당 getServerSideProps까지도 type name을 통일해주어야 라우팅이 제대로 설정이 됨
-// paths로 slideBanner마다 slug명으로 params 설정
+// paths로 plant마다 slug명으로 params 설정
 export const getStaticPaths = async () => {
   const query = `*[_type == "plant"] {
       slug {
@@ -98,10 +109,10 @@ export const getStaticPaths = async () => {
     }
     `;
 
-  // 상단 client에 있는 정보로 fetch해서 slideBanner를 경로지정
+  // 상단 client에 있는 정보로 fetch해서 plant를 경로지정
   const plants = await client.fetch(query);
 
-  //slideBanner에 있는 경로를 slug명으로 매핑해서 리턴
+  //plant에 있는 경로를 slug명으로 매핑해서 리턴
   const paths = plants.map((plant) => ({
     params: {
       slug: plant.slug.current,

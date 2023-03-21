@@ -916,12 +916,15 @@ span.text-red {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 40px;
-  margin: 80px 40px 40px 40px;
+  grid-gap: 40px;
+  gap: 60px;
+  padding: 80px 60px;
   color: #324d67;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 1280px;
+  margin: 0 auto;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px -2px 20px #d7d7d7;
+          box-shadow: 0px -2px 20px #d7d7d7;
 }
 
 .product-detail-image {
@@ -979,7 +982,7 @@ span.text-red {
   margin-top: 10px;
 }
 
-.reviews p {
+.product-detail-desc .reviews p {
   color: #324d67;
   margin-top: 0px;
 }
@@ -991,11 +994,15 @@ span.text-red {
   color: #50d76e;
 }
 
-.price .old-price,
+.product-detail-desc .price .old-price,
 .product-price .old-price,
 .price .old-price {
   color: gray;
   text-decoration: line-through;
+}
+
+.product-detail-desc {
+  min-width: 600px;
 }
 
 .product-detail-desc .quantity {
@@ -1096,7 +1103,7 @@ span.text-red {
 }
 
 .maylike-products-wrapper {
-  margin-top: 120px;
+  margin-top: 80px;
 }
 
 .maylike-products-wrapper h2 {
@@ -1104,7 +1111,7 @@ span.text-red {
   margin: 30px 50px 15px;
   color: #324d67;
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .maylike-products-container {

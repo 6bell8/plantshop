@@ -1,5 +1,5 @@
 // dom제어  useRef
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import {
   AiOutlineMinus,
@@ -8,15 +8,25 @@ import {
   AiOutlineShopping,
 } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
-import toast from "react-hot-toast";
 
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
+import toast from "react-hot-toast";
+import getStripe from "../lib/getStripe";
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart } =
-    useStateContext();
+  const {
+    totalPrice,
+    totalQuantities,
+    cartItems,
+    setShowCart,
+    toggleCartItemQuanitity,
+    onRemove,
+  } = useStateContext();
+
+  const handleCheckout = async () => {};
+
   return (
     <div className="cart-wrapper" ref={cartRef}>
       <div className="cart-container">
@@ -32,7 +42,7 @@ const Cart = () => {
         {/* 조건식 바로 부여 */}
         {cartItems.length < 1 && (
           <div className="empty-cart">
-            <AiOutlineShopping width={150} height={150} />
+            <AiOutlineShopping size={150} />
             <h3>장바구니가 텅 비었어요.</h3>
             <Link href="/">
               <button
@@ -64,18 +74,34 @@ const Cart = () => {
                     <div>
                       <p className="quantity-desc">
                         {/* useContext에서의 함수를 onclick에 걸어놓기 */}
-                        <span className="minus" onClick="">
+
+                        {/* 인자값에 dec를 주는 이유는 toggle if에 쓰인 dec와 일치 시키기 위해서 이다 */}
+                        <span
+                          className="minus"
+                          onClick={() =>
+                            toggleCartItemQuanitity(item._id, "dec")
+                          }
+                        >
                           <AiOutlineMinus />
                         </span>
                         <span className="num" onClick="">
-                          0
+                          {item.quantity}
                         </span>
-                        <span className="plus" onClick="">
+                        <span
+                          className="plus"
+                          onClick={() =>
+                            toggleCartItemQuanitity(item._id, "inc")
+                          }
+                        >
                           <AiOutlinePlus />
                         </span>
                       </p>
                     </div>
-                    <button type="button" className="remove-item">
+                    <button
+                      type="button"
+                      className="remove-item"
+                      onClick={() => onRemove(item)}
+                    >
                       <TiDeleteOutline />
                     </button>
                   </div>
@@ -89,7 +115,7 @@ const Cart = () => {
                 <h3>{totalPrice}원</h3>
               </div>
               <div className="btn-container">
-                <button type="button" className="btn" onClick="">
+                <button type="button" className="btn" onClick={handleCheckout}>
                   결제하기
                 </button>
               </div>

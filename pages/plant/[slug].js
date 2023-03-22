@@ -15,8 +15,12 @@ const ProductDesc = ({ plant, plants }) => {
 
   const [index, setIndex] = useState(0);
   // 2. 전역변수 바인딩을 위한 콜백함수 전달
-  const { decQty, incQty, qty, onAdd } = useStateContext();
+  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
+  const handleBuyNow = () => {
+    onAdd(plant, qty);
+    setShowCart(true);
+  };
   return (
     <div>
       <div className="product-detail-container">
@@ -60,9 +64,7 @@ const ProductDesc = ({ plant, plants }) => {
               <span className="minus" onClick={decQty}>
                 <AiOutlineMinus />
               </span>
-              <span className="num" onClick="">
-                {qty}
-              </span>
+              <span className="num">{qty}</span>
               <span className="plus" onClick={incQty}>
                 <AiOutlinePlus />
               </span>
@@ -78,7 +80,7 @@ const ProductDesc = ({ plant, plants }) => {
             >
               장바구니 추가
             </button>
-            <button type="button" className="buy-now" onClick="">
+            <button type="button" className="buy-now" onClick={handleBuyNow}>
               지금 구매하기
             </button>
           </div>

@@ -11,8 +11,8 @@ import { TiDeleteOutline } from "react-icons/ti";
 
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
-import toast from "react-hot-toast";
 import getStripe from "../lib/getStripe";
+import toast from "react-hot-toast";
 
 const Cart = () => {
   const cartRef = useRef();
@@ -25,7 +25,27 @@ const Cart = () => {
     onRemove,
   } = useStateContext();
 
-  const handleCheckout = async () => {};
+  //버튼 태그에 getstripe 비동기 함수 적용
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+
+    // 데이터를 문자열로 보내는 기능
+    const response = await fetch("/api/stripe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cartItems),
+    });
+
+    if (response.statusCode === 500) return;
+    // response.json() 객체를 받아오는 방법
+    const data = await response.json();
+    toast.loading("결제 정보를 보내는 중");
+
+    //위에서 받은 stripe loading 함수를 체킹
+    stripe.redirectToCheckout({ sessionId: data.id });
+  };
 
   return (
     <div className="cart-wrapper" ref={cartRef}>

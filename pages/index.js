@@ -52,12 +52,9 @@ const Home = ({
             thumbs={{ swiper: activeThumb }}
             autoplay={{ delay: 5000, disableOnInteraction: false }}
           >
-            {customplant?.map((customplant) => (
-              <SwiperSlide>
-                <ProductCustom
-                  key={customplant._id}
-                  customplant={customplant}
-                />
+            {customplant?.map((customplant, i) => (
+              <SwiperSlide key={i}>
+                <ProductCustom customplant={customplant} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -73,12 +70,9 @@ const Home = ({
             autoplay={{ delay: 10000, disableOnInteraction: false }}
             thumbs={{ swiper: activeThumb02 }}
           >
-            {customFlowerpot?.map((customFlowerpot) => (
-              <SwiperSlide>
-                <ProductCustom02
-                  key={customFlowerpot._id}
-                  customFlowerpot={customFlowerpot}
-                />
+            {customFlowerpot?.map((customFlowerpot, i) => (
+              <SwiperSlide key={i}>
+                <ProductCustom02 customFlowerpot={customFlowerpot} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -95,13 +89,9 @@ const Home = ({
             // spaceBetween={50}
             modules={[Navigation, Thumbs]}
           >
-            {plant?.map((plant, index) => (
-              <SwiperSlide>
-                <Plant
-                  className="plant-product-wrapper"
-                  key={index}
-                  plant={plant}
-                />
+            {plant?.map((plant, i) => (
+              <SwiperSlide key={i}>
+                <Plant className="plant-product-wrapper" plant={plant} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -114,11 +104,10 @@ const Home = ({
             slidesPerView={4}
             modules={[Navigation, Thumbs]}
           >
-            {flowerpot?.map((flowerpot, index) => (
-              <SwiperSlide>
+            {flowerpot?.map((flowerpot, i) => (
+              <SwiperSlide key={i}>
                 <Flowerpot
                   className="plant-product-wrapper"
-                  key={index}
                   flowerpot={flowerpot}
                 />
               </SwiperSlide>
@@ -134,10 +123,10 @@ const Home = ({
           <h1>Best Seller Products</h1>
           <p>이 달의 베스트 상품을 만나보세요.</p>
         </div>
-        {slideBanner?.map((slideBanner, index) => (
+        {slideBanner?.map((slideBanner, i) => (
           <PlantDetail
             className="product-wrapper-02"
-            key={index}
+            key={i}
             slideBanner={slideBanner}
           />
         ))}

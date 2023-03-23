@@ -34,11 +34,10 @@ const Home = ({
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
       <div className="products-heading">
-        <h2 className="">
-          Custom <br />
-          your plant!
-        </h2>
-        <p>마음에 드는 식물이나 화분을 클릭하면 주문 화면으로 이동됩니다.</p>
+        <h2 className="products-h2">Custom your plant!</h2>
+        <p className="products-p">
+          마음에 드는 식물이나 화분을 클릭하면 주문 화면으로 이동됩니다.
+        </p>
       </div>
       <div className="products-container">
         <div className="custom-boxs">
@@ -119,9 +118,9 @@ const Home = ({
       {/* 두번째 product container slide */}
 
       <div className="products-container-02">
-        <div className="container-02-box">
-          <h1>Best Seller Products</h1>
-          <p>이 달의 베스트 상품을 만나보세요.</p>
+        <div className="container-02-box products-heading">
+          <h2 className="products-h2">Best Seller Products</h2>
+          <p className="products-p">이 달의 베스트 상품을 만나보세요.</p>
         </div>
         {slideBanner?.map((slideBanner, i) => (
           <PlantDetail

@@ -11,6 +11,7 @@ const Layout = ({ children }) => {
     <div className="layout">
       <Head>
         <title>prk-plant-shop</title>
+        <link rel="icon" href="image/pjs-g.svg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet"

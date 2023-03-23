@@ -77,7 +77,8 @@ export const StateContext = ({ children }) => {
       // 장바구니에 물건이 없으면 그대로 스프레드
       setCartItems([...cartItems, { ...product }]);
     }
-    toast.success(`[ ${qty} ] 개 ${product.name} 장바구니에 담았습니다.`);
+    //toast.success(`[ ${qty} ] 개 ${product.name} 장바구니에 담았습니다.`);
+    alert(`[ ${qty} ] 개 ${product.name} 장바구니에 담았습니다.`);
   };
 
   const onRemove = (product) => {

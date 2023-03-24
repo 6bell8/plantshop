@@ -1,10 +1,8 @@
 import { React, useState } from "react";
-import Link from "next/link";
 import { client } from "../lib/client";
 import {
   Plant,
   Flowerpot,
-  FooterBanner,
   HeroBanner,
   PlantDetail,
   ProductCustom,
@@ -13,7 +11,6 @@ import {
 
 import { Swiper, SwiperSlide } from "swiper/react"; // basic
 import SwiperCore, { Navigation, Pagination, Autoplay, Thumbs } from "swiper";
-
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 
@@ -130,8 +127,6 @@ const Home = ({
           />
         ))}
       </div>
-
-      {/* <FooterBanner  /> */}
     </>
   );
 };

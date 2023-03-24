@@ -1,6 +1,4 @@
 import React from "react";
-import Link from "next/link"; // 제품에 연결하기위해서 next link를 가져오기
-
 import { urlFor } from "../lib/client";
 
 const Plant = ({ plant: { image, name, slug, price } }) => {

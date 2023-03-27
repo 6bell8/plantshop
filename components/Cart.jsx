@@ -8,11 +8,9 @@ import {
   AiOutlineShopping,
 } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
-
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
 import getStripe from "../lib/getStripe";
-import toast from "react-hot-toast";
 
 const Cart = () => {
   const cartRef = useRef();
@@ -41,7 +39,6 @@ const Cart = () => {
     if (response.statusCode === 500) return;
     // response.json() 객체를 받아오는 방법
     const data = await response.json();
-    toast.loading("결제 정보를 보내는 중");
 
     //위에서 받은 stripe loading 함수를 체킹
     stripe.redirectToCheckout({ sessionId: data.id });

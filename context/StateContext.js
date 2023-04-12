@@ -14,6 +14,7 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
   //useSa snippet 엄청편함
   const [showCart, setShowCart] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
@@ -59,6 +60,7 @@ export const StateContext = ({ children }) => {
     setTotalPrice(
       (prevTotlaPrice) => prevTotlaPrice + product.price * quantity
     );
+
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
     if (checkProductInCart) {
       // 장바구니 항목 업데이트 함수
@@ -133,6 +135,8 @@ export const StateContext = ({ children }) => {
       value={{
         showCart,
         setShowCart,
+        showMenu,
+        setShowMenu,
         cartItems,
         totalPrice,
         totalQuantities,
@@ -147,6 +151,7 @@ export const StateContext = ({ children }) => {
         setTotalQuantities,
       }}
     >
+      {/* context api 인자값 */}
       {children}
     </Context.Provider>
   );

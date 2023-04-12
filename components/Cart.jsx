@@ -1,5 +1,5 @@
 // dom제어  useRef
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import {
   AiOutlineMinus,

@@ -1,0 +1,75 @@
+피그마로 웹사이트 템플릿 구축
+
+sanity연동해놓음 
+
+커스텀 만들기
+
+이미지 클릭 시 products-plant or products-flowerpot에 고정 되도록
+
+plant, flowerpot에 있는 링크들을 custom img에 걸도록
+
+<urlfor에 있는 인자값들이 안들어오는 듯, slug, image 다시 받아오기>
+
+일단 리액트 스와이퍼
+
+플라워팟이랑 wrapper 연동해놓기 , usestate 다르게 지정,
+wrapper 간격 조정 spacebetween 배치 버튼 색상 다르게 autoplay
+
+//-------------//
+
+     {slideBanners.map((item) => (
+              <PlantDetail key={item._id} slideBanner={item} />
+            ))}
+
+index 경로 설정 제대로하기
+
+//-------------//
+
+useContext
+
+import React, { createContext, useContext, useState, useEffect } from "react";
+import { toast } from "react-hot-toast";
+
+// createContext 생성 훅
+const Context = createContext();
+
+//children props 중요 children을 통해서 모든 정보를 하달
+export const StateContext = ({ children }) => {
+  //useSa snippet 엄청편함
+  const [showCart, setshowCart] = useState(second);
+};
+
+
+
+
+  setTotalQuantities((prevTotalQuantities) => {
+      prevTotalQuantities + quantity;
+    });
+
+중괄호 생략하고 ㄱㄱ
+
+    setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
+
+
+plant랑 flowerpot은 아직 안 만든 상태, slideBanner 완료하고 복붙해서 [slug] plant, flowerpot 형식에 맞게
+수정하기
+
+
+
+
+
+
+
+이미지 경로 때문에 서버소스를 못가져 오는 걸 수도 있음
+
+plant, flowerpot stripe 링크 태우는 걸로 수정해서 (getstripe, stripe, Cart 연동)
+
+
+- 3/24 배포하기
+
+불필요한 파일 제거 구글폰트 css로 옮기니까 배포완료
+
+plant, flowerpot 배너 링크 타지게 할 수 있도록 통합
+
+이후, 페이지네이션, 게시판, 왼쪽 편의기능 만들어보기
+

@@ -116,6 +116,27 @@ a {
           box-shadow: 1px 1px 10px #c4c4c4;
 }
 
+.navbar-container .profile-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-container .profile-box .user {
+  margin-right: 20px;
+}
+
+.navbar-container .profile-box .user .user-desc {
+  color: #333;
+}
+
+.navbar-container .profile-box .user .user-name {
+  font-weight: 700;
+}
+
 .marquee-text {
   font-size: 29px;
   font-weight: 600;
@@ -177,8 +198,10 @@ span.text-red {
   cursor: pointer;
 }
 
-.cart-icon {
-  font-size: 25px;
+.cart-icon,
+.noti-icon,
+.nav-icon {
+  font-size: 24px;
   color: gray;
   cursor: pointer;
   position: relative;
@@ -190,7 +213,17 @@ span.text-red {
   background-color: transparent;
 }
 
-.cart-icon:hover {
+.noti-icon {
+  margin-right: 15px;
+}
+
+.cart-icon {
+  margin-right: 50px;
+}
+
+.nav-icon:hover,
+.cart-icon:hover,
+.noti-icon:hover {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
 }
@@ -570,7 +603,7 @@ span.text-red {
   font-size: 23px;
   font-weight: 700;
   cursor: pointer;
-  z-index: 10000 !important;
+  z-index: 10 !important;
 }
 
 .hero-banner-container button:hover {
@@ -787,6 +820,25 @@ span.text-red {
 .cart-container {
   height: 100vh;
   width: 600px;
+  background-color: white;
+  float: right;
+  padding: 40px 10px;
+  position: relative;
+}
+
+.profile-wrapper {
+  width: 100vw;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.profile-container {
+  height: 100vh;
+  width: 500px;
   background-color: white;
   float: right;
   padding: 40px 10px;

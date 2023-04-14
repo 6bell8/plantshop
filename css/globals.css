@@ -97,7 +97,7 @@ a {
   max-width: 1920px;
   margin: auto;
   width: 100%;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .navbar-container {
@@ -108,7 +108,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 20px 23px;
+  padding: 10px 23px;
   position: fixed;
   z-index: 10000;
   background-color: #fff;
@@ -843,6 +843,15 @@ span.text-red {
   float: right;
   padding: 40px 10px;
   position: relative;
+}
+
+.profile-container .profile-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer-container {

@@ -101,14 +101,14 @@ a {
   max-width: 1920px;
   margin: auto;
   width: 100%;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .navbar-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 20px 23px;
+  padding: 10px 23px;
   position: fixed;
   z-index: 10000;
   background-color: #fff;
@@ -683,6 +683,12 @@ span.text-red {
   float: right;
   padding: 40px 10px;
   position: relative;
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .profile-menu {
+  }
 }
 
 //

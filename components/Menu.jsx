@@ -10,7 +10,6 @@ import ProfileHeader from "../public/image/profileHeader.svg";
 
 const Menu = () => {
   const { setShowMenu } = useStateContext();
-
   return (
     <div className="profile-wrapper">
       <div className="profile-container">
@@ -26,18 +25,21 @@ const Menu = () => {
         </div>
         <div className="profile-menu">
           {links.map((item) => (
-            <div key={item.title}>
-              <p>{item.title}</p>
+            <div key={item.title} className="profile-desc">
+              <p className="profile-title">{item.title}</p>
               {item.links.map((link) => (
                 // link 처리가 안돼서 일단
-                <p
-                  to={`/${link.name}`}
-                  key={link.name}
-                  // onClick={handleCloseSideBar}
-                >
-                  {link.icon}
-                  <span className="capitalize">{link.name}</span>
-                </p>
+                <div className="profile-links">
+                  <p
+                    href={`/${link.name}`}
+                    key={link.name}
+                    className="profile-link"
+                    // onClick={handleCloseSideBar}
+                  >
+                    {link.icon}
+                    <span className="capitalize">{link.name}</span>
+                  </p>
+                </div>
               ))}
             </div>
           ))}

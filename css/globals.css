@@ -838,7 +838,7 @@ span.text-red {
 
 .profile-container {
   height: 100vh;
-  width: 400px;
+  width: 350px;
   background-color: white;
   float: right;
   padding: 40px 10px;
@@ -870,8 +870,7 @@ span.text-red {
   padding: 10px 20px 10px 10px;
   font-size: 1.2rem;
   font-weight: 500;
-  color: #ccc;
-  border-bottom: 1px solid #ccc;
+  color: #acd7b5;
 }
 
 .profile-container .profile-menu .profile-desc .profile-links {
@@ -881,7 +880,7 @@ span.text-red {
 .profile-container .profile-menu .profile-desc .profile-links .profile-link {
   color: #333;
   font-size: 22px;
-  padding: 15px 30px 15px 0;
+  padding: 15px 35px 15px 0;
 }
 
 .profile-container .profile-menu .profile-desc .profile-links .profile-link svg {

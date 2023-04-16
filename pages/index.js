@@ -13,7 +13,6 @@ import { Swiper, SwiperSlide } from "swiper/react"; // basic
 import SwiperCore, { Navigation, Pagination, Autoplay, Thumbs } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-import { BrowserRouter } from "react-router-dom";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 

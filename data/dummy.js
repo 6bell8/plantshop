@@ -512,51 +512,47 @@ export const employeesGrid = [
 
 export const links = [
   {
-    title: "Dashboard",
+    title: "게시판",
     links: [
       {
-        name: "ecommerce",
+        name: "거래 내역",
         icon: <FiShoppingBag />,
       },
     ],
   },
 
   {
-    title: "Pages",
+    title: "페이지",
     links: [
       {
-        name: "orders",
+        name: "주문 내역",
         icon: <AiOutlineShoppingCart />,
-      },
-      {
-        name: "employees",
-        icon: <IoMdContacts />,
       },
     ],
   },
   {
-    title: "Apps",
+    title: "편의기능",
     links: [
       {
-        name: "calendar",
+        name: "달력",
         icon: <AiOutlineCalendar />,
       },
 
       {
-        name: "editor",
+        name: "편집",
         icon: <FiEdit />,
       },
     ],
   },
   {
-    title: "Charts",
+    title: "차트",
     links: [
       {
-        name: "line",
+        name: "라인 차트",
         icon: <AiOutlineStock />,
       },
       {
-        name: "area",
+        name: "곡선 차트",
         icon: <AiOutlineAreaChart />,
       },
     ],

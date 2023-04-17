@@ -881,11 +881,25 @@ span.text-red {
   color: #333;
   font-size: 22px;
   padding: 15px 35px 15px 0;
+  cursor: pointer;
 }
 
 .profile-container .profile-menu .profile-desc .profile-links .profile-link svg {
   -webkit-transform: translate(0px, 5px);
           transform: translate(0px, 5px);
+}
+
+.profile-container .profile-menu .profile-desc .profile-links .profile-link.active {
+  border-radius: 10px 0 0 10px;
+  background-color: #9be9a8;
+  color: #fff;
+}
+
+.profile-container .profile-menu .profile-desc .profile-links .profile-link:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px 0 0 10px;
+  background-color: #eeeeee;
 }
 
 .profile-container .profile-menu .profile-desc .profile-links .capitalize {
@@ -929,7 +943,7 @@ span.text-red {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 500;
   cursor: pointer;
   gap: 2px;
@@ -1427,7 +1441,9 @@ span.text-red {
     padding: 4px;
   }
   .cart-heading {
-    margin-top: 35px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .product-container {
     margin-top: 10px;

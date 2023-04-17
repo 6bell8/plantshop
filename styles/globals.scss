@@ -706,8 +706,19 @@ span.text-red {
           color: #333;
           font-size: 22px;
           padding: 15px 35px 15px 0;
+          cursor: pointer;
           svg {
             transform: translate(0px, 5px);
+          }
+          &.active {
+            border-radius: 10px 0 0 10px;
+            background-color: #9be9a8;
+            color: #fff;
+          }
+          &:hover {
+            transition: all 0.3s ease-in-out;
+            border-radius: 10px 0 0 10px;
+            background-color: #eeeeee;
           }
         }
         .capitalize {
@@ -740,7 +751,7 @@ span.text-red {
 .cart-heading {
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 500;
   cursor: pointer;
   gap: 2px;
@@ -1136,7 +1147,7 @@ span.text-red {
     padding: 4px;
   }
   .cart-heading {
-    margin-top: 35px;
+    align-items: center;
   }
   .product-container {
     margin-top: 10px;

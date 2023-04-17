@@ -8,6 +8,7 @@ import {
   ProductCustom,
   ProductCustom02,
 } from "../components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react"; // basic
 import SwiperCore, { Navigation, Pagination, Autoplay, Thumbs } from "swiper";

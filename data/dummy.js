@@ -515,7 +515,7 @@ export const links = [
     title: "게시판",
     links: [
       {
-        name: "거래 내역",
+        name: "ecommerce",
         icon: <FiShoppingBag />,
       },
     ],
@@ -525,7 +525,7 @@ export const links = [
     title: "페이지",
     links: [
       {
-        name: "주문 내역",
+        name: "orders",
         icon: <AiOutlineShoppingCart />,
       },
     ],

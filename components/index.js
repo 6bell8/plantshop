@@ -2,7 +2,7 @@ export { default as Cart } from "./Cart";
 export { default as Footer } from "./Footer";
 export { default as HeroBanner } from "./HeroBanner";
 export { default as Layout } from "./Layout";
-export { default as Menu } from "./Menu";
+export { default as MenuSidebar } from "./MenuSidebar";
 export { default as Navbar } from "./Navbar";
 export { default as Plant } from "./Plant";
 export { default as Flowerpot } from "./Flowerpot";

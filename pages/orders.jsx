@@ -2,8 +2,8 @@ import React from "react";
 import { GoPrimitiveDot } from "react-icons/go";
 // import { earningData, SparklineAreaData, ecomPieChartDat } from "../data/dummy";
 
-const Ecommerce = () => {
-  return <div className="">asd</div>;
+const orders = () => {
+  return <div className="">zsdz</div>;
 };
 
-export default Ecommerce;
+export default orders;

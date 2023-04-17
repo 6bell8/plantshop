@@ -1,15 +1,19 @@
 // dom제어  useRef
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineLeft } from "react-icons/ai";
 import { useStateContext } from "../context/StateContext";
 import { MdOutlineCancel } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { links } from "../data/dummy";
 import { Link } from "react-router-dom";
+import { useRouter } from "next/router";
+// import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import ProfileHeader from "../public/image/profileHeader.svg";
 
-const Menu = () => {
+const MenuSidebar = () => {
+  const router = useRouter();
   const { setShowMenu } = useStateContext();
+
   return (
     <div className="profile-wrapper">
       <div className="profile-container">
@@ -27,14 +31,12 @@ const Menu = () => {
           {links.map((item) => (
             <div key={item.title} className="profile-desc">
               <p className="profile-title">{item.title}</p>
-              {item.links.map((link) => (
+              {item.links.map((link, idx) => (
                 // link 처리가 안돼서 일단
-                <div className="profile-links">
+                <div className="profile-links" key={link.name}>
                   <p
-                    href={`/${link.name}`}
-                    key={link.name}
-                    className="profile-link"
-                    // onClick={handleCloseSideBar}
+                    className={"profile-link"}
+                    onClick={() => router.push(`${link.name}`)}
                   >
                     {link.icon}
                     <span className="capitalize">{link.name}</span>
@@ -49,4 +51,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default MenuSidebar;

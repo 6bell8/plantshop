@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { AiOutlineShopping, AiOutlineMenu } from "react-icons/ai";
 import { RiNotification3Line } from "react-icons/ri";
-import { Cart, Sidebar } from "./";
+import { Cart } from "./";
 import { useStateContext } from "../context/StateContext";
 
 const Navbar = () => {
@@ -46,15 +46,15 @@ const Navbar = () => {
         {/* toggle 할 때 컴포넌트 숨기고 감추는 법  */}
         {showCart && <Cart />}
         {/* profile orders */}
-        <button
+        {/* <button
           type="button"
           className="nav-icon"
           onClick={() => setShowMenu(true)}
         >
           <AiOutlineMenu />
-        </button>
+        </button> */}
         {/* toggle 할 때 컴포넌트 숨기고 감추는 법 추가  */}
-        {showMenu && <Sidebar />}
+        {/* {showMenu && <Sidebar />} */}
       </div>
     </div>
   );

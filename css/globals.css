@@ -110,7 +110,7 @@ a {
           justify-content: space-between;
   padding: 10px 23px;
   position: fixed;
-  z-index: 10000;
+  z-index: 1000;
   background-color: #fff;
   -webkit-box-shadow: 1px 1px 10px #c4c4c4;
           box-shadow: 1px 1px 10px #c4c4c4;
@@ -123,6 +123,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 30px;
 }
 
 .navbar-container .profile-box .user {
@@ -1546,7 +1547,7 @@ span.text-red {
   text-align: left !important;
   -webkit-transition: width, left, right, 0.3s;
   transition: width, left, right, 0.3s;
-  position: absolute !important;
+  position: fixed !important;
   z-index: 1009;
   top: 0 !important;
   right: 0 !important;
@@ -1564,25 +1565,45 @@ span.text-red {
 }
 
 .pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu {
-  border-bottom: 1px solid #9be9a8;
-  margin: 0 15px;
   color: #333;
 }
 
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .sidebar-title {
+  margin: 15px;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .pro-menu-item.active {
+  color: #9be9a8;
+}
+
 .pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .pro-menu-item .pro-inner-item {
-  padding: 10px 0px 20px 0px !important;
+  padding: 20px 25px !important;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .pro-menu-item .pro-inner-item:hover {
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .pro-menu-item .pro-inner-item .pro-icon-wrapper {
   background-color: #fff;
-  width: 100%;
   margin-right: 0 !important;
+  font-size: 25px;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .pro-menu-item .pro-inner-item .pro-item-content {
+  padding-left: 20px;
 }
 
 .pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .pro-menu-item .pro-inner-item .pro-item-content .pro-item-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: 18px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1597,6 +1618,8 @@ span.text-red {
 
 .pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .profile-user-wrapper {
   padding-bottom: 20px;
+  border-bottom: 1px solid #9be9a8;
+  margin: 0 15px;
 }
 
 .pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .profile-user-wrapper .profile-user-box {

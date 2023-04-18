@@ -1,10 +1,9 @@
 import "../css/globals.css";
 import { Layout } from "../components";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import React from "react"; // _app에서 import해서 react 돔을 실행해야 index가 동작
 import { StateContext } from "../context/StateContext";
-import Ecommerce from "./ecommerce";
 
 function App({ Component, pageProps }) {
   return (

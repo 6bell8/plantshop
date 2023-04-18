@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
+// 시그니처 컬러 #9BE9A8
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -1244,4 +1246,81 @@ span.text-red {
 .swiper-button-next {
   right: 15vw !important;
   width: 70px !important ;
+}
+
+// sidebar
+.pro-sidebar {
+  color: #adadad !important;
+  height: 100vh !important;
+  text-align: left !important ;
+  transition: width, left, right, 0.3s;
+  position: absolute !important;
+  z-index: 1009;
+  top: 0 !important;
+  right: 0 !important;
+  .pro-sidebar-inner {
+    background: #ffffff !important;
+    height: 100%;
+    position: relative;
+    text-align: right !important;
+    z-index: 101;
+    font-size: 18px !important;
+    box-shadow: 1px 5px 10px !important;
+    .pro-sidebar-layout {
+      .pro-menu {
+        border-bottom: 1px solid #9be9a8;
+        margin: 0 15px;
+        color: #333;
+        .pro-menu-item {
+          .pro-inner-item {
+            padding: 10px 0px 20px 0px !important;
+            .pro-icon-wrapper {
+              background-color: #fff;
+              width: 100%;
+              margin-right: 0 !important;
+              .pro-icon {
+              }
+            }
+            .pro-item-content {
+              .pro-item-box {
+                display: flex;
+                justify-content: space-between;
+                .backBtn {
+                  background: none;
+                  border: none;
+                  font-size: 20px;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+      .profile-user-wrapper {
+        padding-bottom: 20px;
+        .profile-user-box {
+          justify-content: center;
+          display: flex;
+          margin-bottom: 15px;
+          .profile-user {
+            border-radius: 50px;
+            background: center;
+            object-fit: cover;
+            border: 3px solid #9be9a8 !important;
+          }
+        }
+        .profile-info {
+          text-align: center;
+          .profile-name {
+            font-size: 25px;
+            font-weight: 500;
+          }
+          .profile-mode {
+            font-size: 15px;
+            color: #ccc;
+          }
+        }
+      }
+    }
+  }
 }

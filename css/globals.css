@@ -1539,3 +1539,94 @@ span.text-red {
   right: 15vw !important;
   width: 70px !important;
 }
+
+.pro-sidebar {
+  color: #adadad !important;
+  height: 100vh !important;
+  text-align: left !important;
+  -webkit-transition: width, left, right, 0.3s;
+  transition: width, left, right, 0.3s;
+  position: absolute !important;
+  z-index: 1009;
+  top: 0 !important;
+  right: 0 !important;
+}
+
+.pro-sidebar .pro-sidebar-inner {
+  background: #ffffff !important;
+  height: 100%;
+  position: relative;
+  text-align: right !important;
+  z-index: 101;
+  font-size: 18px !important;
+  -webkit-box-shadow: 1px 5px 10px !important;
+          box-shadow: 1px 5px 10px !important;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu {
+  border-bottom: 1px solid #9be9a8;
+  margin: 0 15px;
+  color: #333;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .pro-menu-item .pro-inner-item {
+  padding: 10px 0px 20px 0px !important;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .pro-menu-item .pro-inner-item .pro-icon-wrapper {
+  background-color: #fff;
+  width: 100%;
+  margin-right: 0 !important;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .pro-menu-item .pro-inner-item .pro-item-content .pro-item-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .pro-menu .pro-menu-item .pro-inner-item .pro-item-content .pro-item-box .backBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .profile-user-wrapper {
+  padding-bottom: 20px;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .profile-user-wrapper .profile-user-box {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .profile-user-wrapper .profile-user-box .profile-user {
+  border-radius: 50px;
+  background: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 3px solid #9be9a8 !important;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .profile-user-wrapper .profile-info {
+  text-align: center;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .profile-user-wrapper .profile-info .profile-name {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.pro-sidebar .pro-sidebar-inner .pro-sidebar-layout .profile-user-wrapper .profile-info .profile-mode {
+  font-size: 15px;
+  color: #ccc;
+}

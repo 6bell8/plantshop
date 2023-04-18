@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="profile-box">
         <p className="user">
           <span className="user-desc">안녕하세요, </span>
-          <span className="user-name">방문자 님</span>
+          <span className="user-name"> 방문자 님</span>
         </p>
         <button type="button" className="noti-icon nav-icon">
           <RiNotification3Line />

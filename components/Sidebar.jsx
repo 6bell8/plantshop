@@ -24,6 +24,8 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   return (
     <MenuItem
       active={selected === to}
+      className="tooltip-link"
+      data-tooltip={title}
       onClick={() => router.push(`${to}`, setSelected(to))}
       icon={icon}
     >
@@ -66,7 +68,7 @@ const Sidebar = () => {
                   className="profile-user"
                   width="100px"
                   height="100px"
-                  src="/image/주호민.jpg"
+                  src={"/image/주호민.jpg"}
                 />
               </div>
               <div className="profile-info">
@@ -76,7 +78,7 @@ const Sidebar = () => {
             </div>
           )}
 
-          <div paddingLeft={isCollapsed ? undefined : "5%"}>
+          <div paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
               title="거래내역"
               to="/ecommerce"

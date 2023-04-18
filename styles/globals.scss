@@ -1284,9 +1284,6 @@ span.text-red {
             box-sizing: border-box;
           }
           &.tooltip-link::before {
-            content: attr(
-              data-tooltip
-            ); /*툴팁 표시 내용은 버튼의 "data-tooltip" 속성값으로 */
             content: attr(data-tooltip);
             position: absolute;
             background-color: #ebebeb;

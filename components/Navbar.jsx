@@ -3,15 +3,31 @@ import Link from "next/link";
 import { AiOutlineShopping, AiOutlineMenu } from "react-icons/ai";
 import { RiNotification3Line } from "react-icons/ri";
 import { Cart } from "./";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import { useStateContext } from "../context/StateContext";
 
 const Navbar = () => {
   // useStateContext 전역변수에서 가져옴
-  const { showCart, setShowCart, totalQuantities, showMenu, setShowMenu } =
+  const { showCart, setShowCart, totalQuantities, selected, setSelected } =
     useStateContext();
+
+  const router = useRouter();
+
+  // useEffect(() => {
+  //   return () => {
+
+  //   };
+  // }, [router]);
+
   return (
     <div className="navbar-container">
-      <p className="logo">
+      <p
+        className="logo"
+        onClick={() => {
+          setSelected("/");
+        }}
+      >
         <Link href="/">
           <svg
             width="47"

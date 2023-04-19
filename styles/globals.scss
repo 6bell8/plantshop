@@ -1343,9 +1343,11 @@ span.text-red {
           justify-content: center;
           display: flex;
           margin-bottom: 15px;
-          .profile-user {
+          .profile-user-img {
+            width: 100px;
+            height: 100px;
             border-radius: 50px;
-            background: center;
+            background: url(/image/주호민.jpg) no-repeat center/cover;
             object-fit: cover;
             border: 3px solid #9be9a8 !important;
           }

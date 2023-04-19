@@ -19,6 +19,7 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
+  const [selected, setSelected] = useState("/");
 
   let foundProduct;
   let index;
@@ -149,6 +150,8 @@ export const StateContext = ({ children }) => {
         setCartItems,
         setTotalPrice,
         setTotalQuantities,
+        selected,
+        setSelected,
       }}
     >
       {/* context api 인자값 */}

@@ -7,6 +7,7 @@ import {
   AiOutlineShoppingCart,
   AiOutlineAreaChart,
   AiOutlineStock,
+  AiOutlineHome,
 } from "react-icons/ai";
 import { FiShoppingBag } from "react-icons/fi";
 import { BsFillPeopleFill, BsFillQuestionCircleFill } from "react-icons/bs";
@@ -38,7 +39,8 @@ const Sidebar = () => {
   const router = useRouter();
   // const { setShowMenu } = useStateContext();
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [selected, setSelected] = useState("");
+
+  const { selected, setSelected } = useStateContext();
 
   return (
     <>
@@ -64,12 +66,7 @@ const Sidebar = () => {
           {!isCollapsed && (
             <div className="profile-user-wrapper">
               <div className="profile-user-box">
-                <Image
-                  className="profile-user"
-                  width="100px"
-                  height="100px"
-                  src={"/image/주호민.jpg"}
-                />
+                <figure className="profile-user-img"></figure>
               </div>
               <div className="profile-info">
                 <p className="profile-name">박진성</p>
@@ -78,7 +75,15 @@ const Sidebar = () => {
             </div>
           )}
 
-          <div paddingLeft={isCollapsed ? undefined : "10%"}>
+          <div>
+            <Item
+              title="홈"
+              to="/"
+              icon={<AiOutlineHome />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <p className="sidebar-title">Info</p>
             <Item
               title="거래내역"
               to="/ecommerce"
@@ -86,7 +91,6 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <p className="sidebar-title">Info</p>
             <Item
               title="주문내역"
               to="/team"

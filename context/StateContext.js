@@ -13,21 +13,20 @@ const Context = createContext();
 //useState 함수
 export const StateContext = ({ children }) => {
   //useSa snippet 엄청편함
+
+  const router = useRouter();
+
   const [showCart, setShowCart] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
-  const [selected, setSelected] = useState("/");
+  const [selected, setSelected] = useState(router.pathname);
 
   let foundProduct;
-  let index;
 
-  //next에서 페이지 변화 감지 할 때마다 next/router 함수로 변화 시킴
-
-  // 동적 변화는 context에서 직접 변화
-  const router = useRouter();
+  //next에서 페이지 변화 감지 할 때마다 next/router 함수로 변화 시킴, 동적 변화는 context에서 직접 변화
 
   useEffect(() => {
     return () => {

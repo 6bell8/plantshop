@@ -37,7 +37,6 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 
 const Sidebar = () => {
   const router = useRouter();
-  // const { setShowMenu } = useStateContext();
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const { selected, setSelected } = useStateContext();
@@ -93,7 +92,7 @@ const Sidebar = () => {
             />
             <Item
               title="주문내역"
-              to="/team"
+              to="/orders"
               icon={<AiOutlineShoppingCart />}
               selected={selected}
               setSelected={setSelected}
@@ -101,7 +100,7 @@ const Sidebar = () => {
 
             <Item
               title="직원명단"
-              to="/contacts"
+              to="/employee"
               icon={<BsFillPeopleFill />}
               selected={selected}
               setSelected={setSelected}

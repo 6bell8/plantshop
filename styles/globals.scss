@@ -1447,9 +1447,8 @@ span.text-red {
           border-radius: 50px;
           width: 4rem;
           height: 4rem;
-
           &:hover {
-            box-shadow: 2px 2px 2px #ccc;
+            box-shadow: 2px 2px 1.9px #ccc;
             transition: all 0.3s ease-in-out;
           }
           svg {

@@ -1363,3 +1363,101 @@ span.text-red {
     }
   }
 }
+
+//  Ecommerce
+
+.ecommerce-container {
+  padding: 50px 120px 50px 40px;
+  width: 100%;
+  .ecommerce-wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #9be9a8;
+    border-radius: 20px;
+    box-shadow: 4px 0px 14px -3px #ccc;
+    .ecommerce-box {
+      flex-grow: 3;
+      padding: 2rem;
+      margin: 15px 0;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #ccc;
+      .ecommerce-benefit {
+        margin-bottom: 20px;
+        .ecommerce-benefit-title {
+          font-size: 24px;
+          margin-bottom: 5px;
+        }
+        .ecommerce-benefit-num {
+          font-size: 21px;
+          font-weight: 500;
+          color: #666;
+        }
+      }
+      .ecommerce-download {
+        .ecommerce-button {
+          cursor: pointer;
+          border: 2px solid #9be9a8;
+          border-radius: 10px;
+          background: #fff;
+          width: 140px;
+          height: 40px;
+          &:hover {
+            box-shadow: 2px 2px 2px #ccc;
+            background-color: #9be9a8;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+    .ecommerce-boxs {
+      display: flex;
+      padding: 2rem;
+      flex-grow: 7;
+      flex-wrap: wrap;
+      .ecommerce-data {
+        padding: 2rem;
+        flex-grow: 1;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        .ecommerce-index {
+          .ecommerce-index-amount {
+            font-size: 18px;
+            color: #888;
+            padding: 0 15px;
+          }
+          .ecommerce-index-per {
+            font-size: 21px;
+            color: #333;
+          }
+        }
+        .ecommerce-index-title {
+          color: #0ea5ca;
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+        .ecommerce-button {
+          cursor: pointer;
+          border: none;
+          border-radius: 50px;
+          width: 4rem;
+          height: 4rem;
+
+          &:hover {
+            box-shadow: 2px 2px 2px #ccc;
+            transition: all 0.3s ease-in-out;
+          }
+          svg {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

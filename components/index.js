@@ -9,3 +9,5 @@ export { default as Flowerpot } from "./Flowerpot";
 export { default as ProductCustom } from "./ProductCustom";
 export { default as ProductCustom02 } from "./ProductCustom02";
 export { default as PlantDetail } from "./PlantDetail";
+export { default as SparkLine } from "./Charts/SparkLine";
+export { default as Stacked } from "./Charts/Stacked";

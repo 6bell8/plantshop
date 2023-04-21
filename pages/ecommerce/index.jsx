@@ -94,12 +94,11 @@ const Ecommerce = () => {
               </div>
               <div className="">
                 <button type="button" className="">
-                  바꿔야됨
+                  다운로드
                 </button>
               </div>
             </div>
             <div>
-              {" "}
               <Stacked width="320px" height="360px" />
             </div>
           </div>

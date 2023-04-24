@@ -1,20 +1,25 @@
 import "../css/globals.css";
-import { Layout } from "../components";
-import React from "react"; // _app에서 import해서 react 돔을 실행해야 index가 동작
+import { Layout, Loading } from "../components";
+import React, { useState } from "react"; // _app에서 import해서 react 돔을 실행해야 index가 동작
 import { StateContext } from "../context/StateContext";
-import dynamic from "next/dynamic";
-
-const ComponentsWithNoSSR = dynamic(() => import("../pages/ecommerce"), {
-  ssr: false,
-  loading: () => <p>Loading...</p>,
-});
+import Router from "next/router";
 
 function App({ Component, pageProps }) {
+  //  app 내에서 router.event.on로 로딩 제어
+  const [loading, setLoading] = useState(false);
+  Router.events.on("routeChangeStart", (url) => {
+    setLoading(true);
+  });
+  Router.events.on("routeChangeComplete", (url) => {
+    setLoading(false);
+  });
+
   return (
     <StateContext>
       <Layout>
+        {/* useState 논리연산자:  먼저 나온 게 false면 안보여줌 */}
+        {loading && <Loading />}
         <Component {...pageProps} />
-        {/* <ComponentsWithNoSSR /> */}
       </Layout>
     </StateContext>
   );

@@ -664,7 +664,7 @@ span.text-red {
   width: 600px;
   background-color: white;
   float: right;
-  padding: 40px 10px;
+  padding: 40px 80px 40px 10px;
   position: relative;
 }
 
@@ -789,8 +789,9 @@ span.text-red {
 }
 .product {
   display: flex;
-  gap: 30px;
-  padding: 20px;
+  .item-desc {
+    margin-left: 15px;
+  }
 }
 .product .cart-product-image {
   width: 150px;
@@ -833,7 +834,7 @@ span.text-red {
   right: 0;
   width: 100%;
   background-color: #dde9cf;
-  padding: 30px 65px;
+  padding: 30px 100px 30px 20px;
 }
 
 .btn-container {
@@ -1458,5 +1459,66 @@ span.text-red {
         }
       }
     }
+  }
+}
+
+// loading
+.loading-content {
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(100%);
+  z-index: 30000;
+  .loading-desc {
+    text-align: center;
+  }
+  .load-wrapp {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    padding: 20px 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+    .load-2 {
+      .line:nth-last-child(1) {
+        animation: loadingB 1.5s 1s infinite;
+        box-shadow: 5px 5px 5px #ccc;
+      }
+      .line:nth-last-child(2) {
+        animation: loadingB 1.5s 0.5s infinite;
+        box-shadow: 5px 5px 5px #ccc;
+      }
+      .line:nth-last-child(3) {
+        animation: loadingB 1.5s 0s infinite;
+        box-shadow: 5px 5px 5px #ccc;
+      }
+    }
+    .line {
+      display: inline-block;
+      width: 25px;
+      height: 15px;
+      border-radius: 15px;
+      background-color: #9be9a8;
+    }
+  }
+}
+
+// keyframe
+
+@keyframes loadingB {
+  0% {
+    width: 25px;
+  }
+  50% {
+    width: 55px;
+  }
+  100% {
+    width: 25px;
   }
 }

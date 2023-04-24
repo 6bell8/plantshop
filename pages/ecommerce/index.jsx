@@ -1,6 +1,5 @@
 import React from "react";
 import { GoPrimitiveDot } from "react-icons/go";
-// import { SparkLine, Stacked } from "../../components";
 import dynamic from "next/dynamic";
 import {
   earningData,
@@ -8,10 +7,11 @@ import {
   ecomPieChartDat,
 } from "../../data/dummy";
 
+//  chart가 문제있어서 import SparkLine을 ssr 방식으로 렌더링하지않고 dynamic 방식으로 렌더링해서 문제해결
+
 const SparkLine = dynamic(() => import("../../components/Charts/SparkLine"), {
   ssr: false,
 });
-
 const Stacked = dynamic(() => import("../../components/Charts/Stacked"), {
   ssr: false,
 });

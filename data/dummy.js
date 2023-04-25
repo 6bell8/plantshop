@@ -36,23 +36,16 @@ import avatar from "./avatar.jpg";
 import avatar2 from "./avatar2.jpg";
 import avatar3 from "./avatar3.png";
 import avatar4 from "./avatar4.jpg";
-import product1 from "./product1.jpg";
-import product2 from "./product2.jpg";
-import product3 from "./product3.jpg";
-import product4 from "./product4.jpg";
-import product5 from "./product5.jpg";
-import product6 from "./product6.jpg";
-import product7 from "./product7.jpg";
 
-export const gridOrderImage = (props) => (
-  <div>
-    <img
-      className="rounded-xl h-20 md:ml-3 w-20"
-      src={props.ProductImage}
-      alt="order-item"
-    />
-  </div>
-);
+// export const gridOrderImage = (props) => (
+//   <div>
+//     <img
+//       className="rounded-xl h-20 md:ml-3 w-20"
+//       src={props.ProductImage}
+//       alt="order-item"
+//     />
+//   </div>
+// );
 
 export const gridOrderStatus = (props) => (
   <button
@@ -560,19 +553,22 @@ export const links = [
 
 export const cartData = [
   {
-    image: product5,
+    image:
+      "https://images.unsplash.com/photo-1530968348606-69c989d6efc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     name: "butterscotch ice-cream",
     category: "Milk product",
     price: "$250",
   },
   {
-    image: product6,
+    image:
+      "https://images.unsplash.com/photo-1607541866666-8923bbba7381?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     name: "Supreme fresh tomato",
     category: "Vegetable Item",
     price: "$450",
   },
   {
-    image: product7,
+    image:
+      "https://images.unsplash.com/photo-1649849382302-a375eab58522?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     name: "Red color candy",
     category: "Food Item",
     price: "$190",
@@ -726,7 +722,8 @@ export const weeklyStats = [
 
 export const productsPerformance = [
   {
-    image: product5,
+    image:
+      "https://images.unsplash.com/photo-1530968348606-69c989d6efc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     title: "Is it good butterscotch ice-cream?",
     desc: "Ice-Cream, Milk, Powder",
     rating: "Good",
@@ -734,7 +731,8 @@ export const productsPerformance = [
     earningAmount: "$546,000",
   },
   {
-    image: product6,
+    image:
+      "https://images.unsplash.com/photo-1607541866666-8923bbba7381?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     title: "Supreme fresh tomato available",
     desc: "Market, Mall",
     rating: "Excellent",
@@ -742,7 +740,8 @@ export const productsPerformance = [
     earningAmount: "$780,000",
   },
   {
-    image: product7,
+    image:
+      "https://images.unsplash.com/photo-1649849382302-a375eab58522?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     title: "Red color candy from Gucci",
     desc: "Chocolate, Yummy",
     rating: "Average",
@@ -750,7 +749,8 @@ export const productsPerformance = [
     earningAmount: "$457,000",
   },
   {
-    image: product4,
+    image:
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     title: "Stylish night lamp for night",
     desc: "Electric, Wire, Current",
     rating: "Poor",
@@ -863,7 +863,8 @@ export const ordersData = [
     Location: "USA",
     Status: "pending",
     StatusBg: "#FB9678",
-    ProductImage: product1,
+    ProductImage:
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 345653,
@@ -873,7 +874,8 @@ export const ordersData = [
     Location: "Delhi",
     Status: "complete",
     StatusBg: "#8BE78B",
-    ProductImage: product5,
+    ProductImage:
+      "https://images.unsplash.com/photo-1530968348606-69c989d6efc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 390457,
@@ -883,7 +885,8 @@ export const ordersData = [
     Location: "New York",
     Status: "active",
     StatusBg: "#03C9D7",
-    ProductImage: product7,
+    ProductImage:
+      "https://images.unsplash.com/photo-1649849382302-a375eab58522?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 893486,
@@ -893,7 +896,8 @@ export const ordersData = [
     Location: "Germany",
     Status: "canceled",
     StatusBg: "#FF5C8E",
-    ProductImage: product4,
+    ProductImage:
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 748975,
@@ -903,7 +907,8 @@ export const ordersData = [
     Location: "Spain",
     Status: "rejected",
     StatusBg: "red",
-    ProductImage: product1,
+    ProductImage:
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 94757,
@@ -913,7 +918,8 @@ export const ordersData = [
     Location: "USA",
     Status: "canceled",
     StatusBg: "#FF5C8E",
-    ProductImage: product2,
+    ProductImage:
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 944895,
@@ -923,7 +929,8 @@ export const ordersData = [
     Location: "USA",
     Status: "active",
     StatusBg: "#03C9D7",
-    ProductImage: product3,
+    ProductImage:
+      "https://images.unsplash.com/photo-1570784332176-fdd73da66f03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
   },
   {
     OrderID: 845954,
@@ -933,7 +940,151 @@ export const ordersData = [
     Location: "USA",
     Status: "complete",
     StatusBg: "#8BE78B",
-    ProductImage: product4,
+    ProductImage:
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+  },
+  {
+    OrderID: 845954,
+    CustomerName: "Jie Yan",
+    TotalAmount: 87.99,
+    OrderItems: "Shoes",
+    Location: "USA",
+    Status: "pending",
+    StatusBg: "#FB9678",
+    ProductImage:
+      "https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg",
+  },
+  {
+    OrderID: 874534,
+    CustomerName: "Danai",
+    TotalAmount: 122.99,
+    OrderItems: "Watch",
+    Location: "USA",
+    Status: "canceled",
+    StatusBg: "#FF5C8E",
+    ProductImage:
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*",
+  },
+  {
+    OrderID: 38489,
+    CustomerName: "Miron",
+    TotalAmount: 87.99,
+    OrderItems: "Ice Cream",
+    Location: "USA",
+    Status: "active",
+    StatusBg: "#03C9D7",
+    ProductImage:
+      "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg",
+  },
+  {
+    OrderID: 24546,
+    CustomerName: "Frank",
+    TotalAmount: 84.99,
+    OrderItems: "Pan Cake",
+    Location: "Delhi",
+    Status: "complete",
+    StatusBg: "#8BE78B",
+    ProductImage:
+      "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80",
+  },
+  {
+    OrderID: 874534,
+    CustomerName: "Danai",
+    TotalAmount: 122.99,
+    OrderItems: "Watch",
+    Location: "USA",
+    Status: "canceled",
+    StatusBg: "#FF5C8E",
+    ProductImage:
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*",
+  },
+  {
+    OrderID: 10248,
+    CustomerName: "Vinet",
+    TotalAmount: 32.38,
+    OrderItems: "Fresh Tomato",
+    Location: "USA",
+    Status: "pending",
+    StatusBg: "#FB9678",
+    ProductImage:
+      "https://images.unsplash.com/photo-1607541866666-8923bbba7381?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+  },
+  {
+    OrderID: 345653,
+    CustomerName: "Carson Darrin",
+    TotalAmount: 56.34,
+    OrderItems: "Butter Scotch",
+    Location: "Delhi",
+    Status: "complete",
+    StatusBg: "#8BE78B",
+    ProductImage:
+      "https://images.unsplash.com/photo-1530968348606-69c989d6efc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+  },
+  {
+    OrderID: 390457,
+    CustomerName: "Fran Perez",
+    TotalAmount: 93.31,
+    OrderItems: "Candy Gucci",
+    Location: "New York",
+    Status: "active",
+    StatusBg: "#03C9D7",
+    ProductImage:
+      "https://images.unsplash.com/photo-1649849382302-a375eab58522?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  },
+  {
+    OrderID: 893486,
+    CustomerName: "Anika Viseer",
+    TotalAmount: 93.31,
+    OrderItems: "Night Lamp",
+    Location: "Germany",
+    Status: "canceled",
+    StatusBg: "#FF5C8E",
+    ProductImage:
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+  },
+  {
+    OrderID: 748975,
+    CustomerName: "Miron Vitold",
+    TotalAmount: 23.99,
+    OrderItems: "Healthcare Erbology",
+    Location: "Spain",
+    Status: "rejected",
+    StatusBg: "red",
+    ProductImage:
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  },
+  {
+    OrderID: 94757,
+    CustomerName: "Omar Darobe",
+    TotalAmount: 95.99,
+    OrderItems: "Makeup Lancome Rouge",
+    Location: "USA",
+    Status: "canceled",
+    StatusBg: "#FF5C8E",
+    ProductImage:
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  },
+  {
+    OrderID: 944895,
+    CustomerName: "Lulia albu",
+    TotalAmount: 17.99,
+    OrderItems: "Skincare",
+    Location: "USA",
+    Status: "active",
+    StatusBg: "#03C9D7",
+    ProductImage:
+      "https://images.unsplash.com/photo-1570784332176-fdd73da66f03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+  },
+  {
+    OrderID: 845954,
+    CustomerName: "Penjani",
+    TotalAmount: 59.99,
+    OrderItems: "Headphone",
+    Location: "USA",
+    Status: "complete",
+    StatusBg: "#8BE78B",
+    ProductImage:
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 845954,
@@ -999,7 +1150,8 @@ export const ordersData = [
     Location: "USA",
     Status: "pending",
     StatusBg: "#FB9678",
-    ProductImage: product6,
+    ProductImage:
+      "https://images.unsplash.com/photo-1607541866666-8923bbba7381?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 345653,
@@ -1009,7 +1161,8 @@ export const ordersData = [
     Location: "Delhi",
     Status: "complete",
     StatusBg: "#8BE78B",
-    ProductImage: product5,
+    ProductImage:
+      "https://images.unsplash.com/photo-1530968348606-69c989d6efc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 390457,
@@ -1019,7 +1172,8 @@ export const ordersData = [
     Location: "New York",
     Status: "active",
     StatusBg: "#03C9D7",
-    ProductImage: product7,
+    ProductImage:
+      "https://images.unsplash.com/photo-1649849382302-a375eab58522?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 893486,
@@ -1029,7 +1183,8 @@ export const ordersData = [
     Location: "Germany",
     Status: "canceled",
     StatusBg: "#FF5C8E",
-    ProductImage: product4,
+    ProductImage:
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 748975,
@@ -1039,7 +1194,8 @@ export const ordersData = [
     Location: "Spain",
     Status: "rejected",
     StatusBg: "red",
-    ProductImage: product1,
+    ProductImage:
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 94757,
@@ -1049,7 +1205,8 @@ export const ordersData = [
     Location: "USA",
     Status: "canceled",
     StatusBg: "#FF5C8E",
-    ProductImage: product2,
+    ProductImage:
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 944895,
@@ -1059,7 +1216,8 @@ export const ordersData = [
     Location: "USA",
     Status: "active",
     StatusBg: "#03C9D7",
-    ProductImage: product3,
+    ProductImage:
+      "https://images.unsplash.com/photo-1570784332176-fdd73da66f03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
   },
   {
     OrderID: 845954,
@@ -1069,7 +1227,8 @@ export const ordersData = [
     Location: "USA",
     Status: "complete",
     StatusBg: "#8BE78B",
-    ProductImage: product4,
+    ProductImage:
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 845954,
@@ -1135,7 +1294,8 @@ export const ordersData = [
     Location: "USA",
     Status: "pending",
     StatusBg: "#FB9678",
-    ProductImage: product6,
+    ProductImage:
+      "https://images.unsplash.com/photo-1607541866666-8923bbba7381?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 345653,
@@ -1145,7 +1305,8 @@ export const ordersData = [
     Location: "Delhi",
     Status: "complete",
     StatusBg: "#8BE78B",
-    ProductImage: product5,
+    ProductImage:
+      "https://images.unsplash.com/photo-1530968348606-69c989d6efc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 390457,
@@ -1155,7 +1316,8 @@ export const ordersData = [
     Location: "New York",
     Status: "active",
     StatusBg: "#03C9D7",
-    ProductImage: product7,
+    ProductImage:
+      "https://images.unsplash.com/photo-1649849382302-a375eab58522?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 893486,
@@ -1165,7 +1327,8 @@ export const ordersData = [
     Location: "Germany",
     Status: "canceled",
     StatusBg: "#FF5C8E",
-    ProductImage: product4,
+    ProductImage:
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 748975,
@@ -1175,7 +1338,8 @@ export const ordersData = [
     Location: "Spain",
     Status: "rejected",
     StatusBg: "red",
-    ProductImage: product1,
+    ProductImage:
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 94757,
@@ -1185,7 +1349,8 @@ export const ordersData = [
     Location: "USA",
     Status: "canceled",
     StatusBg: "#FF5C8E",
-    ProductImage: product2,
+    ProductImage:
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 944895,
@@ -1195,7 +1360,8 @@ export const ordersData = [
     Location: "USA",
     Status: "active",
     StatusBg: "#03C9D7",
-    ProductImage: product3,
+    ProductImage:
+      "https://images.unsplash.com/photo-1570784332176-fdd73da66f03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
   },
   {
     OrderID: 845954,
@@ -1205,7 +1371,8 @@ export const ordersData = [
     Location: "USA",
     Status: "complete",
     StatusBg: "#8BE78B",
-    ProductImage: product4,
+    ProductImage:
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 845954,
@@ -1271,7 +1438,8 @@ export const ordersData = [
     Location: "USA",
     Status: "pending",
     StatusBg: "#FB9678",
-    ProductImage: product6,
+    ProductImage:
+      "https://images.unsplash.com/photo-1607541866666-8923bbba7381?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 345653,
@@ -1281,7 +1449,8 @@ export const ordersData = [
     Location: "Delhi",
     Status: "complete",
     StatusBg: "#8BE78B",
-    ProductImage: product5,
+    ProductImage:
+      "https://images.unsplash.com/photo-1530968348606-69c989d6efc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 390457,
@@ -1291,7 +1460,8 @@ export const ordersData = [
     Location: "New York",
     Status: "active",
     StatusBg: "#03C9D7",
-    ProductImage: product7,
+    ProductImage:
+      "https://images.unsplash.com/photo-1649849382302-a375eab58522?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 893486,
@@ -1301,7 +1471,8 @@ export const ordersData = [
     Location: "Germany",
     Status: "canceled",
     StatusBg: "#FF5C8E",
-    ProductImage: product4,
+    ProductImage:
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 748975,
@@ -1311,7 +1482,8 @@ export const ordersData = [
     Location: "Spain",
     Status: "rejected",
     StatusBg: "red",
-    ProductImage: product1,
+    ProductImage:
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 94757,
@@ -1321,7 +1493,8 @@ export const ordersData = [
     Location: "USA",
     Status: "canceled",
     StatusBg: "#FF5C8E",
-    ProductImage: product2,
+    ProductImage:
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     OrderID: 944895,
@@ -1331,7 +1504,8 @@ export const ordersData = [
     Location: "USA",
     Status: "active",
     StatusBg: "#03C9D7",
-    ProductImage: product3,
+    ProductImage:
+      "https://images.unsplash.com/photo-1570784332176-fdd73da66f03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
   },
   {
     OrderID: 845954,
@@ -1341,143 +1515,8 @@ export const ordersData = [
     Location: "USA",
     Status: "complete",
     StatusBg: "#8BE78B",
-    ProductImage: product4,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: "Jie Yan",
-    TotalAmount: 87.99,
-    OrderItems: "Shoes",
-    Location: "USA",
-    Status: "pending",
-    StatusBg: "#FB9678",
     ProductImage:
-      "https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg",
-  },
-  {
-    OrderID: 874534,
-    CustomerName: "Danai",
-    TotalAmount: 122.99,
-    OrderItems: "Watch",
-    Location: "USA",
-    Status: "canceled",
-    StatusBg: "#FF5C8E",
-    ProductImage:
-      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*",
-  },
-  {
-    OrderID: 38489,
-    CustomerName: "Miron",
-    TotalAmount: 87.99,
-    OrderItems: "Ice Cream",
-    Location: "USA",
-    Status: "active",
-    StatusBg: "#03C9D7",
-    ProductImage:
-      "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg",
-  },
-  {
-    OrderID: 24546,
-    CustomerName: "Frank",
-    TotalAmount: 84.99,
-    OrderItems: "Pan Cake",
-    Location: "Delhi",
-    Status: "complete",
-    StatusBg: "#8BE78B",
-    ProductImage:
-      "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80",
-  },
-  {
-    OrderID: 874534,
-    CustomerName: "Danai",
-    TotalAmount: 122.99,
-    OrderItems: "Watch",
-    Location: "USA",
-    Status: "canceled",
-    StatusBg: "#FF5C8E",
-    ProductImage:
-      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*",
-  },
-  {
-    OrderID: 10248,
-    CustomerName: "Vinet",
-
-    TotalAmount: 32.38,
-    OrderItems: "Fresh Tomato",
-    Location: "USA",
-    Status: "pending",
-    StatusBg: "#FB9678",
-    ProductImage: product6,
-  },
-  {
-    OrderID: 345653,
-    CustomerName: "Carson Darrin",
-    TotalAmount: 56.34,
-    OrderItems: "Butter Scotch",
-    Location: "Delhi",
-    Status: "complete",
-    StatusBg: "#8BE78B",
-    ProductImage: product5,
-  },
-  {
-    OrderID: 390457,
-    CustomerName: "Fran Perez",
-    TotalAmount: 93.31,
-    OrderItems: "Candy Gucci",
-    Location: "New York",
-    Status: "active",
-    StatusBg: "#03C9D7",
-    ProductImage: product7,
-  },
-  {
-    OrderID: 893486,
-    CustomerName: "Anika Viseer",
-    TotalAmount: 93.31,
-    OrderItems: "Night Lamp",
-    Location: "Germany",
-    Status: "canceled",
-    StatusBg: "#FF5C8E",
-    ProductImage: product4,
-  },
-  {
-    OrderID: 748975,
-    CustomerName: "Miron Vitold",
-    TotalAmount: 23.99,
-    OrderItems: "Healthcare Erbology",
-    Location: "Spain",
-    Status: "rejected",
-    StatusBg: "red",
-    ProductImage: product1,
-  },
-  {
-    OrderID: 94757,
-    CustomerName: "Omar Darobe",
-    TotalAmount: 95.99,
-    OrderItems: "Makeup Lancome Rouge",
-    Location: "USA",
-    Status: "canceled",
-    StatusBg: "#FF5C8E",
-    ProductImage: product2,
-  },
-  {
-    OrderID: 944895,
-    CustomerName: "Lulia albu",
-    TotalAmount: 17.99,
-    OrderItems: "Skincare",
-    Location: "USA",
-    Status: "active",
-    StatusBg: "#03C9D7",
-    ProductImage: product3,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: "Penjani",
-    TotalAmount: 59.99,
-    OrderItems: "Headphone",
-    Location: "USA",
-    Status: "complete",
-    StatusBg: "#8BE78B",
-    ProductImage: product4,
+      "https://images.unsplash.com/photo-1613372978247-de50228e8033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     OrderID: 845954,
@@ -1539,7 +1578,7 @@ export const ordersData = [
 export const ordersGrid = [
   {
     headerText: "Image",
-    template: gridOrderImage,
+    // template: gridOrderImage,
     textAlign: "Center",
     width: "120",
   },

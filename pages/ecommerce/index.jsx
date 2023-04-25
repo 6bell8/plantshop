@@ -19,6 +19,10 @@ const Stacked = dynamic(() => import("../../components/Charts/Stacked"), {
 const Ecommerce = () => {
   return (
     <div className="ecommerce-container">
+      <div className="page-title-box">
+        <h1 className="page-title">거래 내역</h1>
+        <p className="page-subtitle">info</p>
+      </div>
       <div className="ecommerce-wrap">
         <div className="ecommerce-box">
           <div className="ecommerce-benefit">
@@ -56,59 +60,58 @@ const Ecommerce = () => {
           ))}
         </div>
       </div>
-      <div className="ecommerce-update">
-        <div className="">
-          <div className="">
-            <p className="">수입 업데이트</p>
+      <div className="ecommerce-budget">
+        <div className="ecommerce-update-wrap">
+          <p className="ecommerce-update-title">수입 업데이트</p>
+          <div className="ecommerce-update-box">
+            <p className="ecommerce-export">
+              <span>
+                <GoPrimitiveDot />
+              </span>
+              <span>지출</span>
+            </p>
+            <p className="ecommerce-benefit">
+              <span>
+                <GoPrimitiveDot />
+              </span>
+              <span>예산</span>
+            </p>
+          </div>
+        </div>
+
+        <div className="ecommerce-graph-wrap">
+          <div className="ecommerce-graph-box">
+            <div className="ecommerce-graph-budBox">
+              <p>
+                <span className="ecommerce-graph-bud green">100,000원</span>
+                <span className="ecommerce-graph-per green">+20%</span>
+              </p>
+              <p className="ecommerce-graph-title">예산</p>
+            </div>
+            <div className="ecommerce-graph-budBox">
+              <p>
+                <span className="ecommerce-graph-bud blue">230,000원</span>
+                <span className="ecommerce-graph-per blue">-10%</span>
+              </p>
+              <p className="ecommerce-graph-title">지출</p>
+            </div>
             <div className="">
-              <p className="">
-                <span>
-                  <GoPrimitiveDot />
-                </span>
-                <span>지출</span>
-              </p>
-              <p className="">
-                <span>
-                  <GoPrimitiveDot />
-                </span>
-                <span>예산</span>
-              </p>
+              <SparkLine
+                id="line-sparkLine"
+                type="Line"
+                height="120px"
+                width="360px"
+                data={SparklineAreaData}
+              />
+            </div>
+            <div className="ecommerce-download">
+              <button type="button" className="ecommerce-download-btn">
+                Download Report
+              </button>
             </div>
           </div>
-
-          <div className="">
-            <div className="">
-              <div>
-                <p>
-                  <span className="">100,000원</span>
-                  <span className="">20%</span>
-                </p>
-                <p className="">예산</p>
-              </div>
-              <div className="">
-                <p>
-                  <span className="">230,000원</span>
-                </p>
-                <p className="">지출</p>
-              </div>
-              <div className="">
-                <SparkLine
-                  id="line-sparkLine"
-                  type="Line"
-                  height="80px"
-                  width="250px"
-                  data={SparklineAreaData}
-                />
-              </div>
-              <div className="">
-                <button type="button" className="">
-                  다운로드
-                </button>
-              </div>
-            </div>
-            <div>
-              <Stacked width="320px" height="360px" />
-            </div>
+          <div className="stacked-chart-box">
+            <Stacked width="400px" height="460px" />
           </div>
         </div>
       </div>

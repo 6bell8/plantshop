@@ -100,6 +100,20 @@ a {
   padding-top: 60px;
 }
 
+.page-title-box {
+  margin: 40px 70px;
+}
+
+.page-title-box .page-title {
+  font-size: 45px;
+  line-height: 0.9;
+}
+
+.page-title-box .page-subtitle {
+  font-size: 22px;
+  color: #ccc;
+}
+
 .navbar-container {
   width: 100%;
   display: -webkit-box;
@@ -545,10 +559,12 @@ span.text-red {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  line-height: 1.05;
 }
 
 .hero-banner-container .hero-banner-wrapper .hero-banner-box-2 {
   text-align: right;
+  padding-left: 90px;
 }
 
 .hero-banner-container .plant-bg-video {
@@ -1822,6 +1838,130 @@ span.text-red {
 .ecommerce-container .ecommerce-wrap .ecommerce-boxs .ecommerce-data .ecommerce-button svg {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.ecommerce-container .ecommerce-budget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-update-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 70px;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-update-wrap .ecommerce-update-title {
+  font-size: 31px;
+  font-weight: 600;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-update-wrap .ecommerce-update-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-update-wrap .ecommerce-update-box .ecommerce-export {
+  color: #00bdae;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-update-wrap .ecommerce-update-box .ecommerce-benefit {
+  padding-left: 40px;
+  color: #404041;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .ecommerce-graph-box {
+  padding-right: 40px;
+  margin: auto 0;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .ecommerce-graph-box .ecommerce-graph-budBox {
+  margin-bottom: 20px;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .ecommerce-graph-box .ecommerce-graph-budBox .ecommerce-graph-bud {
+  font-size: 28px;
+  font-weight: 600;
+  padding-right: 20px;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .ecommerce-graph-box .ecommerce-graph-budBox .ecommerce-graph-per {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .ecommerce-graph-box .ecommerce-graph-budBox .ecommerce-graph-per.green {
+  background-color: #404041;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .ecommerce-graph-box .ecommerce-graph-budBox .ecommerce-graph-per.blue {
+  background-color: #00bdae;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .ecommerce-graph-box .ecommerce-graph-title {
+  font-size: 24px;
+  color: #9c9c9c;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .ecommerce-download .ecommerce-download-btn {
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  color: #686868;
+  font-size: 18px;
+  margin-top: 40px;
+  border: none;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .ecommerce-download .ecommerce-download-btn:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .stacked-chart-box {
+  border-left: 1px solid #ccc;
+  padding-left: 50px;
+}
+
+.ecommerce-container .ecommerce-budget .ecommerce-graph-wrap .stacked-chart-box #charts {
+  color: #ccc;
 }
 
 .loading-content {

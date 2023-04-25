@@ -106,6 +106,18 @@ a {
   padding-top: 60px;
 }
 
+.page-title-box {
+  margin: 40px 70px;
+  .page-title {
+    font-size: 45px;
+    line-height: 0.9;
+  }
+  .page-subtitle {
+    font-size: 22px;
+    color: #ccc;
+  }
+}
+
 .navbar-container {
   width: 100%;
   display: flex;
@@ -428,9 +440,10 @@ span.text-red {
   .hero-banner-wrapper {
     display: flex;
     justify-content: space-between;
-
+    line-height: 1.05;
     .hero-banner-box-2 {
       text-align: right;
+      padding-left: 90px;
     }
   }
   .plant-bg-video {
@@ -1456,6 +1469,95 @@ span.text-red {
             width: 1.5rem;
             height: 1.5rem;
           }
+        }
+      }
+    }
+  }
+  .ecommerce-budget {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    .ecommerce-update-wrap {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      font-size: 25px;
+      font-weight: 500;
+      margin-top: 70px;
+      .ecommerce-update-title {
+        font-size: 31px;
+        font-weight: 600;
+      }
+      .ecommerce-update-box {
+        display: flex;
+        font-size: 20px;
+        .ecommerce-export {
+          color: rgb(0, 189, 174);
+        }
+        .ecommerce-benefit {
+          padding-left: 40px;
+          color: #404041;
+        }
+      }
+    }
+    .ecommerce-graph-wrap {
+      display: flex;
+      width: 100%;
+      margin-top: 60px;
+      justify-content: center;
+      .ecommerce-graph-box {
+        padding-right: 40px;
+        margin: auto 0;
+        .ecommerce-graph-budBox {
+          margin-bottom: 20px;
+          .ecommerce-graph-bud {
+            font-size: 28px;
+            font-weight: 600;
+            padding-right: 20px;
+          }
+          .ecommerce-graph-per {
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 20px;
+            color: #fff;
+            &.green {
+              background-color: #404041;
+            }
+            &.blue {
+              background-color: rgb(0, 189, 174);
+            }
+          }
+        }
+        .ecommerce-graph-title {
+          font-size: 24px;
+          color: #9c9c9c;
+        }
+      }
+      .ecommerce-download {
+        .ecommerce-download-btn {
+          width: 200px;
+          height: 50px;
+          cursor: pointer;
+          color: #686868;
+          font-size: 18px;
+          margin-top: 40px;
+          border: none;
+          border-radius: 15px;
+          border: 1px solid #ccc;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background-color: #ccc;
+            color: #fff;
+          }
+        }
+      }
+      .stacked-chart-box {
+        border-left: 1px solid #ccc;
+        padding-left: 50px;
+        #charts {
+          color: #ccc;
         }
       }
     }

@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { Sidebar, Footer, Navbar } from "./";
-import dynamic from "next/dynamic";
 
 //chiidren 이라는 props로 흘려서 component 전체를 묶어줘서 _app 전체에 실행한다
 

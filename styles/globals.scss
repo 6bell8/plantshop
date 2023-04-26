@@ -106,18 +106,6 @@ a {
   padding-top: 60px;
 }
 
-.page-title-box {
-  margin: 40px 70px;
-  .page-title {
-    font-size: 45px;
-    line-height: 0.9;
-  }
-  .page-subtitle {
-    font-size: 22px;
-    color: #ccc;
-  }
-}
-
 .navbar-container {
   width: 100%;
   display: flex;
@@ -1378,11 +1366,26 @@ span.text-red {
   }
 }
 
-//  Ecommerce
+// sidebar - container
 
-.ecommerce-container {
+.ecommerce-container,
+.order-container {
   padding: 50px 120px 50px 40px;
   width: 100%;
+  .page-title-box {
+    margin: 40px 70px;
+    .page-title {
+      font-size: 45px;
+      line-height: 0.9;
+    }
+    .page-subtitle {
+      font-size: 22px;
+      color: #9be9a8;
+    }
+  }
+}
+//  Ecommerce
+.ecommerce-container {
   .ecommerce-wrap {
     width: 100%;
     display: flex;
@@ -1559,6 +1562,146 @@ span.text-red {
         #charts {
           color: #ccc;
         }
+      }
+    }
+  }
+}
+
+// order
+.order-container {
+  .order-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 0px #ccc;
+    .order-header-wrap {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      .order-header-box {
+        width: 100%;
+        .order-header {
+          width: 1%;
+          height: 60px;
+          color: #777;
+          font-size: 18px;
+          font-weight: 500;
+          border-bottom: 1px solid #ccc;
+          border-collapse: collapse;
+        }
+      }
+    }
+    tbody {
+      width: 100%;
+      padding: 0 20px;
+      border-collapse: collapse;
+      font-size: 17px;
+      font-weight: 300;
+      tr {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+        &:hover {
+          background-color: #e7e7e7;
+          transition: background-color 0.3s ease-in-out;
+        }
+        td {
+          width: 8.78%;
+          padding: 10px 5px;
+          border-bottom: 1px solid #ccc;
+          img {
+            border: 1px solid #9be9a8;
+            border-collapse: collapse;
+            border-radius: 15px;
+          }
+          .pending,
+          .complete,
+          .active,
+          .canceled,
+          .rejected {
+            padding: 5px 15px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #eee;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+          }
+          .pending {
+            background-color: rgb(251, 150, 120);
+          }
+          .complete {
+            background-color: rgb(139, 231, 139);
+          }
+          .active {
+            background-color: rgb(3, 201, 215);
+          }
+          .canceled {
+            background-color: rgb(255, 92, 142);
+          }
+          .rejected {
+            background-color: red;
+          }
+        }
+        &:nth-last-child(1) {
+          border-bottom: none;
+        }
+      }
+    }
+    ul {
+      list-style: none;
+    }
+    .order-pagination-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+      width: 100%;
+      .pagination {
+        display: flex;
+        .page-item {
+          cursor: pointer;
+          color: #333;
+          font-weight: 600;
+          height: 40px;
+          align-items: center;
+          display: flex;
+          &.active {
+            color: #fff;
+            border-radius: 15px;
+            background-color: #9be9a8;
+          }
+          .page-link {
+            padding: 15px;
+          }
+          &.arrow {
+            margin: 0 10px;
+          }
+        }
+      }
+      .select-post {
+        width: 100px;
+        height: 35px;
+        display: flex;
+        text-align: center;
+        font-size: 18px;
+        background-size: 20px;
+        border-radius: 10px;
+        border: 2px solid #acacac;
+        margin-left: 30px;
+        outline: 0 none;
+        option {
+          text-align: center;
+          border-radius: 10px;
+          background: #fff;
+          padding: 7px 0;
+        }
+      }
+      select::-ms-expand {
+        display: none;
       }
     }
   }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ordersData } from "../../data/dummy";
-import Table from "./Table";
+import Table from "../../components/Orders/Table";
 
 const orders = () => {
   // *- query -* //

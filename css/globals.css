@@ -1688,24 +1688,28 @@ span.text-red {
 }
 
 .ecommerce-container,
-.order-container {
+.order-container,
+.faq-container {
   padding: 50px 120px 50px 40px;
   width: 100%;
 }
 
 .ecommerce-container .page-title-box,
-.order-container .page-title-box {
+.order-container .page-title-box,
+.faq-container .page-title-box {
   margin: 40px 70px;
 }
 
 .ecommerce-container .page-title-box .page-title,
-.order-container .page-title-box .page-title {
+.order-container .page-title-box .page-title,
+.faq-container .page-title-box .page-title {
   font-size: 45px;
   line-height: 0.9;
 }
 
 .ecommerce-container .page-title-box .page-subtitle,
-.order-container .page-title-box .page-subtitle {
+.order-container .page-title-box .page-subtitle,
+.faq-container .page-title-box .page-subtitle {
   font-size: 22px;
   color: #9be9a8;
 }
@@ -2210,6 +2214,68 @@ span.text-red {
 
 .order-container .order-table .order-pagination-box select::-ms-expand {
   display: none;
+}
+
+.faq-container .faq-wrapper {
+  margin: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.faq-container .faq-wrapper .faq-accordion {
+  width: 50rem;
+}
+
+.faq-container .faq-wrapper .faq-accordion .item {
+  background-color: #f3f3f3;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.faq-container .faq-wrapper .faq-accordion .item .faq-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #333;
+  cursor: pointer;
+}
+
+.faq-container .faq-wrapper .faq-accordion .item .faq-title:hover svg {
+  -webkit-transition: all 0.8s cubic-bezier(0, 1, 0, 1);
+  transition: all 0.8s cubic-bezier(0, 1, 0, 1);
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.faq-container .faq-wrapper .faq-accordion .item .content {
+  color: #aaa;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+  transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+}
+
+.faq-container .faq-wrapper .faq-accordion .item .content.show {
+  padding-top: 10px;
+  height: auto;
+  max-height: 1000px;
+  -webkit-transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+  transition: all 0.3s cubic-bezier(0, 1, 0, 1);
 }
 
 .loading-content {

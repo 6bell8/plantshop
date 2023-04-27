@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ordersData } from "../../data/dummy";
-import Table from "../../components/Orders/Table";
+import TableOrder from "../../components/Orders/TableOrder";
 
 const orders = () => {
   // *- query -* //
@@ -38,7 +38,7 @@ const orders = () => {
       </div>
       {/* data는 props. search 함수에서 ordersData를 담아서 보냄 */}
       {/* ordersData는 search 함수안의 인자값 */}
-      <Table data={search(ordersData)} />
+      <TableOrder data={search(ordersData)} />
     </div>
   );
 };

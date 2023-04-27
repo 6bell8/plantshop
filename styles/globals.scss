@@ -1369,7 +1369,8 @@ span.text-red {
 // sidebar - container
 
 .ecommerce-container,
-.order-container {
+.order-container,
+.faq-container {
   padding: 50px 120px 50px 40px;
   width: 100%;
   .page-title-box {
@@ -1384,7 +1385,7 @@ span.text-red {
     }
   }
 }
-//  Ecommerce
+// ------- Ecommerce -------- //
 .ecommerce-container {
   .ecommerce-wrap {
     width: 100%;
@@ -1567,7 +1568,7 @@ span.text-red {
   }
 }
 
-// order
+// ------- order ------- //
 .order-container {
   .order-search-box {
     height: 50px;
@@ -1735,6 +1736,51 @@ span.text-red {
       }
       select::-ms-expand {
         display: none;
+      }
+    }
+  }
+}
+// ------ FAQ ------- //
+
+.faq-container {
+  .faq-wrapper {
+    margin: 30px 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    .faq-accordion {
+      width: 50rem;
+      .item {
+        background-color: #f3f3f3;
+        margin-bottom: 10px;
+        padding: 20px;
+        border-radius: 15px;
+        .faq-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #333;
+          cursor: pointer;
+          &:hover {
+            svg {
+              transition: all 0.8s cubic-bezier(0, 1, 0, 1);
+              transform: rotate(360deg);
+            }
+          }
+        }
+        .content {
+          color: #aaa;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+          &.show {
+            padding-top: 10px;
+            height: auto;
+            max-height: 1000px;
+            transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+          }
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
-const Table = ({ data }) => {
+const TableEmployees = ({ data }) => {
   // 페이지네이션 상태관리
   const [currentPage, setCurrentPage] = useState(1);
   // 보여줄 데이터
@@ -27,34 +27,21 @@ const Table = ({ data }) => {
     <table className="order-table">
       <thead className="order-header-wrap">
         <tr className="order-header-box">
-          <th className="order-header">이미지</th>
           <th className="order-header">ID</th>
-          <th className="order-header">총 금액</th>
           <th className="order-header">이름</th>
+          <th className="order-header">직책</th>
           <th className="order-header">상태</th>
-          <th className="order-header">지역</th>
           <th className="order-header">국가</th>
         </tr>
       </thead>
       <tbody>
         {records.map((item, index) => (
           <tr key={index}>
-            <td>
-              <img
-                src={item.ProductImage}
-                width={100}
-                height={100}
-                alt="이미지가 준비 되지않았습니다."
-              />
-            </td>
-            <td>{item.OrderID}</td>
-            <td>{item.TotalAmount}</td>
-            <td>{item.CustomerName}</td>
-            <td>
-              <button className={`${item.Status}`}>{item.Status}</button>
-            </td>
-            <td>{item.OrderItems}</td>
-            <td>{item.Location}</td>
+            <td>{item.EmployeeID}</td>
+            <td>{item.Name}</td>
+            <td>{item.Title}</td>
+            <td>{item.HireDate}</td>
+            <td>{item.Country}</td>
           </tr>
         ))}
       </tbody>
@@ -122,4 +109,4 @@ const Table = ({ data }) => {
   }
 };
 
-export default Table;
+export default TableEmployees;

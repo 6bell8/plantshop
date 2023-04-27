@@ -1764,7 +1764,7 @@ span.text-red {
           cursor: pointer;
           &:hover {
             svg {
-              transition: all 0.8s cubic-bezier(0, 1, 0, 1);
+              transition: all 0.8s ease-in-out;
               transform: rotate(360deg);
             }
           }

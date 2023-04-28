@@ -1370,6 +1370,7 @@ span.text-red {
 
 .ecommerce-container,
 .order-container,
+.board-container,
 .faq-container {
   padding: 50px 120px 50px 40px;
   width: 100%;
@@ -1779,6 +1780,35 @@ span.text-red {
             height: auto;
             max-height: 1000px;
             transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// ------ board ------- //
+.board-container {
+  .board-wrapper {
+    .board-table {
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 5px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      .board-head {
+        .board-head-tr {
+          .board-head-td {
+            &.num {
+            }
+            &.id,
+            &.name,
+            &.contact {
+            }
+            &.content {
+            }
           }
         }
       }

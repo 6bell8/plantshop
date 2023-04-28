@@ -1689,6 +1689,7 @@ span.text-red {
 
 .ecommerce-container,
 .order-container,
+.board-container,
 .faq-container {
   padding: 50px 120px 50px 40px;
   width: 100%;
@@ -1696,12 +1697,14 @@ span.text-red {
 
 .ecommerce-container .page-title-box,
 .order-container .page-title-box,
+.board-container .page-title-box,
 .faq-container .page-title-box {
   margin: 40px 70px;
 }
 
 .ecommerce-container .page-title-box .page-title,
 .order-container .page-title-box .page-title,
+.board-container .page-title-box .page-title,
 .faq-container .page-title-box .page-title {
   font-size: 45px;
   line-height: 0.9;
@@ -1709,6 +1712,7 @@ span.text-red {
 
 .ecommerce-container .page-title-box .page-subtitle,
 .order-container .page-title-box .page-subtitle,
+.board-container .page-title-box .page-subtitle,
 .faq-container .page-title-box .page-subtitle {
   font-size: 22px;
   color: #9be9a8;
@@ -2276,6 +2280,16 @@ span.text-red {
   max-height: 1000px;
   -webkit-transition: all 0.3s cubic-bezier(0, 1, 0, 1);
   transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+}
+
+.board-container .board-wrapper .board-table {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .loading-content {

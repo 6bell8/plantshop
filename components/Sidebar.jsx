@@ -9,6 +9,7 @@ import {
   AiOutlineStock,
   AiOutlineHome,
 } from "react-icons/ai";
+import { GoCommentDiscussion } from "react-icons/go";
 import { FiShoppingBag } from "react-icons/fi";
 import { BsFillPeopleFill, BsFillQuestionCircleFill } from "react-icons/bs";
 import { useStateContext } from "../context/StateContext";
@@ -110,6 +111,13 @@ const Sidebar = () => {
               title="FAQ"
               to="/faq"
               icon={<BsFillQuestionCircleFill />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="게시판"
+              to="/board"
+              icon={<GoCommentDiscussion />}
               selected={selected}
               setSelected={setSelected}
             />

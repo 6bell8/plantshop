@@ -17,9 +17,8 @@ const faq = () => {
     <div className="faq-container">
       <div className="page-title-box">
         <h1 className="page-title">자주 묻는 질문</h1>
-        <p className="page-subtitle">info</p>
+        <p className="page-subtitle">page</p>
       </div>
-
       {/* FAQ */}
       <div className="faq-wrapper">
         <div className="faq-accordion">

@@ -39,11 +39,11 @@ const board = () => {
             {empData &&
               empData.map((item, i) => (
                 <tr key={item.id}>
-                  <td>{item.id}</td>
-                  <td>{item.name}</td>
-                  <td>{item.username}</td>
-                  <td>{item.qa}</td>
-                  <td>{item.phone}</td>
+                  <td className="board-tbody-td num">{item.id}</td>
+                  <td className="board-tbody-td id">{item.name}</td>
+                  <td className="board-tbody-td name">{item.username}</td>
+                  <td className="board-tbody-td content">{item.qa}</td>
+                  <td className="board-tbody-td contact">{item.phone}</td>
                   <td className="board-btn board-btn-success">수정</td>
                   <td className="board-btn board-btn-dnager">삭제</td>
                   <td className="board-btn board-btn-primary">더 보기</td>

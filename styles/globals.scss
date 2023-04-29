@@ -1812,6 +1812,34 @@ span.text-red {
           }
         }
       }
+      tbody {
+        tr {
+          .board-tbody-td {
+            padding: 5px;
+            &.num {
+              width: 5%;
+            }
+            &.id,
+            &.name {
+              width: 15%;
+            }
+
+            &.content {
+              width: 25%;
+            }
+            &.contact {
+              width: 20%;
+            }
+          }
+          .board-btn {
+            width: 5%;
+            padding: 5px;
+            &.board-btn-primary {
+              width: 10%;
+            }
+          }
+        }
+      }
     }
   }
 }

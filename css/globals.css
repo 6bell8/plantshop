@@ -2292,6 +2292,35 @@ span.text-red {
   font-weight: 500;
 }
 
+.board-container .board-wrapper .board-table tbody tr .board-tbody-td {
+  padding: 5px;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-tbody-td.num {
+  width: 5%;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-tbody-td.id, .board-container .board-wrapper .board-table tbody tr .board-tbody-td.name {
+  width: 15%;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-tbody-td.content {
+  width: 25%;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-tbody-td.contact {
+  width: 20%;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-btn {
+  width: 5%;
+  padding: 5px;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-btn.board-btn-primary {
+  width: 10%;
+}
+
 .loading-content {
   width: 100%;
   position: fixed;

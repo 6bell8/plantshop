@@ -2292,6 +2292,10 @@ span.text-red {
   font-weight: 500;
 }
 
+.board-container .board-wrapper .board-table .board-head .board-head-tr {
+  padding: 5px 0;
+}
+
 .board-container .board-wrapper .board-table tbody tr .board-tbody-td {
   padding: 5px;
 }

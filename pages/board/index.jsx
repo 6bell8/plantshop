@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const board = () => {
   const [empData, empDataChange] = useState(null);
@@ -18,11 +20,31 @@ const board = () => {
       });
   }, []);
 
+  const router = useRouter();
+
   return (
     <div className="board-container">
       <div className="page-title-box">
         <h1 className="page-title">게시판</h1>
         <p className="page-subtitle">page</p>
+      </div>
+      <div
+        className="btn btn-success"
+        onClick={() => router.push("/board/empcreate")}
+      >
+        게시글 쓰기
+      </div>
+      <div
+        className="btn btn-success"
+        onClick={() => router.push("/board/empedit/:id")}
+      >
+        게시글 수정
+      </div>
+      <div
+        className="btn btn-success"
+        onClick={() => router.push("/board/empdetail/:id")}
+      >
+        더보기
       </div>
       <div className="board-wrapper">
         <table className="board-table">

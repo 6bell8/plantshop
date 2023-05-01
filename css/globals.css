@@ -2319,10 +2319,19 @@ span.text-red {
 .board-container .board-wrapper .board-table tbody tr .board-btn {
   width: 5%;
   padding: 5px;
+  cursor: pointer;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-btn.board-btn-success {
+  background-color: orange;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-btn.board-btn-dnager {
+  background-color: orangered;
 }
 
 .board-container .board-wrapper .board-table tbody tr .board-btn.board-btn-primary {
-  width: 10%;
+  background-color: olivedrab;
 }
 
 .loading-content {

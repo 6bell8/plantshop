@@ -37,7 +37,6 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 };
 
 const Sidebar = () => {
-  const router = useRouter();
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const { selected, setSelected } = useStateContext();

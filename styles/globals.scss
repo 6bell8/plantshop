@@ -1835,8 +1835,15 @@ span.text-red {
           .board-btn {
             width: 5%;
             padding: 5px;
+            cursor: pointer;
+            &.board-btn-success {
+              background-color: orange;
+            }
+            &.board-btn-dnager {
+              background-color: orangered;
+            }
             &.board-btn-primary {
-              width: 10%;
+              background-color: olivedrab;
             }
           }
         }

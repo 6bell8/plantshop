@@ -9,15 +9,15 @@ const boardDetail = () => {
   const { empData, setEmpData } = useStateContext();
 
   useEffect(() => {}, []);
-  console.log(params.boardDetail);
+  console.log(params);
   return (
     <div>
-      {empData && (
+      {/* {empData && (
         <h1>
           작성자 : {empData[params.boardDetail].name}
           <span>{empData[params.boardDetail].id}</span>
         </h1>
-      )}
+      )} */}
     </div>
   );
 };

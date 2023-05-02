@@ -1832,18 +1832,22 @@ span.text-red {
               width: 20%;
             }
           }
-          .board-btn {
-            width: 5%;
-            padding: 5px;
+          .board-btns {
+            width: 200px;
+            display: flex;
             cursor: pointer;
-            &.board-btn-success {
-              background-color: orange;
-            }
-            &.board-btn-dnager {
-              background-color: orangered;
-            }
-            &.board-btn-primary {
-              background-color: olivedrab;
+            .board-btn {
+              padding: 5px;
+              margin: 5px;
+              &.board-btn-success {
+                background-color: orange;
+              }
+              &.board-btn-dnager {
+                background-color: orangered;
+              }
+              &.board-btn-primary {
+                background-color: olivedrab;
+              }
             }
           }
         }

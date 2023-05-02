@@ -2316,21 +2316,28 @@ span.text-red {
   width: 20%;
 }
 
-.board-container .board-wrapper .board-table tbody tr .board-btn {
-  width: 5%;
-  padding: 5px;
+.board-container .board-wrapper .board-table tbody tr .board-btns {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   cursor: pointer;
 }
 
-.board-container .board-wrapper .board-table tbody tr .board-btn.board-btn-success {
+.board-container .board-wrapper .board-table tbody tr .board-btns .board-btn {
+  padding: 5px;
+  margin: 5px;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-success {
   background-color: orange;
 }
 
-.board-container .board-wrapper .board-table tbody tr .board-btn.board-btn-dnager {
+.board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-dnager {
   background-color: orangered;
 }
 
-.board-container .board-wrapper .board-table tbody tr .board-btn.board-btn-primary {
+.board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-primary {
   background-color: olivedrab;
 }
 

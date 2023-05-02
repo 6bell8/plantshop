@@ -1,26 +1,20 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useStateContext } from "../../context/StateContext";
 
 const board = () => {
-  const [empData, empDataChange] = useState(null);
-
-  useEffect(() => {
-    fetch(
-      "https://gist.githubusercontent.com/6bell8/d9b6225c2adb19dc658b7ab8529ce767/raw/2bdd4aa832f44c878518bc64c51ad31541b54155/board.json"
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((resp) => {
-        empDataChange(resp);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
-
   const router = useRouter();
+  const { empData, setEmpData } = useStateContext();
+
+  const LoadDetail = (id) => {
+    // id를 통해서 동적변화 라우팅
+    router.push({ pathname: "/board/empdetail/" + id });
+  };
+  const RemoveFunction = (id) => {};
+  const LoadEdit = (id) => {};
+
+  empData.sort((a, b) => b.id - a.id);
 
   return (
     <div className="board-container">
@@ -40,12 +34,18 @@ const board = () => {
       >
         게시글 수정
       </div>
-      <div
+
+      {/* <div
         className="btn btn-success"
-        onClick={() => router.push("/board/empdetail/:id")}
+        onClick={() =>
+          router.push({
+            pathname: "/board/empedetail/[pid]",
+            query: { pid: id },
+          })
+        }
       >
         더보기
-      </div>
+      </div> */}
       <div className="board-wrapper">
         <table className="board-table">
           <thead className="board-head">
@@ -58,19 +58,44 @@ const board = () => {
             </tr>
           </thead>
           <tbody>
-            {empData &&
+            {
+              // empData &&
               empData.map((item, i) => (
                 <tr key={item.id}>
                   <td className="board-tbody-td num">{item.id}</td>
-                  <td className="board-tbody-td id">{item.name}</td>
                   <td className="board-tbody-td name">{item.username}</td>
+                  <td className="board-tbody-td id">{item.name}</td>
                   <td className="board-tbody-td content">{item.qa}</td>
                   <td className="board-tbody-td contact">{item.phone}</td>
-                  <td className="board-btn board-btn-success">수정</td>
-                  <td className="board-btn board-btn-dnager">삭제</td>
-                  <td className="board-btn board-btn-primary">더 보기</td>
+                  <td className="board-btns">
+                    <a
+                      className="board-btn board-btn-success"
+                      onClick={() => {
+                        LoadEdit(item.id);
+                      }}
+                    >
+                      수정
+                    </a>
+                    <a
+                      className="board-btn board-btn-dnager"
+                      onClick={() => {
+                        RemoveFunction(item.id);
+                      }}
+                    >
+                      삭제
+                    </a>
+                    <a
+                      className="board-btn board-btn-primary"
+                      onClick={() => {
+                        LoadDetail(item.id);
+                      }}
+                    >
+                      더 보기
+                    </a>
+                  </td>
                 </tr>
-              ))}
+              ))
+            }
           </tbody>
         </table>
       </div>

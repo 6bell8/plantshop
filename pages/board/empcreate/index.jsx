@@ -1,30 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useRouter } from "next/router";
+import { useStateContext } from "../../../context/StateContext";
+import swal from "sweetalert";
 
 const EmpCreate = () => {
   const router = useRouter();
-  const [num, numChange] = useState("");
   const [id, idChange] = useState("");
+  const [username, usernameChange] = useState("");
   const [name, nameChange] = useState("");
-  const [contact, contactChange] = useState("");
+  const [qa, qaChange] = useState("");
   const [phone, phoneChange] = useState("");
   const [active, activeChange] = useState(true);
   const [validation, validationChange] = useState(false);
 
-  // e인자 값이 들어가 있어야 실행이 됨
+  // 전역변수 전달
+  const { empData, setEmpData, nextId } = useStateContext();
+  // usestate 상태관리로 handleSubmit 끝나면 초기화
+  const formData = { id, username, name, qa, phone, active };
+
+  // e인자 값이 들어가 있어야 실행
+  const handleSave = (e) => {
+    //
+
+    if (e.id) {
+      setEmpData(
+        empData.map((row) =>
+          e.id === row.id
+            ? {
+                id: e.id,
+                name: e.name,
+                username: e.username,
+                qa: e.qa,
+                phone: e.phone,
+              }
+            : row
+        )
+      );
+    } else {
+      setEmpData((empData) =>
+        empData.concat({
+          id: nextId.current,
+          name: e.name,
+          username: e.username,
+          qa: e.qa,
+          phone: e.phone,
+        })
+      );
+    }
+    nextId.current += 1;
+
+    swal({
+      title: "등록 완료",
+      text: "확인 버튼을 눌러 닫아주세요.",
+      icon: "success",
+      button: "확인",
+    });
+
+    router.push("/board");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const empdata = { id, name, contact, phone, active };
-
-    // fetch();
-    // "https://gist.githubusercontent.com/6bell8/d9b6225c2adb19dc658b7ab8529ce767/raw/2bdd4aa832f44c878518bc64c51ad31541b54155/board.json",
-    // {
-    //   method: "POST",
-    //   header: { "content-type": "application/json" },
-    //   body: JSON.stringify(empdata),
-    // }
-    alert("게시글 업로드 완료");
-    router.push("/board");
+    handleSave(formData);
   };
 
   return (
@@ -40,18 +77,16 @@ const EmpCreate = () => {
                 <div className="row-col">
                   <div className="form-group">
                     <label>번호</label>
-                    <input value={num} disabled className="form-control" />
+                    <input value={id} disabled className="form-control" />
                   </div>
                 </div>
                 <div className="row-col">
-                  <div className="form-group">
-                    <label>ID</label>
-                    <input
-                      value={id}
-                      onChange={(e) => idChange(e.target.value)}
-                      className="form-control"
-                    />
-                  </div>
+                  <label>계정</label>
+                  <input
+                    value={username}
+                    onChange={(e) => usernameChange(e.target.value)}
+                    className="form-control"
+                  />
                 </div>
                 <div className="row-col">
                   <div className="form-group">
@@ -71,11 +106,11 @@ const EmpCreate = () => {
                 </div>
                 <div className="row-col">
                   <div className="form-group">
-                    <label>문의사항</label>
-                    <input
-                      value={contact}
-                      onChange={(e) => contactChange(e.target.value)}
-                      className="form-control"
+                    <label>내용</label>
+                    <textarea
+                      value={qa}
+                      onChange={(e) => qaChange(e.target.value)}
+                      className="form-qa"
                     />
                   </div>
                 </div>

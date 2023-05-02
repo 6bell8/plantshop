@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+} from "react";
 import { useRouter } from "next/router";
 
 // createContext 생성 훅
@@ -23,10 +29,27 @@ export const StateContext = ({ children }) => {
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
   const [selected, setSelected] = useState(router.pathname);
+  const [empData, setEmpData] = useState([]);
+  const nextId = useRef(31);
 
   let foundProduct;
 
   //next에서 페이지 변화 감지 할 때마다 next/router 함수로 변화 시킴, 동적 변화는 context에서 직접 변화
+
+  useEffect(() => {
+    fetch(
+      "https://gist.githubusercontent.com/6bell8/d9b6225c2adb19dc658b7ab8529ce767/raw/2bdd4aa832f44c878518bc64c51ad31541b54155/board.json"
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((resp) => {
+        setEmpData(resp);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
 
   useEffect(() => {
     return () => {
@@ -137,10 +160,13 @@ export const StateContext = ({ children }) => {
         setShowCart,
         showMenu,
         setShowMenu,
+        empData,
+        setEmpData,
         cartItems,
         totalPrice,
         totalQuantities,
         qty,
+        nextId,
         incQty,
         decQty,
         onAdd,

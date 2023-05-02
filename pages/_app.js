@@ -5,7 +5,7 @@ import { StateContext } from "../context/StateContext";
 import Router from "next/router";
 
 function App({ Component, pageProps }) {
-  //  app 내에서 router.event.on로 로딩 제어
+  //  app 내에서 Router.event.on로 로딩 제어
   const [loading, setLoading] = useState(false);
   Router.events.on("routeChangeStart", (url) => {
     setLoading(true);

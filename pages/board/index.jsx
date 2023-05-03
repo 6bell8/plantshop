@@ -7,15 +7,20 @@ const board = () => {
   const router = useRouter();
   const { empData, setEmpData } = useStateContext();
 
+  // btn 함수
   const LoadDetail = (id) => {
-    // id를 통해서 동적변화 라우팅
+    console.log(id);
     router.push({ pathname: "/board/empdetail/" + id });
   };
+
+  const LoadEdit = (id) => {
+    router.push({ pathname: "/board/empedit/" + id });
+  };
+
   const RemoveFunction = (id) => {};
-  const LoadEdit = (id) => {};
 
   empData.sort((a, b) => b.id - a.id);
-  console.log(empData[0]?.name);
+
   return (
     <div className="board-container">
       <div className="page-title-box">
@@ -60,7 +65,7 @@ const board = () => {
                     <a
                       className="board-btn board-btn-success"
                       onClick={() => {
-                        LoadEdit(item.id);
+                        LoadEdit(i);
                       }}
                     >
                       수정
@@ -68,7 +73,7 @@ const board = () => {
                     <a
                       className="board-btn board-btn-dnager"
                       onClick={() => {
-                        RemoveFunction(item.id);
+                        RemoveFunction(i);
                       }}
                     >
                       삭제
@@ -76,7 +81,7 @@ const board = () => {
                     <a
                       className="board-btn board-btn-primary"
                       onClick={() => {
-                        LoadDetail(item.id);
+                        LoadDetail(i);
                       }}
                     >
                       더 보기

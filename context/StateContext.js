@@ -152,6 +152,57 @@ export const StateContext = ({ children }) => {
     }
   };
 
+  const handleSave = (e) => {
+    // 수정하는 조건식
+    if (e.id) {
+      setEmpData(
+        empData.map((row) =>
+          e.id === row.id
+            ? {
+                id: e.id,
+                name: e.name,
+                username: e.username,
+                qa: e.qa,
+                phone: e.phone,
+              }
+            : row
+        )
+      );
+      swal({
+        title: "수정 완료",
+        text: "확인 버튼을 눌러 닫아주세요.",
+        icon: "success",
+        button: "확인",
+      });
+    }
+    // 추가하는 조건식
+    else {
+      setEmpData((data) =>
+        data.concat({
+          id: nextId.current,
+          name: data.name,
+          username: data.username,
+          qa: data.qa,
+          phone: data.phone,
+        })
+      );
+
+      swal({
+        title: "게시 완료",
+        text: "확인 버튼을 눌러 닫아주세요.",
+        icon: "success",
+        button: "확인",
+      });
+    }
+    nextId.current += 1;
+
+    router.push("/board");
+  };
+
+  const handleEditSubmit = (item) => {
+    handleSave(item);
+  };
+
   //export Context.Provider 내에서 value 값 내에 usestate 다 떄려 넣기
   return (
     <Context.Provider
@@ -177,6 +228,8 @@ export const StateContext = ({ children }) => {
         setTotalQuantities,
         selected,
         setSelected,
+        handleSave,
+        handleEditSubmit,
       }}
     >
       {/* context api 인자값 */}

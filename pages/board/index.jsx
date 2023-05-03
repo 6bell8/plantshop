@@ -5,7 +5,14 @@ import { useStateContext } from "../../context/StateContext";
 
 const board = () => {
   const router = useRouter();
-  const { empData, setEmpData } = useStateContext();
+  const {
+    empData,
+    setEmpData,
+    handleEditSubmit,
+    onSubmitEdit,
+    onEditChange,
+    handleSave,
+  } = useStateContext();
 
   // btn 함수
   const LoadDetail = (id) => {

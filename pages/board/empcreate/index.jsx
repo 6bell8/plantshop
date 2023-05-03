@@ -14,50 +14,11 @@ const EmpCreate = () => {
   const [validation, validationChange] = useState(false);
 
   // 전역변수 전달
-  const { empData, setEmpData, nextId } = useStateContext();
+  const { empData, setEmpData, nextId, handleSave } = useStateContext();
   // usestate 상태관리로 handleSubmit 끝나면 초기화
   const formData = { id, username, name, qa, phone, active };
 
   // e인자 값이 들어가 있어야 실행
-  const handleSave = (e) => {
-    //
-
-    if (e.id) {
-      setEmpData(
-        empData.map((row) =>
-          e.id === row.id
-            ? {
-                id: e.id,
-                name: e.name,
-                username: e.username,
-                qa: e.qa,
-                phone: e.phone,
-              }
-            : row
-        )
-      );
-    } else {
-      setEmpData((empData) =>
-        empData.concat({
-          id: nextId.current,
-          name: e.name,
-          username: e.username,
-          qa: e.qa,
-          phone: e.phone,
-        })
-      );
-    }
-    nextId.current += 1;
-
-    swal({
-      title: "등록 완료",
-      text: "확인 버튼을 눌러 닫아주세요.",
-      icon: "success",
-      button: "확인",
-    });
-
-    router.push("/board");
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();

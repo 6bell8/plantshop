@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { useStateContext } from "../../../context/StateContext";
+import swal from "sweetalert";
 
 const EmpEdit = () => {
   const router = useRouter();
@@ -16,52 +16,22 @@ const EmpEdit = () => {
   const [validation, validationChange] = useState(false);
 
   // 전역변수 전달
-  const { empData, setEmpData, nextId } = useStateContext();
+  let { empData, setEmpData, nextId, handleSave, handleEditSubmit } =
+    useStateContext();
   // usestate 상태관리로 handleSubmit 끝나면 초기화
   const formData = { id, username, name, qa, phone, active };
 
-  console.log(empData[params]?.id);
-  const handleSave = (e) => {
-    if (e.id) {
-      setEmpData(
-        empData.map((row) =>
-          e.id === row.id
-            ? {
-                id: e.id,
-                name: e.name,
-                username: e.username,
-                qa: e.qa,
-                phone: e.phone,
-              }
-            : row
-        )
-      );
-    } else {
-      setEmpData((empData) =>
-        empData.concat({
-          id: nextId.current,
-          name: e.name,
-          username: e.username,
-          qa: e.qa,
-          phone: e.phone,
-        })
-      );
-    }
-    nextId.current += 1;
-
-    swal({
-      title: "수정 완료",
-      text: "확인 버튼을 눌러 닫아주세요.",
-      icon: "success",
-      button: "수정",
-    });
-
-    router.push("/board");
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSave(formData);
+    handleEditSubmit(empData);
+  };
+
+  const onEditChange = (e) => {
+    setEmpData({
+      ...empData,
+      [e.target.name]: e.target.value,
+    });
+    // console.log(e.target.value);
   };
 
   return (
@@ -88,9 +58,11 @@ const EmpEdit = () => {
                 <div className="row-col">
                   <label>계정</label>
                   <input
-                    value={username}
-                    onChange={(e) => usernameChange(e.target.value)}
                     className="form-control"
+                    defaultValue={empData[params]?.username || ""}
+                    type="text"
+                    name="username"
+                    onChange={onEditChange}
                   />
                 </div>
                 <div className="row-col">
@@ -99,10 +71,12 @@ const EmpEdit = () => {
                     {/* input 값으로 namechange변경 */}
                     <input
                       required
-                      value={name}
-                      onMouseDown={() => validationChange(true)}
-                      onChange={(e) => nameChange(e.target.value)}
                       className="form-control"
+                      type="text"
+                      name="name"
+                      onMouseDown={() => validationChange(true)}
+                      defaultValue={empData[params]?.name || ""}
+                      onChange={onEditChange}
                     />
                     {name.length == 0 && validation && (
                       <span className="text-danger">이름을 입력하세요.</span>
@@ -113,9 +87,11 @@ const EmpEdit = () => {
                   <div className="form-group">
                     <label>내용</label>
                     <textarea
-                      value={qa}
-                      onChange={(e) => qaChange(e.target.value)}
                       className="form-qa"
+                      type="text"
+                      name="qa"
+                      defaultValue={empData[params]?.qa}
+                      onChange={onEditChange}
                     />
                   </div>
                 </div>
@@ -123,19 +99,22 @@ const EmpEdit = () => {
                   <div className="form-group">
                     <label>연락처</label>
                     <input
-                      value={phone}
-                      onChange={(e) => phoneChange(e.target.value)}
                       className="form-control"
+                      type="text"
+                      name="phone"
+                      defaultValue={empData[params]?.phone}
+                      onChange={onEditChange}
                     />
                   </div>
                 </div>
                 <div className="row-col">
                   <div className="form-check">
                     <input
-                      checked={active}
-                      onChange={(e) => activeChange(e.target.checked)}
-                      type="checkbox"
                       className="form-check-input"
+                      checked={active}
+                      onChange={onEditChange}
+                      type="checkbox"
+                      name="active"
                     />
                     <label className="form-check-label">확인하였습니다.</label>
                   </div>

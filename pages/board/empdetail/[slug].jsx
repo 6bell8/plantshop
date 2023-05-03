@@ -5,19 +5,17 @@ import { useStateContext } from "../../../context/StateContext";
 
 const boardDetail = () => {
   const router = useRouter();
-  const params = router.query;
+  const params = router.query.slug;
   const { empData, setEmpData } = useStateContext();
 
-  useEffect(() => {}, []);
-  console.log(params);
   return (
     <div>
-      {/* {empData && (
-        <h1>
-          작성자 : {empData[params.boardDetail].name}
-          <span>{empData[params.boardDetail].id}</span>
-        </h1>
-      )} */}
+      {empData && (
+        <div>
+          <h2>게시글 : {empData[params]?.id}</h2>
+          <h1>작성자 : {empData[params]?.name}</h1>
+        </div>
+      )}
     </div>
   );
 };

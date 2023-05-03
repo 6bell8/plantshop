@@ -15,7 +15,7 @@ const board = () => {
   const LoadEdit = (id) => {};
 
   empData.sort((a, b) => b.id - a.id);
-
+  console.log(empData[0]?.name);
   return (
     <div className="board-container">
       <div className="page-title-box">
@@ -35,17 +35,6 @@ const board = () => {
         게시글 수정
       </div>
 
-      {/* <div
-        className="btn btn-success"
-        onClick={() =>
-          router.push({
-            pathname: "/board/empedetail/[pid]",
-            query: { pid: id },
-          })
-        }
-      >
-        더보기
-      </div> */}
       <div className="board-wrapper">
         <table className="board-table">
           <thead className="board-head">

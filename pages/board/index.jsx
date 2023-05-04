@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useStateContext } from "../../context/StateContext";
+import { AiOutlineEdit } from "react-icons/ai";
+import { TiDelete } from "react-icons/ti";
 import swal from "sweetalert";
 const board = () => {
   const router = useRouter();
@@ -17,7 +18,6 @@ const board = () => {
   };
 
   const RemoveFunction = (id) => {
-    console.log(id);
     window
       .swal({
         title: "삭제하시겠습니까?",
@@ -87,11 +87,12 @@ const board = () => {
         <table className="board-table">
           <thead className="board-head">
             <tr className="board-head-tr">
-              <td className="board-head-td num">번호</td>
-              <td className="board-head-td id">ID</td>
-              <td className="board-head-td name">이름</td>
-              <td className="board-head-td content">문의사항</td>
-              <td className="board-head-td contact">연락처</td>
+              <th className="board-head-th num">번호</th>
+              <th className="board-head-th id">ID</th>
+              <th className="board-head-th name">이름</th>
+              <th className="board-head-th content">문의사항</th>
+              <th className="board-head-th contact">연락처</th>
+              <th className="board-head-th null"></th>
             </tr>
           </thead>
           <tbody>
@@ -102,32 +103,31 @@ const board = () => {
                   <td className="board-tbody-td num">{item.id}</td>
                   <td className="board-tbody-td name">{item.username}</td>
                   <td className="board-tbody-td id">{item.name}</td>
-                  <td className="board-tbody-td content">{item.qa}</td>
+                  <td
+                    className="board-tbody-td content"
+                    onClick={() => {
+                      LoadDetail(i);
+                    }}
+                  >
+                    {item.qa}
+                  </td>
                   <td className="board-tbody-td contact">{item.phone}</td>
-                  <td className="board-btns">
+                  <td className="board-tbody-td board-btns">
                     <a
                       className="board-btn board-btn-success"
                       onClick={() => {
                         LoadEdit(i);
                       }}
                     >
-                      수정
+                      <AiOutlineEdit />
                     </a>
                     <a
-                      className="board-btn board-btn-dnager"
+                      className="board-btn board-btn-delete"
                       onClick={() => {
                         RemoveFunction(item.id);
                       }}
                     >
-                      삭제
-                    </a>
-                    <a
-                      className="board-btn board-btn-primary"
-                      onClick={() => {
-                        LoadDetail(i);
-                      }}
-                    >
-                      더 보기
+                      <TiDelete />
                     </a>
                   </td>
                 </tr>

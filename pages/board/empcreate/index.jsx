@@ -92,6 +92,7 @@ const EmpCreate = () => {
                   <label>닉네임</label>
                   <input
                     value={username}
+                    maxLength={20}
                     onChange={(e) => usernameChange(e.target.value)}
                     className="form-control"
                   />
@@ -103,6 +104,7 @@ const EmpCreate = () => {
                     <input
                       required
                       value={name}
+                      maxLength={20}
                       onMouseDown={() => validationChange(true)}
                       onChange={(e) => nameChange(e.target.value)}
                       className="form-control"
@@ -127,6 +129,7 @@ const EmpCreate = () => {
                     <label>연락처</label>
                     <input
                       value={phone}
+                      maxLength={20}
                       onChange={(e) => phoneChange(e.target.value)}
                       className="form-control"
                     />

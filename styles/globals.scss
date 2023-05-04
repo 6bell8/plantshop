@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
+@mixin multiEllipsis($line: 3, $lineHeight: 1.5) {
+  display: -webkit-box;
+  height: ($lineHeight * 1em * $line);
+  overflow: hidden;
+  line-height: $lineHeight;
+  -webkit-line-clamp: $line;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
 // 시그니처 컬러 #9BE9A8
 
 :root {
@@ -1793,60 +1804,83 @@ span.text-red {
     margin-bottom: 70px;
   }
   .board-wrapper {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     .board-table {
-      width: 100%;
-      border: 1px solid #ccc;
-      padding: 5px;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 16px;
-      font-weight: 500;
+      width: 90vw;
+      padding: 1rem;
+      background-color: #fff5;
+      box-shadow: 0 0.4rem 0.8rem #0005;
+      border-radius: 0.8rem;
+      border-collapse: collapse;
+      overflow: hidden;
       .board-head {
+        width: 100%;
+        height: 10%;
+        background-color: rgba(134, 201, 156, 0.27);
+        font-weight: 200;
+        font-size: 16px;
+        border-bottom: 1px solid #9be9a8;
         .board-head-tr {
-          padding: 5px 0;
-          .board-head-td {
-            &.num {
-            }
-            &.id,
-            &.name,
-            &.contact {
-            }
-            &.content {
-            }
+          .board-head-th {
+            padding: 1rem;
+            font-weight: 400;
+            color: #333333;
           }
         }
       }
       tbody {
+        width: 95%;
+        max-height: calc(90% -0.8rem);
+        background-color: #fff4;
+        margin: 0.8rem auto;
+        overflow: hidden;
         tr {
+          border-bottom: 1px solid #e3e3e3;
+          &:hover {
+            background-color: #ededed;
+          }
           .board-tbody-td {
-            padding: 5px;
+            padding: 0.1rem 1.5rem;
+            margin: 5px 0;
             &.num {
-              width: 5%;
+              border-right: 1px solid #f0f0f0;
             }
-            &.id,
-            &.name {
-              width: 15%;
-            }
-
             &.content {
-              width: 25%;
-            }
-            &.contact {
-              width: 20%;
+              cursor: pointer;
+              @include multiEllipsis(1, 1.5);
+              transform: translate(0px, -5px);
             }
           }
           .board-btns {
-            width: 200px;
             display: flex;
             cursor: pointer;
+            border-left: 1px solid #ebebeb;
+            margin: 5px 0;
             .board-btn {
               padding: 5px;
               margin: 5px;
+              vertical-align: middle;
+              padding: 0 10px;
               &.board-btn-success {
-                background-color: orange;
+                z-index: 2;
+                font-size: 30px;
+                color: #767676;
+                margin: auto 0;
+                &:hover {
+                  color: orange;
+                  transition: 0.3s all ease-in-out;
+                }
               }
-              &.board-btn-dnager {
-                background-color: orangered;
+              &.board-btn-delete {
+                z-index: 2;
+                font-size: 35px;
+                color: #767676;
+                &:hover {
+                  color: red;
+                  transition: 0.3s all ease-in-out;
+                }
               }
               &.board-btn-primary {
                 background-color: olivedrab;

@@ -2291,58 +2291,108 @@ span.text-red {
 }
 
 .board-container .board-wrapper .board-table {
-  width: 100%;
-  border: 1px solid #ccc;
-  padding: 5px;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
+  width: 90vw;
+  padding: 1rem;
+  background-color: #fff5;
+  -webkit-box-shadow: 0 0.4rem 0.8rem #0005;
+          box-shadow: 0 0.4rem 0.8rem #0005;
+  border-radius: 0.8rem;
+  border-collapse: collapse;
+  overflow: hidden;
 }
 
-.board-container .board-wrapper .board-table .board-head .board-head-tr {
-  padding: 5px 0;
+.board-container .board-wrapper .board-table .board-head {
+  width: 100%;
+  height: 10%;
+  background-color: rgba(134, 201, 156, 0.27);
+  font-weight: 200;
+  font-size: 16px;
+  border-bottom: 1px solid #9be9a8;
+}
+
+.board-container .board-wrapper .board-table .board-head .board-head-tr .board-head-th {
+  padding: 1rem;
+  font-weight: 400;
+  color: #333333;
+}
+
+.board-container .board-wrapper .board-table tbody {
+  width: 95%;
+  max-height: calc(90% -0.8rem);
+  background-color: #fff4;
+  margin: 0.8rem auto;
+  overflow: hidden;
+}
+
+.board-container .board-wrapper .board-table tbody tr {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.board-container .board-wrapper .board-table tbody tr:hover {
+  background-color: #ededed;
 }
 
 .board-container .board-wrapper .board-table tbody tr .board-tbody-td {
-  padding: 5px;
+  padding: 0.1rem 1.5rem;
+  margin: 5px 0;
 }
 
 .board-container .board-wrapper .board-table tbody tr .board-tbody-td.num {
-  width: 5%;
-}
-
-.board-container .board-wrapper .board-table tbody tr .board-tbody-td.id, .board-container .board-wrapper .board-table tbody tr .board-tbody-td.name {
-  width: 15%;
+  border-right: 1px solid #f0f0f0;
 }
 
 .board-container .board-wrapper .board-table tbody tr .board-tbody-td.content {
-  width: 25%;
-}
-
-.board-container .board-wrapper .board-table tbody tr .board-tbody-td.contact {
-  width: 20%;
+  cursor: pointer;
+  display: -webkit-box;
+  height: 1.5em;
+  overflow: hidden;
+  line-height: 1.5;
+  -webkit-line-clamp: 1;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  transform: translate(0px, -5px);
 }
 
 .board-container .board-wrapper .board-table tbody tr .board-btns {
-  width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
+  border-left: 1px solid #ebebeb;
+  margin: 5px 0;
 }
 
 .board-container .board-wrapper .board-table tbody tr .board-btns .board-btn {
   padding: 5px;
   margin: 5px;
+  vertical-align: middle;
+  padding: 0 10px;
 }
 
 .board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-success {
-  background-color: orange;
+  z-index: 2;
+  font-size: 30px;
+  color: #767676;
+  margin: auto 0;
 }
 
-.board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-dnager {
-  background-color: orangered;
+.board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-success:hover {
+  color: orange;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-delete {
+  z-index: 2;
+  font-size: 35px;
+  color: #767676;
+}
+
+.board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-delete:hover {
+  color: red;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 .board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-primary {

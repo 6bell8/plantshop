@@ -9,6 +9,7 @@ const board = () => {
 
   // btn 함수
   const LoadDetail = (id) => {
+    console.log(id);
     router.push({ pathname: "/board/empdetail/" + id });
   };
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { useStateContext } from "../../../context/StateContext";
 import swal from "sweetalert";
 
@@ -109,8 +110,6 @@ const EmpEdit = () => {
                     defaultValue={empData[params]?.username}
                     onChange={(e) => usernameChange(e.target.value)}
                     className="form-control"
-                    type="text"
-                    name="username"
                   />
                 </div>
                 <div className="row-col">
@@ -123,8 +122,6 @@ const EmpEdit = () => {
                       onMouseDown={() => validationChange(true)}
                       onChange={(e) => nameChange(e.target.value)}
                       className="form-control"
-                      type="text"
-                      name="name"
                     />
                     {name.length == 0 && validation && (
                       <span className="text-danger">이름을 입력하세요.</span>
@@ -138,8 +135,6 @@ const EmpEdit = () => {
                       defaultValue={empData[params]?.qa}
                       onChange={(e) => qaChange(e.target.value)}
                       className="form-qa"
-                      type="text"
-                      name="qa"
                     />
                   </div>
                 </div>
@@ -150,8 +145,6 @@ const EmpEdit = () => {
                       defaultValue={empData[params]?.phone}
                       onChange={(e) => phoneChange(e.target.value)}
                       className="form-control"
-                      type="text"
-                      name="phone"
                     />
                   </div>
                 </div>

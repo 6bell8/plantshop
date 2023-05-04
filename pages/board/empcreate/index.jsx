@@ -32,6 +32,7 @@ const EmpCreate = () => {
                 username: e.username,
                 qa: e.qa,
                 phone: e.phone,
+                active: e.active,
               }
             : row
         )
@@ -44,6 +45,7 @@ const EmpCreate = () => {
           username: e.username,
           qa: e.qa,
           phone: e.phone,
+          active: e.active,
         })
       );
     }
@@ -62,6 +64,7 @@ const EmpCreate = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSave(formData);
+    console.log(formData);
   };
 
   return (
@@ -77,11 +80,16 @@ const EmpCreate = () => {
                 <div className="row-col">
                   <div className="form-group">
                     <label>번호</label>
-                    <input value={id} disabled className="form-control" />
+                    <input
+                      value={id}
+                      disabled
+                      className="form-control"
+                      placeholder={nextId.current}
+                    />
                   </div>
                 </div>
                 <div className="row-col">
-                  <label>계정</label>
+                  <label>닉네임</label>
                   <input
                     value={username}
                     onChange={(e) => usernameChange(e.target.value)}

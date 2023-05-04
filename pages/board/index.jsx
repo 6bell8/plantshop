@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useStateContext } from "../../context/StateContext";
-
+import swal from "sweetalert";
 const board = () => {
   const router = useRouter();
   const { empData, setEmpData } = useStateContext();
 
   // btn 함수
   const LoadDetail = (id) => {
-    console.log(id);
     router.push({ pathname: "/board/empdetail/" + id });
   };
 
@@ -17,7 +16,57 @@ const board = () => {
     router.push({ pathname: "/board/empedit/" + id });
   };
 
-  const RemoveFunction = (id) => {};
+  const RemoveFunction = (id) => {
+    console.log(id);
+    window
+      .swal({
+        title: "삭제하시겠습니까?",
+        text: "확인 버튼을 눌러 닫아주세요.",
+        icon: "info",
+        buttons: {
+          cancle: {
+            text: "확인",
+            value: true,
+            className: "remove-btn",
+          },
+          confirm: {
+            text: "취소",
+            value: false,
+            className: "cancle-btn",
+          },
+        },
+      })
+      .then((result) => {
+        if (result) {
+          swal("삭제되었습니다.", "페이지로 돌아갑니다.", {
+            closeOnClickOutside: false,
+            closeOnEsc: false,
+            button: {
+              confirm: {
+                text: "확인",
+                value: true,
+                className: "",
+              },
+            },
+          });
+
+          //  filter로 삭제
+          setEmpData((data) => data.filter((item) => item.id !== id));
+        } else {
+          swal("취소되었습니다.", "페이지로 돌아갑니다.", {
+            closeOnClickOutside: false,
+            closeOnEsc: false,
+            button: {
+              confirm: {
+                text: "확인",
+                value: true,
+                className: "",
+              },
+            },
+          });
+        }
+      });
+  };
 
   empData.sort((a, b) => b.id - a.id);
 
@@ -28,16 +77,10 @@ const board = () => {
         <p className="page-subtitle">page</p>
       </div>
       <div
-        className="btn btn-success"
+        className="btn board-write"
         onClick={() => router.push("/board/empcreate")}
       >
         게시글 쓰기
-      </div>
-      <div
-        className="btn btn-success"
-        onClick={() => router.push("/board/empedit/:id")}
-      >
-        게시글 수정
       </div>
 
       <div className="board-wrapper">
@@ -73,7 +116,7 @@ const board = () => {
                     <a
                       className="board-btn board-btn-dnager"
                       onClick={() => {
-                        RemoveFunction(i);
+                        RemoveFunction(item.id);
                       }}
                     >
                       삭제

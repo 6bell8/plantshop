@@ -1367,7 +1367,7 @@ span.text-red {
 }
 
 // sidebar - container
-
+.board-container,
 .ecommerce-container,
 .order-container,
 .board-container,
@@ -1789,6 +1789,9 @@ span.text-red {
 
 // ------ board ------- //
 .board-container {
+  .board-write {
+    margin-bottom: 70px;
+  }
   .board-wrapper {
     .board-table {
       width: 100%;

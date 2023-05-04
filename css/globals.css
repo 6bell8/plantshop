@@ -1687,6 +1687,7 @@ span.text-red {
   color: #ccc;
 }
 
+.board-container,
 .ecommerce-container,
 .order-container,
 .board-container,
@@ -1695,6 +1696,7 @@ span.text-red {
   width: 100%;
 }
 
+.board-container .page-title-box,
 .ecommerce-container .page-title-box,
 .order-container .page-title-box,
 .board-container .page-title-box,
@@ -1702,6 +1704,7 @@ span.text-red {
   margin: 40px 70px;
 }
 
+.board-container .page-title-box .page-title,
 .ecommerce-container .page-title-box .page-title,
 .order-container .page-title-box .page-title,
 .board-container .page-title-box .page-title,
@@ -1710,6 +1713,7 @@ span.text-red {
   line-height: 0.9;
 }
 
+.board-container .page-title-box .page-subtitle,
 .ecommerce-container .page-title-box .page-subtitle,
 .order-container .page-title-box .page-subtitle,
 .board-container .page-title-box .page-subtitle,
@@ -2280,6 +2284,10 @@ span.text-red {
   max-height: 1000px;
   -webkit-transition: all 0.3s cubic-bezier(0, 1, 0, 1);
   transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+}
+
+.board-container .board-write {
+  margin-bottom: 70px;
 }
 
 .board-container .board-wrapper .board-table {

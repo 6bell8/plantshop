@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { useStateContext } from "../../../context/StateContext";
 import swal from "sweetalert";
 
@@ -18,11 +17,6 @@ const EmpEdit = () => {
   const [active, activeChange] = useState(true);
   const [validation, validationChange] = useState(false);
 
-  useEffect(() => {
-    formData.username = usernameChange(formData?.username);
-    return () => {};
-  }, []);
-
   // 전역변수 전달
   // formData 임의로 설정 id가 같기 때문에 추가가 되지않는다. 이 부분 다시 설정
 
@@ -35,7 +29,7 @@ const EmpEdit = () => {
     name: name === "" ? empData[params]?.name : name,
     qa: qa === "" ? empData[params]?.qa : qa,
     phone: phone === "" ? empData[params]?.phone : phone,
-    active: active,
+    active: empData[params]?.active,
   };
 
   const handleSave = (e) => {
@@ -110,6 +104,8 @@ const EmpEdit = () => {
                     defaultValue={empData[params]?.username}
                     onChange={(e) => usernameChange(e.target.value)}
                     className="form-control"
+                    type="text"
+                    name="username"
                   />
                 </div>
                 <div className="row-col">
@@ -122,6 +118,8 @@ const EmpEdit = () => {
                       onMouseDown={() => validationChange(true)}
                       onChange={(e) => nameChange(e.target.value)}
                       className="form-control"
+                      type="text"
+                      name="name"
                     />
                     {name.length == 0 && validation && (
                       <span className="text-danger">이름을 입력하세요.</span>
@@ -135,6 +133,8 @@ const EmpEdit = () => {
                       defaultValue={empData[params]?.qa}
                       onChange={(e) => qaChange(e.target.value)}
                       className="form-qa"
+                      type="text"
+                      name="qa"
                     />
                   </div>
                 </div>
@@ -145,6 +145,8 @@ const EmpEdit = () => {
                       defaultValue={empData[params]?.phone}
                       onChange={(e) => phoneChange(e.target.value)}
                       className="form-control"
+                      type="text"
+                      name="phone"
                     />
                   </div>
                 </div>

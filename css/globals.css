@@ -2378,7 +2378,7 @@ span.text-red {
 }
 
 .board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-success:hover {
-  color: orange;
+  color: #ffaa0d;
   -webkit-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
 }

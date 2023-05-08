@@ -8,10 +8,6 @@ const employees = () => {
   const keys = ["EmployeeID", "Name", "Title", "HireDate", "Country"];
   const [active, setActive] = useState(false);
 
-  const toggle = () => {
-    setActive((active) => !active);
-  };
-
   const search = (data) => {
     return data.filter((item) =>
       keys.some((key) => item[key].toString().toLowerCase().includes(query))

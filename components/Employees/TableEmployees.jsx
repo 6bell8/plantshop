@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 const TableEmployees = ({ data }) => {
+  console.log(data);
+
   // 페이지네이션 상태관리
   const [currentPage, setCurrentPage] = useState(1);
   // 보여줄 데이터

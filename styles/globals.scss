@@ -11,6 +11,14 @@
   word-break: break-all;
 }
 
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
+  transition: $property $duration $ease;
+}
+
 // 시그니처 컬러 #9BE9A8
 
 :root {
@@ -108,6 +116,92 @@ body,
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.order-search-box,
+.board-search-box {
+  height: 50px;
+  display: flex;
+  justify-content: right;
+  padding-left: 16px;
+  border-radius: 4px;
+  margin-left: auto;
+  .order-search,
+  .board-search {
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 20px 0 40px;
+    box-shadow: 0 0 0 2px #aee5b7;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56.966 56.966' fill='%23717790c7'%3e%3cpath d='M55.146 51.887L41.588 37.786A22.926 22.926 0 0046.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 00.083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z'/%3e%3c/svg%3e");
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: 16px 48%;
+    color: #333;
+    &::placeholder {
+      color: #ccc;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    // forwards가 상태가 끝나도 유지 시키는 기능
+    &.active {
+      animation: beLong 0.4s ease-in-out 0s 1 normal forwards;
+    }
+  }
+}
+
+.order-pagination-box,
+.board-pagination-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  width: 100%;
+  .pagination {
+    display: flex;
+    .page-item {
+      cursor: pointer;
+      color: #333;
+      font-weight: 600;
+      height: 40px;
+      align-items: center;
+      display: flex;
+      &.active {
+        color: #fff;
+        border-radius: 15px;
+        background-color: #9be9a8;
+      }
+      .page-link {
+        padding: 15px;
+      }
+      &.arrow {
+        margin: 0 10px;
+      }
+    }
+  }
+  .select-post {
+    width: 100px;
+    height: 35px;
+    display: flex;
+    text-align: center;
+    font-size: 18px;
+    background-size: 20px;
+    border-radius: 10px;
+    border: 2px solid #acacac;
+    margin-left: 30px;
+    outline: 0 none;
+    option {
+      text-align: center;
+      border-radius: 10px;
+      background: #fff;
+      padding: 7px 0;
+    }
+  }
+  select::-ms-expand {
+    display: none;
+  }
 }
 
 .main-container {
@@ -1582,44 +1676,12 @@ span.text-red {
 
 // ------- order ------- //
 .order-container {
-  .order-search-box {
-    height: 50px;
-    display: flex;
-    justify-content: right;
-    padding-left: 16px;
-    border-radius: 4px;
-    margin-bottom: 60px;
-    margin-left: auto;
-    .order-search {
-      height: 100%;
-      border: none;
-      border-radius: 4px;
-      font-size: 15px;
-      font-weight: 500;
-      padding: 0 20px 0 40px;
-      box-shadow: 0 0 0 2px #aee5b7;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56.966 56.966' fill='%23717790c7'%3e%3cpath d='M55.146 51.887L41.588 37.786A22.926 22.926 0 0046.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 00.083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z'/%3e%3c/svg%3e");
-      background-size: 14px;
-      background-repeat: no-repeat;
-      background-position: 16px 48%;
-      color: #333;
-      &::placeholder {
-        color: #ccc;
-        font-size: 15px;
-        font-weight: 500;
-      }
-      // forwards가 상태가 끝나도 유지 시키는 기능
-      &.active {
-        animation: beLong 0.4s ease-in-out 0s 1 normal forwards;
-      }
-    }
-  }
-
   .order-table {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 60px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 3px 3px 3px 0px #ccc;
@@ -1700,56 +1762,6 @@ span.text-red {
     ul {
       list-style: none;
     }
-    .order-pagination-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 30px 0;
-      width: 100%;
-      .pagination {
-        display: flex;
-        .page-item {
-          cursor: pointer;
-          color: #333;
-          font-weight: 600;
-          height: 40px;
-          align-items: center;
-          display: flex;
-          &.active {
-            color: #fff;
-            border-radius: 15px;
-            background-color: #9be9a8;
-          }
-          .page-link {
-            padding: 15px;
-          }
-          &.arrow {
-            margin: 0 10px;
-          }
-        }
-      }
-      .select-post {
-        width: 100px;
-        height: 35px;
-        display: flex;
-        text-align: center;
-        font-size: 18px;
-        background-size: 20px;
-        border-radius: 10px;
-        border: 2px solid #acacac;
-        margin-left: 30px;
-        outline: 0 none;
-        option {
-          text-align: center;
-          border-radius: 10px;
-          background: #fff;
-          padding: 7px 0;
-        }
-      }
-      select::-ms-expand {
-        display: none;
-      }
-    }
   }
 }
 // ------ FAQ ------- //
@@ -1800,28 +1812,109 @@ span.text-red {
 
 // ------ board ------- //
 .board-container {
-  .board-write {
-    margin-bottom: 70px;
+  .board-util-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    .board-write {
+      width: 13rem;
+      height: auto;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      outline: none;
+      border: 0;
+      vertical-align: middle;
+      text-decoration: none;
+      background: transparent;
+      padding: 0;
+      font-size: inherit;
+      font-family: inherit;
+      .circle {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 3rem;
+        height: 3rem;
+        background: #9be9a8;
+        border-radius: 1.625rem;
+        .icon {
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          background: white;
+          &.arrow {
+            @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+            left: 0.625rem;
+            width: 1.125rem;
+            height: 0.125rem;
+            background: none;
+            &::before {
+              position: absolute;
+              content: "";
+              top: -0.25rem;
+              right: 0.0625rem;
+              width: 0.625rem;
+              height: 0.625rem;
+              border-top: 0.125rem solid #fff;
+              border-right: 0.125rem solid #fff;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+      .button-text {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.4rem 0;
+        margin: 0 0 0 3rem;
+        color: #333;
+        font-weight: 700;
+        line-height: 1.6;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      &:hover {
+        .circle {
+          width: 100%;
+          .icon {
+            &.arrow {
+              background: white;
+              transform: translate(1rem, 0);
+            }
+          }
+        }
+        .button-text {
+          color: white;
+        }
+      }
+    }
+    .button-text {
+      font-size: 22px;
+    }
   }
   .board-wrapper {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+    background-color: #fff5;
+    box-shadow: 0 0.4rem 0.8rem #0005;
+    border-radius: 0.8rem;
+    overflow: hidden;
     .board-table {
-      width: 90vw;
-      padding: 1rem;
-      background-color: #fff5;
-      box-shadow: 0 0.4rem 0.8rem #0005;
-      border-radius: 0.8rem;
       border-collapse: collapse;
-      overflow: hidden;
+      width: 100%;
       .board-head {
         width: 100%;
         height: 10%;
         background-color: rgba(134, 201, 156, 0.27);
         font-weight: 200;
         font-size: 16px;
-        border-bottom: 1px solid #9be9a8;
         .board-head-tr {
           .board-head-th {
             padding: 1rem;
@@ -1860,7 +1953,6 @@ span.text-red {
             margin: 5px 0;
             .board-btn {
               padding: 5px;
-              margin: 5px;
               vertical-align: middle;
               padding: 0 10px;
               &.board-btn-success {
@@ -1956,7 +2048,7 @@ span.text-red {
 
 @keyframes beLong {
   0% {
-    width: 200px;
+    width: 250px;
   }
   100% {
     width: 400px;

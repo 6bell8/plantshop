@@ -1,11 +1,13 @@
 import React, { useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { useStateContext } from "../../../context/StateContext";
+import { CgDanger } from "react-icons/cg";
 import swal from "sweetalert";
 
 const EmpCreate = () => {
   const router = useRouter();
   const [id, idChange] = useState("");
+
   const [username, usernameChange] = useState("");
   const [name, nameChange] = useState("");
   const [qa, qaChange] = useState("");
@@ -13,15 +15,18 @@ const EmpCreate = () => {
   const [active, activeChange] = useState(true);
   const [validation, validationChange] = useState(false);
 
+  const [usernameActive, usernameChangeActive] = useState(false);
+  const [nameActive, nameChangeActive] = useState(false);
+  const [qaActive, qaChangeActive] = useState(false);
+  const [phoneActive, phoneChangeActive] = useState(false);
+
   // 전역변수 전달
   const { empData, setEmpData, nextId } = useStateContext();
-  // usestate 상태관리로 handleSubmit 끝나면 초기화
+  // usestate 상태관리를 담은 객체
   const formData = { id, username, name, qa, phone, active };
 
   // e인자 값이 들어가 있어야 실행
   const handleSave = (e) => {
-    //
-
     if (e.id) {
       setEmpData(
         empData.map((row) =>
@@ -61,103 +66,126 @@ const EmpCreate = () => {
     router.push("/board");
   };
 
+  // 객체를 함수에 넣어서 리턴
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSave(formData);
     console.log(formData);
   };
 
+  // 글자 제한 모션
+  function formlengtUsername(e) {
+    usernameChange(e.target.value);
+    usernameChange.length >= 1
+      ? usernameChangeActive(true)
+      : usernameChangeActive(false);
+  }
+
+  function formlengtName(e) {
+    nameChange(e.target.value);
+    nameChange.length >= 1 ? nameChangeActive(true) : nameChangeActive(false);
+  }
+
+  function formlengtQa(e) {
+    qaChange(e.target.value);
+    qaChange.length >= 1 ? qaChangeActive(true) : qaChangeActive(false);
+  }
+
+  function formlengtPhone(e) {
+    phoneChange(e.target.value);
+    phoneChange.length >= 1
+      ? phoneChangeActive(true)
+      : phoneChangeActive(false);
+  }
+
   return (
     <div>
       <div className="board-create-container">
+        <div className="page-title-box">
+          <h1 className="page-title">게시판 작성</h1>
+          <p className="page-subtitle">
+            <input
+              value={id}
+              disabled
+              className="form-control"
+              placeholder={nextId.current + "th"}
+            />
+          </p>
+        </div>
         <form className="board-create-wrapper" onSubmit={handleSubmit}>
           <div className="card">
-            <div className="card-title">
-              <h2>게시글 생성</h2>
-            </div>
-            <div className="card-body">
-              <div className="row">
+            <div className="row">
+              <div className="row-2">
                 <div className="row-col">
-                  <div className="form-group">
-                    <label>번호</label>
-                    <input
-                      value={id}
-                      disabled
-                      className="form-control"
-                      placeholder={nextId.current}
-                    />
-                  </div>
-                </div>
-                <div className="row-col">
-                  <label>닉네임</label>
+                  <label className="form-label">닉네임</label>
                   <input
                     value={username}
-                    maxLength={20}
-                    onChange={(e) => usernameChange(e.target.value)}
-                    className="form-control"
+                    maxLength={30}
+                    onChange={(e) => formlengtUsername(e)}
+                    className={`form-control ${usernameActive ? "active" : ""}`}
                   />
                 </div>
                 <div className="row-col">
-                  <div className="form-group">
-                    <label>이름</label>
-                    {/* input 값으로 namechange변경 */}
-                    <input
-                      required
-                      value={name}
-                      maxLength={20}
-                      onMouseDown={() => validationChange(true)}
-                      onChange={(e) => nameChange(e.target.value)}
-                      className="form-control"
-                    />
-                    {name.length == 0 && validation && (
-                      <span className="text-danger">이름을 입력하세요.</span>
-                    )}
-                  </div>
+                  <label className="form-label">이름</label>
+                  {/* input 값으로 namechange변경 */}
+                  <input
+                    required
+                    value={name}
+                    maxLength={30}
+                    onMouseDown={() => validationChange(true)}
+                    onChange={(e) => formlengtName(e)}
+                    className={`form-control ${nameActive ? "active" : ""}`}
+                  />
+                  {name.length == 0 && validation && (
+                    <span className="text-danger">
+                      <CgDanger size="20" paddingRight="5px" color="red" />
+                      이름을 입력하세요.
+                    </span>
+                  )}
                 </div>
-                <div className="row-col">
-                  <div className="form-group">
-                    <label>내용</label>
-                    <textarea
-                      value={qa}
-                      onChange={(e) => qaChange(e.target.value)}
-                      className="form-qa"
-                    />
-                  </div>
+              </div>
+              <div className="row-col board-textarea">
+                <label>내용</label>
+                <textarea
+                  value={qa}
+                  onChange={(e) => formlengtQa(e)}
+                  className={`form-qa ${qaActive ? "active" : ""}`}
+                />
+              </div>
+              <div className="row-col">
+                <label className="form-label">연락처</label>
+                <input
+                  value={phone}
+                  maxLength={20}
+                  onChange={(e) => formlengtPhone(e)}
+                  className={`form-control ${phoneActive ? "active" : ""}`}
+                  placeholder="010-0000-0000"
+                />
+              </div>
+              <div className="row-col">
+                <div className="form-check">
+                  <input
+                    checked={active}
+                    onChange={(e) => activeChange(e.target.checked)}
+                    type="checkbox"
+                    className="form-check-input"
+                  />
+                  <label className="form-check-label">
+                    개인정보 이용정책에 동의 하십니까? (사실 아무 것도 아님)
+                  </label>
                 </div>
-                <div className="row-col">
-                  <div className="form-group">
-                    <label>연락처</label>
-                    <input
-                      value={phone}
-                      maxLength={20}
-                      onChange={(e) => phoneChange(e.target.value)}
-                      className="form-control"
-                    />
-                  </div>
-                </div>
-                <div className="row-col">
-                  <div className="form-check">
-                    <input
-                      checked={active}
-                      onChange={(e) => activeChange(e.target.checked)}
-                      type="checkbox"
-                      className="form-check-input"
-                    />
-                    <label className="form-check-label">확인하였습니다.</label>
-                  </div>
-                </div>
-                <div className="row-col">
-                  <div className="form-group">
-                    <button type="submit" className="btn btn-success">
-                      저장하기
-                    </button>
-                    <button
-                      className="btn"
-                      onClick={() => router.push("/board")}
-                    >
-                      뒤로가기
-                    </button>
-                  </div>
+              </div>
+              <div className="row-col">
+                <div className="form-group">
+                  <button type="submit" className="form-btn left">
+                    저장하기
+                  </button>
+                  <button
+                    className="form-btn right"
+                    onClick={() => router.push("/board")}
+                  >
+                    뒤로가기
+                  </button>
                 </div>
               </div>
             </div>

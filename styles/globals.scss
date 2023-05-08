@@ -1472,6 +1472,7 @@ span.text-red {
 }
 
 // sidebar - container
+
 .board-container,
 .ecommerce-container,
 .order-container,
@@ -1491,6 +1492,31 @@ span.text-red {
     }
   }
 }
+.board-edit-container,
+.board-create-container {
+  padding: 5rem 30rem 5rem 25rem;
+  width: 100%;
+  .page-title-box {
+    margin: 40px 0px;
+    .page-title {
+      font-size: 45px;
+      line-height: 0.9;
+    }
+    .page-subtitle {
+      color: #9be9a8;
+      margin-top: 20px;
+      input {
+        border: none;
+        height: 30px;
+        &::placeholder {
+          font-size: 22px;
+          color: #9be9a8;
+        }
+      }
+    }
+  }
+}
+
 // ------- Ecommerce -------- //
 .ecommerce-container {
   .ecommerce-wrap {
@@ -1976,6 +2002,105 @@ span.text-red {
               }
               &.board-btn-primary {
                 background-color: olivedrab;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.board-create-container {
+  .board-create-wrapper {
+    width: 100%;
+    .card {
+      .row {
+        .row-2 {
+          display: flex;
+          justify-content: space-between;
+        }
+        .row-col {
+          padding: 15px 0 0 0;
+          .form-check {
+            display: flex;
+            align-items: center;
+            .form-check-input {
+              width: 20px;
+              height: 20px;
+            }
+            .form-check-label {
+              padding-left: 5px;
+            }
+          }
+          .form-label {
+            font-size: 16px;
+          }
+          .text-danger {
+            color: red;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+          }
+          .form-control,
+          .form-qa {
+            width: 25rem;
+            display: flex;
+            flex-direction: column;
+            height: 50px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 5px;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 0 10px 0 10px;
+            box-shadow: 0 0 0 2px #b2b2b2;
+            overflow: hidden;
+            color: #333;
+            overflow-y: auto;
+            &::placeholder {
+              color: #ccc;
+              font-size: 20px;
+              font-weight: 500;
+            }
+            // forwards가 상태가 끝나도 유지 시키는 기능
+            &.active {
+              box-shadow: 0 0 0 2px #9be9a8;
+            }
+          }
+          .form-qa {
+            height: 300px;
+            padding: 5px 0 0 5px;
+          }
+          &.board-textarea {
+            width: 100%;
+            .form-qa {
+              width: 100%;
+            }
+          }
+          .form-group {
+            display: flex;
+            justify-content: right;
+            margin-top: 40px;
+            // flex-direction: column;
+            .form-btn {
+              font-size: 20px;
+              width: 250px;
+              height: 50px;
+              cursor: pointer;
+              background-color: #9be9a8;
+              border-radius: 5px;
+              border: none;
+              color: #fff;
+              &.right {
+                margin-left: 20px;
+                background-color: #fff;
+                color: #333;
+                border: 2px solid #9be9a8;
+              }
+              &:hover {
+                transform: scale(1.02);
+                transition: all 0.3s ease-in-out;
               }
             }
           }

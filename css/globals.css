@@ -1881,6 +1881,59 @@ span.text-red {
   color: #9be9a8;
 }
 
+.board-edit-container,
+.board-create-container {
+  padding: 5rem 30rem 5rem 25rem;
+  width: 100%;
+}
+
+.board-edit-container .page-title-box,
+.board-create-container .page-title-box {
+  margin: 40px 0px;
+}
+
+.board-edit-container .page-title-box .page-title,
+.board-create-container .page-title-box .page-title {
+  font-size: 45px;
+  line-height: 0.9;
+}
+
+.board-edit-container .page-title-box .page-subtitle,
+.board-create-container .page-title-box .page-subtitle {
+  color: #9be9a8;
+  margin-top: 20px;
+}
+
+.board-edit-container .page-title-box .page-subtitle input,
+.board-create-container .page-title-box .page-subtitle input {
+  border: none;
+  height: 30px;
+}
+
+.board-edit-container .page-title-box .page-subtitle input::-webkit-input-placeholder,
+.board-create-container .page-title-box .page-subtitle input::-webkit-input-placeholder {
+  font-size: 22px;
+  color: #9be9a8;
+}
+
+.board-edit-container .page-title-box .page-subtitle input:-ms-input-placeholder,
+.board-create-container .page-title-box .page-subtitle input:-ms-input-placeholder {
+  font-size: 22px;
+  color: #9be9a8;
+}
+
+.board-edit-container .page-title-box .page-subtitle input::-ms-input-placeholder,
+.board-create-container .page-title-box .page-subtitle input::-ms-input-placeholder {
+  font-size: 22px;
+  color: #9be9a8;
+}
+
+.board-edit-container .page-title-box .page-subtitle input::placeholder,
+.board-create-container .page-title-box .page-subtitle input::placeholder {
+  font-size: 22px;
+  color: #9be9a8;
+}
+
 .ecommerce-container .ecommerce-wrap {
   width: 100%;
   display: -webkit-box;
@@ -2529,6 +2582,162 @@ span.text-red {
 
 .board-container .board-wrapper .board-table tbody tr .board-btns .board-btn.board-btn-primary {
   background-color: olivedrab;
+}
+
+.board-create-container .board-create-wrapper {
+  width: 100%;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col {
+  padding: 15px 0 0 0;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-check .form-check-input {
+  width: 20px;
+  height: 20px;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-check .form-check-label {
+  padding-left: 5px;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-label {
+  font-size: 16px;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .text-danger {
+  color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5px;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-control,
+.board-create-container .board-create-wrapper .card .row .row-col .form-qa {
+  width: 25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px 0 10px;
+  -webkit-box-shadow: 0 0 0 2px #b2b2b2;
+          box-shadow: 0 0 0 2px #b2b2b2;
+  overflow: hidden;
+  color: #333;
+  overflow-y: auto;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-control::-webkit-input-placeholder,
+.board-create-container .board-create-wrapper .card .row .row-col .form-qa::-webkit-input-placeholder {
+  color: #ccc;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-control:-ms-input-placeholder,
+.board-create-container .board-create-wrapper .card .row .row-col .form-qa:-ms-input-placeholder {
+  color: #ccc;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-control::-ms-input-placeholder,
+.board-create-container .board-create-wrapper .card .row .row-col .form-qa::-ms-input-placeholder {
+  color: #ccc;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-control::placeholder,
+.board-create-container .board-create-wrapper .card .row .row-col .form-qa::placeholder {
+  color: #ccc;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-control.active,
+.board-create-container .board-create-wrapper .card .row .row-col .form-qa.active {
+  -webkit-box-shadow: 0 0 0 2px #9be9a8;
+          box-shadow: 0 0 0 2px #9be9a8;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-qa {
+  height: 300px;
+  padding: 5px 0 0 5px;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col.board-textarea {
+  width: 100%;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col.board-textarea .form-qa {
+  width: 100%;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  margin-top: 40px;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-group .form-btn {
+  font-size: 20px;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #9be9a8;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-group .form-btn.right {
+  margin-left: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #9be9a8;
+}
+
+.board-create-container .board-create-wrapper .card .row .row-col .form-group .form-btn:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .loading-content {

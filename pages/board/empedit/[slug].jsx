@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useStateContext } from "../../../context/StateContext";
+import { CgDanger } from "react-icons/cg";
 import swal from "sweetalert";
 
 const EmpEdit = () => {
@@ -16,7 +17,13 @@ const EmpEdit = () => {
   const [qa, qaChange] = useState("");
   const [phone, phoneChange] = useState("");
   const [active, activeChange] = useState(true);
-  const [validation, validationChange] = useState(false);
+  const [validation, validationChange] = useState(true);
+
+  //change state
+  const [usernameActive, usernameChangeActive] = useState(false);
+  const [nameActive, nameChangeActive] = useState(false);
+  const [qaActive, qaChangeActive] = useState(false);
+  const [phoneActive, phoneChangeActive] = useState(false);
 
   useEffect(() => {
     formData.username = usernameChange(formData?.username);
@@ -80,97 +87,99 @@ const EmpEdit = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSave(formData);
-    console.log(formData);
   };
 
   return (
     <div>
-      <div className="board-create-container">
-        <form className="board-create-wrapper" onSubmit={handleSubmit}>
+      <div className="board-edit-container">
+        <div className="page-title-box">
+          <h1 className="page-title">게시판 수정</h1>
+          <p className="page-subtitle">
+            <input
+              value={id}
+              disabled
+              className="form-control"
+              placeholder={empData[params]?.id + "th"}
+            />
+          </p>
+        </div>
+        <form className="board-edit-wrapper" onSubmit={handleSubmit}>
           <div className="card">
-            <div className="card-title">
-              <h2>게시글 수정</h2>
-            </div>
-            <div className="card-body">
-              <div className="row">
+            <div className="row">
+              <div className="row-2">
                 <div className="row-col">
-                  <div className="form-group">
-                    <label>번호</label>
-                    <input
-                      value={id}
-                      disabled
-                      className="form-control"
-                      placeholder={empData[params]?.id}
-                    />
-                  </div>
-                </div>
-                <div className="row-col">
-                  <label>닉네임</label>
+                  <label className="form-label">닉네임</label>
                   <input
                     defaultValue={empData[params]?.username}
                     onChange={(e) => usernameChange(e.target.value)}
                     className="form-control"
+                    minLength={3}
+                    placeholder="3글자 이상 입력해주세요."
                   />
                 </div>
                 <div className="row-col">
-                  <div className="form-group">
-                    <label>이름</label>
-                    {/* input 값으로 namechange변경 */}
-                    <input
-                      required
-                      defaultValue={empData[params]?.name + username}
-                      onMouseDown={() => validationChange(true)}
-                      onChange={(e) => nameChange(e.target.value)}
-                      className="form-control"
-                    />
-                    {name.length == 0 && validation && (
-                      <span className="text-danger">이름을 입력하세요.</span>
-                    )}
-                  </div>
+                  <label>이름</label>
+                  <input
+                    required
+                    defaultValue={empData[params]?.name + username}
+                    onChange={(e) => nameChange(e.target.value)}
+                    className="form-control"
+                    minLength={3}
+                    placeholder="3글자 이상 입력해주세요."
+                    disabled
+                  />
+                  {name.length == 0 && validation && (
+                    <span className="text-impo">
+                      <CgDanger size="20" color="#35dd51" />
+                      이름은 수정이 불가합니다.
+                    </span>
+                  )}
                 </div>
-                <div className="row-col">
-                  <div className="form-group">
-                    <label>내용</label>
-                    <textarea
-                      defaultValue={empData[params]?.qa}
-                      onChange={(e) => qaChange(e.target.value)}
-                      className="form-qa"
-                    />
-                  </div>
+              </div>
+              <div className="row-col board-textarea">
+                <label>내용</label>
+                <textarea
+                  defaultValue={empData[params]?.qa}
+                  onChange={(e) => qaChange(e.target.value)}
+                  className="form-qa"
+                  minLength={3}
+                  placeholder="3글자 이상 입력해주세요."
+                />
+              </div>
+              <div className="row-col">
+                <label className="form-label">연락처</label>
+                <input
+                  defaultValue={empData[params]?.phone}
+                  onChange={(e) => phoneChange(e.target.value)}
+                  className="form-control"
+                  type="number"
+                  placeholder="010-0000-0000"
+                />
+              </div>
+              <div className="row-col">
+                <div className="form-check">
+                  <input
+                    checked={empData[params]?.active}
+                    onChange={(e) => activeChange(e.target.checked)}
+                    type="checkbox"
+                    className="form-check-input"
+                  />
+                  <label className="form-check-label">
+                    개인정보 이용정책에 동의 하십니까? (사실 아무 것도 아님)
+                  </label>
                 </div>
-                <div className="row-col">
-                  <div className="form-group">
-                    <label>연락처</label>
-                    <input
-                      defaultValue={empData[params]?.phone}
-                      onChange={(e) => phoneChange(e.target.value)}
-                      className="form-control"
-                    />
-                  </div>
-                </div>
-                <div className="row-col">
-                  <div className="form-check">
-                    <input
-                      checked={empData[params]?.active}
-                      onChange={(e) => activeChange(e.target.checked)}
-                      type="checkbox"
-                      className="form-check-input"
-                    />
-                    <label className="form-check-label">확인하였습니다.</label>
-                  </div>
-                </div>
-                <div className="row-col">
-                  <div className="form-group">
-                    <button type="submit" className="btn btn-success">
-                      저장하기
-                    </button>
-                    <button
-                      className="btn"
-                      onClick={() => router.push("/board")}
-                    >
-                      뒤로가기
-                    </button>
-                  </div>
+              </div>
+              <div className="row-col">
+                <div className="form-group">
+                  <button type="submit" className="form-btn left">
+                    저장하기
+                  </button>
+                  <button
+                    className="form-btn right"
+                    onClick={() => router.push("/board")}
+                  >
+                    뒤로가기
+                  </button>
                 </div>
               </div>
             </div>
@@ -179,6 +188,13 @@ const EmpEdit = () => {
       </div>
     </div>
   );
+
+  function formChangeUsername(e) {
+    usernameChange(e.target.value);
+    usernameChange.length >= 1
+      ? usernameChangeActive(true)
+      : usernameChangeActive(false);
+  }
 };
 
 export default EmpEdit;

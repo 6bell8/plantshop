@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useStateContext } from "../../../context/StateContext";
 import { CgDanger } from "react-icons/cg";
@@ -7,14 +7,14 @@ import swal from "sweetalert";
 const EmpCreate = () => {
   const router = useRouter();
   const [id, idChange] = useState("");
-
+  // e.target.value
   const [username, usernameChange] = useState("");
   const [name, nameChange] = useState("");
   const [qa, qaChange] = useState("");
   const [phone, phoneChange] = useState("");
   const [active, activeChange] = useState(true);
   const [validation, validationChange] = useState(false);
-
+  //length state
   const [usernameActive, usernameChangeActive] = useState(false);
   const [nameActive, nameChangeActive] = useState(false);
   const [qaActive, qaChangeActive] = useState(false);
@@ -73,31 +73,6 @@ const EmpCreate = () => {
     console.log(formData);
   };
 
-  // 글자 제한 모션
-  function formlengtUsername(e) {
-    usernameChange(e.target.value);
-    usernameChange.length >= 1
-      ? usernameChangeActive(true)
-      : usernameChangeActive(false);
-  }
-
-  function formlengtName(e) {
-    nameChange(e.target.value);
-    nameChange.length >= 1 ? nameChangeActive(true) : nameChangeActive(false);
-  }
-
-  function formlengtQa(e) {
-    qaChange(e.target.value);
-    qaChange.length >= 1 ? qaChangeActive(true) : qaChangeActive(false);
-  }
-
-  function formlengtPhone(e) {
-    phoneChange(e.target.value);
-    phoneChange.length >= 1
-      ? phoneChangeActive(true)
-      : phoneChangeActive(false);
-  }
-
   return (
     <div>
       <div className="board-create-container">
@@ -121,8 +96,10 @@ const EmpCreate = () => {
                   <input
                     value={username}
                     maxLength={30}
-                    onChange={(e) => formlengtUsername(e)}
+                    minLength={3}
+                    onChange={(e) => formlengthUsername(e)}
                     className={`form-control ${usernameActive ? "active" : ""}`}
+                    placeholder="3글자 이상 입력해주세요."
                   />
                 </div>
                 <div className="row-col">
@@ -132,13 +109,15 @@ const EmpCreate = () => {
                     required
                     value={name}
                     maxLength={30}
+                    minLength={3}
                     onMouseDown={() => validationChange(true)}
                     onChange={(e) => formlengtName(e)}
                     className={`form-control ${nameActive ? "active" : ""}`}
+                    placeholder="3글자 이상 입력해주세요."
                   />
                   {name.length == 0 && validation && (
                     <span className="text-danger">
-                      <CgDanger size="20" paddingRight="5px" color="red" />
+                      <CgDanger size="20" color="red" />
                       이름을 입력하세요.
                     </span>
                   )}
@@ -148,15 +127,19 @@ const EmpCreate = () => {
                 <label>내용</label>
                 <textarea
                   value={qa}
+                  minLength={3}
                   onChange={(e) => formlengtQa(e)}
                   className={`form-qa ${qaActive ? "active" : ""}`}
+                  placeholder="3글자 이상 입력해주세요."
                 />
               </div>
               <div className="row-col">
                 <label className="form-label">연락처</label>
                 <input
+                  type="number"
                   value={phone}
                   maxLength={20}
+                  minLength={3}
                   onChange={(e) => formlengtPhone(e)}
                   className={`form-control ${phoneActive ? "active" : ""}`}
                   placeholder="010-0000-0000"
@@ -194,6 +177,29 @@ const EmpCreate = () => {
       </div>
     </div>
   );
+
+  // 글자 제한 모션
+  function formlengthUsername(e) {
+    username.length > 1
+      ? usernameChangeActive(true)
+      : usernameChangeActive(false);
+    usernameChange(e.target.value);
+  }
+
+  function formlengtName(e) {
+    nameChange(e.target.value);
+    name.length > 1 ? nameChangeActive(true) : nameChangeActive(false);
+  }
+
+  function formlengtQa(e) {
+    qaChange(e.target.value);
+    qa.length > 1 ? qaChangeActive(true) : qaChangeActive(false);
+  }
+
+  function formlengtPhone(e) {
+    phoneChange(e.target.value);
+    phone.length > 1 ? phoneChangeActive(true) : phoneChangeActive(false);
+  }
 };
 
 export default EmpCreate;

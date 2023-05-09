@@ -1913,25 +1913,25 @@ span.text-red {
 .board-edit-container .page-title-box .page-subtitle input::-webkit-input-placeholder,
 .board-create-container .page-title-box .page-subtitle input::-webkit-input-placeholder {
   font-size: 22px;
-  color: #9be9a8;
+  color: #35dd51;
 }
 
 .board-edit-container .page-title-box .page-subtitle input:-ms-input-placeholder,
 .board-create-container .page-title-box .page-subtitle input:-ms-input-placeholder {
   font-size: 22px;
-  color: #9be9a8;
+  color: #35dd51;
 }
 
 .board-edit-container .page-title-box .page-subtitle input::-ms-input-placeholder,
 .board-create-container .page-title-box .page-subtitle input::-ms-input-placeholder {
   font-size: 22px;
-  color: #9be9a8;
+  color: #35dd51;
 }
 
 .board-edit-container .page-title-box .page-subtitle input::placeholder,
 .board-create-container .page-title-box .page-subtitle input::placeholder {
   font-size: 22px;
-  color: #9be9a8;
+  color: #35dd51;
 }
 
 .ecommerce-container .ecommerce-wrap {
@@ -2584,10 +2584,16 @@ span.text-red {
   background-color: olivedrab;
 }
 
+.board-edit-container .board-edit-wrapper,
+.board-edit-container .board-create-wrapper,
+.board-create-container .board-edit-wrapper,
 .board-create-container .board-create-wrapper {
   width: 100%;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-2,
+.board-edit-container .board-create-wrapper .card .row .row-2,
+.board-create-container .board-edit-wrapper .card .row .row-2,
 .board-create-container .board-create-wrapper .card .row .row-2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2597,10 +2603,16 @@ span.text-red {
           justify-content: space-between;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col,
+.board-edit-container .board-create-wrapper .card .row .row-col,
+.board-create-container .board-edit-wrapper .card .row .row-col,
 .board-create-container .board-create-wrapper .card .row .row-col {
   padding: 15px 0 0 0;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-check,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-check,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-check,
 .board-create-container .board-create-wrapper .card .row .row-col .form-check {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2610,20 +2622,36 @@ span.text-red {
           align-items: center;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-check .form-check-input,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-check .form-check-input,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-check .form-check-input,
 .board-create-container .board-create-wrapper .card .row .row-col .form-check .form-check-input {
   width: 20px;
   height: 20px;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-check .form-check-label,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-check .form-check-label,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-check .form-check-label,
 .board-create-container .board-create-wrapper .card .row .row-col .form-check .form-check-label {
   padding-left: 5px;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-label,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-label,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-label,
 .board-create-container .board-create-wrapper .card .row .row-col .form-label {
   font-size: 16px;
 }
 
-.board-create-container .board-create-wrapper .card .row .row-col .text-danger {
+.board-edit-container .board-edit-wrapper .card .row .row-col .text-danger,
+.board-edit-container .board-edit-wrapper .card .row .row-col .text-impo,
+.board-edit-container .board-create-wrapper .card .row .row-col .text-danger,
+.board-edit-container .board-create-wrapper .card .row .row-col .text-impo,
+.board-create-container .board-edit-wrapper .card .row .row-col .text-danger,
+.board-create-container .board-edit-wrapper .card .row .row-col .text-impo,
+.board-create-container .board-create-wrapper .card .row .row-col .text-danger,
+.board-create-container .board-create-wrapper .card .row .row-col .text-impo {
   color: red;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2634,6 +2662,19 @@ span.text-red {
   margin-top: 5px;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .text-impo,
+.board-edit-container .board-create-wrapper .card .row .row-col .text-impo,
+.board-create-container .board-edit-wrapper .card .row .row-col .text-impo,
+.board-create-container .board-create-wrapper .card .row .row-col .text-impo {
+  color: #35dd51;
+}
+
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-control,
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-qa,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-control,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-qa,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-control,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-qa,
 .board-create-container .board-create-wrapper .card .row .row-col .form-control,
 .board-create-container .board-create-wrapper .card .row .row-col .form-qa {
   width: 25rem;
@@ -2658,6 +2699,12 @@ span.text-red {
   overflow-y: auto;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-control::-webkit-input-placeholder,
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-qa::-webkit-input-placeholder,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-control::-webkit-input-placeholder,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-qa::-webkit-input-placeholder,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-control::-webkit-input-placeholder,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-qa::-webkit-input-placeholder,
 .board-create-container .board-create-wrapper .card .row .row-col .form-control::-webkit-input-placeholder,
 .board-create-container .board-create-wrapper .card .row .row-col .form-qa::-webkit-input-placeholder {
   color: #ccc;
@@ -2665,6 +2712,12 @@ span.text-red {
   font-weight: 500;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-control:-ms-input-placeholder,
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-qa:-ms-input-placeholder,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-control:-ms-input-placeholder,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-qa:-ms-input-placeholder,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-control:-ms-input-placeholder,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-qa:-ms-input-placeholder,
 .board-create-container .board-create-wrapper .card .row .row-col .form-control:-ms-input-placeholder,
 .board-create-container .board-create-wrapper .card .row .row-col .form-qa:-ms-input-placeholder {
   color: #ccc;
@@ -2672,6 +2725,12 @@ span.text-red {
   font-weight: 500;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-control::-ms-input-placeholder,
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-qa::-ms-input-placeholder,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-control::-ms-input-placeholder,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-qa::-ms-input-placeholder,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-control::-ms-input-placeholder,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-qa::-ms-input-placeholder,
 .board-create-container .board-create-wrapper .card .row .row-col .form-control::-ms-input-placeholder,
 .board-create-container .board-create-wrapper .card .row .row-col .form-qa::-ms-input-placeholder {
   color: #ccc;
@@ -2679,6 +2738,12 @@ span.text-red {
   font-weight: 500;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-control::placeholder,
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-qa::placeholder,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-control::placeholder,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-qa::placeholder,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-control::placeholder,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-qa::placeholder,
 .board-create-container .board-create-wrapper .card .row .row-col .form-control::placeholder,
 .board-create-container .board-create-wrapper .card .row .row-col .form-qa::placeholder {
   color: #ccc;
@@ -2686,25 +2751,43 @@ span.text-red {
   font-weight: 500;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-control.active,
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-qa.active,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-control.active,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-qa.active,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-control.active,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-qa.active,
 .board-create-container .board-create-wrapper .card .row .row-col .form-control.active,
 .board-create-container .board-create-wrapper .card .row .row-col .form-qa.active {
   -webkit-box-shadow: 0 0 0 2px #9be9a8;
           box-shadow: 0 0 0 2px #9be9a8;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-qa,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-qa,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-qa,
 .board-create-container .board-create-wrapper .card .row .row-col .form-qa {
   height: 300px;
   padding: 5px 0 0 5px;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col.board-textarea,
+.board-edit-container .board-create-wrapper .card .row .row-col.board-textarea,
+.board-create-container .board-edit-wrapper .card .row .row-col.board-textarea,
 .board-create-container .board-create-wrapper .card .row .row-col.board-textarea {
   width: 100%;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col.board-textarea .form-qa,
+.board-edit-container .board-create-wrapper .card .row .row-col.board-textarea .form-qa,
+.board-create-container .board-edit-wrapper .card .row .row-col.board-textarea .form-qa,
 .board-create-container .board-create-wrapper .card .row .row-col.board-textarea .form-qa {
   width: 100%;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-group,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-group,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-group,
 .board-create-container .board-create-wrapper .card .row .row-col .form-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2715,6 +2798,9 @@ span.text-red {
   margin-top: 40px;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-group .form-btn,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-group .form-btn,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-group .form-btn,
 .board-create-container .board-create-wrapper .card .row .row-col .form-group .form-btn {
   font-size: 20px;
   width: 250px;
@@ -2726,6 +2812,9 @@ span.text-red {
   color: #fff;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-group .form-btn.right,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-group .form-btn.right,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-group .form-btn.right,
 .board-create-container .board-create-wrapper .card .row .row-col .form-group .form-btn.right {
   margin-left: 20px;
   background-color: #fff;
@@ -2733,9 +2822,159 @@ span.text-red {
   border: 2px solid #9be9a8;
 }
 
+.board-edit-container .board-edit-wrapper .card .row .row-col .form-group .form-btn:hover,
+.board-edit-container .board-create-wrapper .card .row .row-col .form-group .form-btn:hover,
+.board-create-container .board-edit-wrapper .card .row .row-col .form-group .form-btn:hover,
 .board-create-container .board-create-wrapper .card .row .row-col .form-group .form-btn:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.board-detail-container {
+  padding: 5rem 30rem 5rem 25rem;
+  width: 100%;
+}
+
+.board-detail-container .page-title-box {
+  margin: 40px 0px;
+  border-bottom: 2px solid #35dd51;
+}
+
+.board-detail-container .page-title-box .page-title {
+  font-size: 45px;
+  line-height: 0.9;
+}
+
+.board-detail-container .page-title-box .page-subtitle {
+  margin: 20px 0;
+}
+
+.board-detail-container .page-title-box .page-subtitle input {
+  border: none;
+  height: 30px;
+}
+
+.board-detail-container .page-title-box .page-subtitle input::-webkit-input-placeholder {
+  font-size: 22px;
+  color: #35dd51;
+}
+
+.board-detail-container .page-title-box .page-subtitle input:-ms-input-placeholder {
+  font-size: 22px;
+  color: #35dd51;
+}
+
+.board-detail-container .page-title-box .page-subtitle input::-ms-input-placeholder {
+  font-size: 22px;
+  color: #35dd51;
+}
+
+.board-detail-container .page-title-box .page-subtitle input::placeholder {
+  font-size: 22px;
+  color: #35dd51;
+}
+
+.board-detail-container .board-detail-wrapper {
+  width: 100%;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .row-col {
+  padding: 30px 0 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .row-col.phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .row-col.board-textarea {
+  border: none;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .row-col .form-label {
+  font-size: 16px;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .row-col .form-control,
+.board-detail-container .board-detail-wrapper .card .row .row-col .form-qa {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px 0 10px;
+  overflow: hidden;
+  color: #333;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .row-col .form-control.username,
+.board-detail-container .board-detail-wrapper .card .row .row-col .form-qa.username {
+  font-size: 28px;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .row-col .form-control .form-subTitle,
+.board-detail-container .board-detail-wrapper .card .row .row-col .form-qa .form-subTitle {
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 10px;
+  color: #35dd51;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .row-col .form-qa {
+  height: 300px;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 5px 0 0 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .row-col.board-textarea {
+  width: 100%;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .row-col.board-textarea .form-qa {
+  width: 100%;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .form-btn {
+  font-size: 20px;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px auto;
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #9be9a8;
+}
+
+.board-detail-container .board-detail-wrapper .card .row .form-btn:hover {
+  background-color: #35dd51;
+  color: #fff;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }

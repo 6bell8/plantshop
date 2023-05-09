@@ -1492,6 +1492,7 @@ span.text-red {
     }
   }
 }
+
 .board-edit-container,
 .board-create-container {
   padding: 5rem 30rem 5rem 25rem;
@@ -1510,7 +1511,7 @@ span.text-red {
         height: 30px;
         &::placeholder {
           font-size: 22px;
-          color: #9be9a8;
+          color: #35dd51;
         }
       }
     }
@@ -2011,7 +2012,9 @@ span.text-red {
   }
 }
 
+.board-edit-container,
 .board-create-container {
+  .board-edit-wrapper,
   .board-create-wrapper {
     width: 100%;
     .card {
@@ -2036,11 +2039,15 @@ span.text-red {
           .form-label {
             font-size: 16px;
           }
-          .text-danger {
+          .text-danger,
+          .text-impo {
             color: red;
             display: flex;
             align-items: center;
             margin-top: 5px;
+          }
+          .text-impo {
+            color: #35dd51;
           }
           .form-control,
           .form-qa {
@@ -2103,6 +2110,104 @@ span.text-red {
                 transition: all 0.3s ease-in-out;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+.board-detail-container {
+  padding: 5rem 30rem 5rem 25rem;
+  width: 100%;
+  .page-title-box {
+    margin: 40px 0px;
+    border-bottom: 2px solid #35dd51;
+    .page-title {
+      font-size: 45px;
+      line-height: 0.9;
+    }
+    .page-subtitle {
+      margin: 20px 0;
+      input {
+        border: none;
+        height: 30px;
+        &::placeholder {
+          font-size: 22px;
+          color: #35dd51;
+        }
+      }
+    }
+  }
+  .board-detail-wrapper {
+    width: 100%;
+    .card {
+      .row {
+        .row-col {
+          padding: 30px 0 20px 0;
+          border-bottom: 1px solid #ccc;
+          &.phone {
+            display: flex;
+            justify-content: right;
+          }
+          &.board-textarea {
+            border: none;
+          }
+          .form-label {
+            font-size: 16px;
+          }
+          .form-control,
+          .form-qa {
+            justify-content: space-between;
+            display: flex;
+            height: 50px;
+            align-items: center;
+
+            font-size: 20px;
+            font-weight: 500;
+            padding: 0 10px 0 10px;
+            overflow: hidden;
+            color: #333;
+            &.username {
+              font-size: 28px;
+            }
+            .form-subTitle {
+              font-size: 20px;
+              font-weight: 500;
+              padding-left: 10px;
+              color: #35dd51;
+            }
+          }
+          .form-qa {
+            height: 300px;
+            align-items: baseline;
+            padding: 5px 0 0 5px;
+            border-bottom: 1px solid #ccc;
+          }
+          &.board-textarea {
+            width: 100%;
+            .form-qa {
+              width: 100%;
+            }
+          }
+        }
+        .form-btn {
+          font-size: 20px;
+          width: 150px;
+          height: 50px;
+          cursor: pointer;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 40px auto;
+          background-color: #fff;
+          color: #333;
+          border: 2px solid #9be9a8;
+          &:hover {
+            background-color: #35dd51;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
           }
         }
       }

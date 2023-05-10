@@ -118,6 +118,21 @@ a {
   text-decoration: none;
 }
 
+.popup-box {
+  display: none;
+  position: fixed;
+  left: 100px;
+  top: 100px;
+  border: 1px solid #ebebeb;
+  padding: 40px 60px;
+  z-index: 40000;
+  &.active {
+    display: block;
+  }
+  .popup {
+  }
+}
+
 .order-search-box,
 .board-search-box {
   height: 50px;

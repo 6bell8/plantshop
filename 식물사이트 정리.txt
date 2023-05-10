@@ -2,6 +2,8 @@
 
 sanity연동해놓음 
 
+실행 명령어 npm run dev
+
 커스텀 만들기
 
 이미지 클릭 시 products-plant or products-flowerpot에 고정 되도록
@@ -55,8 +57,11 @@ plant랑 flowerpot은 아직 안 만든 상태, slideBanner 완료하고 복붙�
 수정하기
 
 
+stripe park
+데이터를 문자열로 내보내고, body 파라미터를 json으로 바꿔준다.
 
-
+asycn 비동기식 통신은 순서를 보장하지않는다.
+asycn는 non blocking 형태로 자기일만 하는 것
 
 
 
@@ -72,4 +77,311 @@ plant, flowerpot stripe 링크 태우는 걸로 수정해서 (getstripe, stripe,
 plant, flowerpot 배너 링크 타지게 할 수 있도록 통합
 
 이후, 페이지네이션, 게시판, 왼쪽 편의기능 만들어보기
+
+--------------------------
+
+navbar에 추가할 옵션들, 
+
+사이드바 생성 오른쪽
+
+ ecommerce, orders
+
+
+- next 환경에서 svg 파일 import 할 때 패키지 설치해야됨
+
+지금 link 안되는 이유는, link 컴포넌트가 없기 때문 or browseroute가 
+ dashboard02 에서 실행한 방법으로 link 설정
+
+link 기능이 안되고, browserRouter로 app.js를 감쌌는데도, 기능이 무시돼서 userouter로 변경해서 cursor 태그를
+넣어줌, 그리고 dummy data에서 link.name으로 했더니  
+
+
+active 기능이 안돼서 prosidebar npm 깔아서 내일 다시 시도해보기
+
+1. prosidebar 만들고, dummy 데이터 page에 있는 내용이랑 이름 통일해서 만들고 게시판, 차트, 생성
+
+
+
+다운그레이드 시 뒤에다가 @버젼
+
+
+
+
+sidebar 잔상 그대로 남아있는 거 router 동작 시 useeffect해서 원상복귀,
+
+이미지 절대경로 알아보기
+
+ iscollespe 시 classs 없어지게 하는 거 연구해보기
+
+profile 왜 안되는지
+background: url(/image/custom-bg.jpg) no-repeat center/cover;
+
+하react 환경이랑 next js 환경에서 라우팅 설정다른 거 모르고ㅅㅂ
+next js에서 window 백날 쳐봐야 안뜸 userouter 끌어와서 useRouter.pathname을 쳐야 뜸
+
+
+문제가 발생하는 이유는 component pageprops 때문에 window가 ssr 해서 안보이는거임
+
+그래서 ssr를 false로 했을 때 다음 화면이 보임
+
+결론적으로 나는 component 를 ssr false해서 window 렌더링을 하고싶음
+
+
+ssr 취소를 app에서 시키는 것이 아니라 관련 컴포넌트를 들어가서 ssr :false 인자값을 입력하고 export하는 식으로 
+진행
+
+차트에서 뽑아 놓은 자료가 window 객체가 없어서 렌더링이 안된 거였음,,후,, 개별 컴포넌트로 들어가서 실행하길 잘했다
+
+그리고 router로 starting change, loading spinner 정리 
+
+
+
+
+pagination 직접 만드는 거 구현 중, 
+e.currentTarget.value로 option 확정해서 눌러줌
+css 입히기
+
+e.currentpage.target 활용해서 select value 구현 
+
+pagination sort <prk-shop> 으로 검색 기능 활성화
+
+검색할 때 orderData.filter(user => user.includes()) 시 문자열이랑 숫자 string안맞아서 리턴이 안됐음 
+꼼꼼하게 읽어보기
+
+라우팅 공간 때문에 pages 폴더는 index 아니면 죄다 비워줘야됨 이거때문에 git add. 다시했음
+
+accordian 만드는 함수
+
+index가 같으면 setSelected를 null 처리 (아무 반응 일어나지않음)
+  const toggle = (i) => {
+    if (selected == i) {
+      return setSelected(null);
+    }
+    setSelected(i);
+  };
+
+클릭하고 있는 객체를 확인하기 위해서, toggle 인자값에 (i) index를 넣어주기
+
+<div className={`content ${selected === i ? "show" : ""}`}>
+                  {item.answer} 
+
+이후 classname {`content ${selected == i ? "show" :""} 삼항연산자로
+
+
+
+/// board table tr 에서 display flex 로 안해서 width 100% 안먹었음 width 적용할 때는 display 필수로 사용해야됨
+
+
+restful map 사용 할 떄 주의 할점!!
+
+map 함수 렌더링 전에 데이터가 실행되며, 그렇게 되면 undefind로 뜨는 경우가 있음 
+그런 경우를 대비하기 위해서 {}안에 useState 변수 &&을 붙혀서 조건식이 true일 떄 실행 시켜주어야함.!! 
+
+onsubmit 함수 풀어서 적용하기
+
+shop 파트에서 onData=handleSave ,form , handleSubmit함수 참고해서 게시판 완성하기
+
+
+empdata를 다른 페이지에서 쓰려고함
+
+ㄱ래서 empdata를 context api로 보내서 관리를 하고, empcreate에서 emp를 받아와서 매핑때리기
+
+이게안되면,  db.json을 만들어서 --watch 떄리고 fetch하기
+
+
+1. context api 에서 useeffect 전달 및 변수 전달, - export하기
+
+2. board로 가져오기, 그리고 shop에 있는 내용이랑 동일하게 적용
+
+3. 프로퍼티 id 자동 생성으로 nextId.current 줘서 올렸는데, id를 자꾸 onchange에서 이상한 함수를 입력하니까
+실행이 안됐던 거 였음, 결론은 handleSave에서 form과 매칭되는 변수를 잘 찾아서 기입하면 됨.
+
+formData data 바꿔주기,
+
+
+nextid 를 useref로 한 이유는 상태값이 변경 될 때 마다 리렌더링이 일어나는 usestate와
+달리 useref는 자신의 상태값이 변경되거나 부모로부터 받은 인자값이 변경되었을 때 바뀜,
+
+useState는 state의 값이 달라질 때마다 컴포넌트가 리렌더된다.
+useRef는 ref 값이 변한다고 컴포넌트가 리렌더되지 않는다.
+
+따라서 useRef에서 current라는 프로퍼티를 사용하면서, 유지 되는 객체를 곧바로 반환한다.
+
+mount는 컴포넌트가 화면에 나타나는 것을 의미한다.
+
+게시판 정리, 
+
+1. useeffect로 json 파일이 mount 되는 것을 전역 변수에 담고, 변수 export
+2. restful api가 끝나는 지점 숫자를 useref로 감싸고, 전역변수에 담아서 export
+
+formDate에 있는 변수들을 일단 상태관리 해줌
+
+2가지 함수 생성 필요,
+
+1. handleSubmit 
+
+form에서 값을 제출, e.preventDefault를 통해 링크 전환 방지,
+handleSave() 인자값에 { id, username, name, qa, phone, active } 객체로 
+이루어진 formDate를 삽입
+
+onsubmit = {handleSubmit} => {handleSave} 으로 어떻게 포스트 되냐면,
+form에서 value값을 지정, formDate = {} 객체를 만들어서, value: 값, 이런식으로
+세팅
+
+글번호는 nextId로 제어할 거기 때문에, inputbox disable 처리
+
+
+
+2. handleSave
+
+form에서 입력하는 객체를 반환, 반환이 끝나면, setEmpData로 감싸준 뒤
+concat으로 empData를 매핑한 내용을 합쳐줌. 이후 전역변수로 전달받은 nextid를 =+
+
+
+toast 기능 활성화 시키려고, router 함수 setimeout으로 걸어두고 시간차,, 
+alert 없으면 링크 넘어갈 때 정지기능이 활성화가 안됨.
+
+그래서 sweetalert로 확인 누르면 넘어가게 설정함
+
+동적라우팅 변화는 폴더 내 []로 무조건 1개만 사용 할 수 있다.
+
+
+리액트는 useparams를 통해 path값이나 기본적인 속성을 확인 할 수 있지만,
+next js는 그런 거 없이 그냥 router.query.params값을 퍼올 수 있다.
+
+일단 next js 통해서 params 값을 퍼오긴 함, 
+
+하지만 동적값을 적용했을 때, empData에서 에러가 남
+- 옵셔널 체이닝으로 해결
+
+옵셔널 체이닝이 없으면 
+
+if(empData && empData[params].id) {
+	return empData[params].id 
+}
+
+이런식으로 empData가 있으면 empData[params].id로 접근해서 리턴 하도록 
+if문을 짜야됨(undefined가 있어도 안됨)
+
+그래서 옵셔널체이닝을 활용 empData[params]?.id empData[params]가 있으면 id값을 리턴하는 식으로
+코드를 구성
+
+
+-- edit 하는 법 --
+
+기존 코드에서 전역변수로 활성화 시켜서 onchange로 바꿔주는 방법, 하나는 shop에 있는 거 노가다
+
+
+// 일단 value값을 defalutvalue로 바꿔주긴 했지만, fetch형태로 restful을 받아올 수 없기때문에 
+처음부터 다시해야될듯ㅋㅋㅋ
+
+// handsave 살려두고, handleedit, handsubmit, {selectedData}, setSelected=변수 확인하면서, 수정
+
+
+input 값들이 onchange => {onSubmitEdit => handleEditSubmit=> handleSave} (여기로 전달되는 함수 합쳐주기) 
+
+  const handleEditSubmit = (item) => {
+    handleSave(item);
+    setModalOn(false);
+  };
+
+
+일단 textbox에 적어놓은 name 통해서 useState가 바뀌면서 수정이 되는 듯?
+
+이후 onsubmit해서 전역변수를 바뀌게 해주면 될듯
+
+
+
+handleEditSubmit
+onSubmitEdit
+onEditChange 세가지 함수를 밖으로 빼서 전역함수로 처리하고 
+
+da92119
+
+
+수정이 안돼서, test 동적변화까지 돌아옴,,,
+
+수정 submit 시 돌아가는 방법을 다시 보완해야 될 듯
+
+일단 추가 한 부분에서 수정으로 다시 돌아오긴 함
+
+
+
+먼저, 전역변수 상태에 접근 하고, 해당 변수를 수정, 이후 onsubmit 누르면 handleSave 될 수 있도록 수정, 
+
+접근 시 해당 value가 그대로 보존 될 수있도록, (ㅇ)
+
+일일이 바꾼 상태값을 formData로 감싸서 보내기
+
+formData는 값을 감싸서 전송을 하는데 전역변수가 안바뀜
+
+formData에서 보내주는 값이 일정함 
+
+나는 전역변수로 했고, 얘는 item 인자 값을 Td 부터 끌어와서 갖다가 바침, 
+
+
+
+ <input
+                    defaultValue={empData[params]?.username}
+                    onChange={(e) => usernameChange(e.target.value)}
+                    className="form-control"
+                  />
+
+
+보험용
+
+forData 안돼서 삼항연산자로  username: username === "" ? empData[params]?.username : username, 이런식으로
+정리해놓음,
+
+forData가 이제 보내지니까 FormData 토대로 handsave 수정
+
+handleSave 함수 공통으로 적용하고, id 같으면 수정하는 방식으로 함수를 설계했음,
+
+근데, 내가 formData에서 [params] 값을 자꾸 받아서 id가 달랐음, 결과적으로 empData[params]와 글번호를
+일치시켜서 리턴했더니 수정가능해짐
+
+그리고, 게시글 쓰기에서, 수정해도 글 번호가 쭉쭉 올라가는 버그가 있었는데, nextId 변수를 handleSave 
+edit 란에서 제외했더니 번호가 올라가는 버그가 사라짐
+
+
+삭제도 empData에서 나오는 파라미터(item.id)를 setEmpData((data) => data.filter((item) => item.id !== id)); 일치하지
+않으면 새배열로 리턴 해줌으로써 선택한 요소( 선택했기떄문에 조건에 일치하는 요소)만 삭제할 수 있음.
+
+
+/////// ------------ 5-4---------- ////////////////
+
+
+1. 게시판 css 유뷰트보면서 디자인 ( 수정사항part, 더보기, 문의 사항 한줄 처리 elipse, pagination)
+
+tr 클릭하면 더 보기 하는 식으로 구성해보기
+
+2. filter 처리해서 게시글 search 
+
+pagination, searchbar 이전에 만든 거 참고해서 진행
+
+board-pagination 안되는 이유
+
+직원 명단에 있는, setdata가 다르다, 직원명단은 setData를 search 함수에 감싸서 내보내놓음,,
+
+마찬가지로 search(empData) 보내야됨.. 그리고 records.map 때려서 리턴
+
+// search bar 운영법
+//  searchData 함수에 전역함수 empdata를 감싸서 변수로 만들어줌
+
+해당 변수를 페이지네이션에 연동해서 인자값 받은 것을 filter로 return
+
+
+
+// 
+
+// 게시판 수정 시. empData에 있는 값을 usestate로 비교해서 리턴하려고 하면,
+
+function changeNameValue(){
+empData.name === active class add ?  : no add
+empData.name ==! setempData(empData)
+}
+
+popup 창에 있는 쿠키를 관리하는 법, 리액트 상태관리에서 객체 내 프로퍼티로 관리했음
+
+유튜브에선 setCookie, 자바스크립트로 작업한 듯,
 

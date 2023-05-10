@@ -2,6 +2,7 @@ import "../css/globals.css";
 import { Layout, Loading, Popup } from "../components";
 import React, { useState } from "react"; // _app에서 import해서 react 돔을 실행해야 index가 동작
 import { StateContext } from "../context/StateContext";
+import { CookiesProvider } from "react-cookie";
 import Router from "next/router";
 
 function App({ Component, pageProps }) {
@@ -16,12 +17,14 @@ function App({ Component, pageProps }) {
 
   return (
     <StateContext>
-      <Layout>
-        {/* useState 논리연산자:  먼저 나온 게 false면 안보여줌 */}
-        <Popup />
-        {loading && <Loading />}
-        <Component {...pageProps} />
-      </Layout>
+      <CookiesProvider>
+        <Layout>
+          {/* useState 논리연산자:  먼저 나온 게 false면 안보여줌 */}
+          <Popup />
+          {loading && <Loading />}
+          <Component {...pageProps} />
+        </Layout>
+      </CookiesProvider>
     </StateContext>
   );
 }

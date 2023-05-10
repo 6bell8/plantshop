@@ -2404,7 +2404,7 @@ span.text-red {
   margin: 0;
   width: 3rem;
   height: 3rem;
-  background: #9be9a8;
+  background: #35dd51;
   border-radius: 1.625rem;
 }
 
@@ -2806,7 +2806,7 @@ span.text-red {
   width: 250px;
   height: 50px;
   cursor: pointer;
-  background-color: #9be9a8;
+  background-color: #35dd51;
   border-radius: 5px;
   border: none;
   color: #fff;
@@ -2819,7 +2819,7 @@ span.text-red {
   margin-left: 20px;
   background-color: #fff;
   color: #333;
-  border: 2px solid #9be9a8;
+  border: 2px solid #35dd51;
 }
 
 .board-edit-container .board-edit-wrapper .card .row .row-col .form-group .form-btn:hover,
@@ -3023,22 +3023,22 @@ span.text-red {
 .loading-content .load-wrapp .load-2 .line:nth-last-child(1) {
   -webkit-animation: loadingB 1.5s 1s infinite;
           animation: loadingB 1.5s 1s infinite;
-  -webkit-box-shadow: 5px 5px 5px #ccc;
-          box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px 2px #e3e3e3;
+          box-shadow: 5px 5px 5px 2px #e3e3e3;
 }
 
 .loading-content .load-wrapp .load-2 .line:nth-last-child(2) {
   -webkit-animation: loadingB 1.5s 0.5s infinite;
           animation: loadingB 1.5s 0.5s infinite;
-  -webkit-box-shadow: 5px 5px 5px #ccc;
-          box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px 2px #e3e3e3;
+          box-shadow: 5px 5px 5px 2px #e3e3e3;
 }
 
 .loading-content .load-wrapp .load-2 .line:nth-last-child(3) {
   -webkit-animation: loadingB 1.5s 0s infinite;
           animation: loadingB 1.5s 0s infinite;
-  -webkit-box-shadow: 5px 5px 5px #ccc;
-          box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px 2px #e3e3e3;
+          box-shadow: 5px 5px 5px 2px #e3e3e3;
 }
 
 .loading-content .load-wrapp .line {

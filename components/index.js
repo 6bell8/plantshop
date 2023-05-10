@@ -6,6 +6,7 @@ export { default as Loading } from "./Loading";
 export { default as Sidebar } from "./Sidebar";
 export { default as Navbar } from "./Navbar";
 export { default as Plant } from "./Plant";
+export { default as Popup } from "./Popup";
 export { default as Flowerpot } from "./Flowerpot";
 export { default as ProductCustom } from "./ProductCustom";
 export { default as ProductCustom02 } from "./ProductCustom02";

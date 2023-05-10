@@ -1865,7 +1865,7 @@ span.text-red {
         margin: 0;
         width: 3rem;
         height: 3rem;
-        background: #9be9a8;
+        background: #35dd51;
         border-radius: 1.625rem;
         .icon {
           @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
@@ -2095,7 +2095,7 @@ span.text-red {
               width: 250px;
               height: 50px;
               cursor: pointer;
-              background-color: #9be9a8;
+              background-color: #35dd51;
               border-radius: 5px;
               border: none;
               color: #fff;
@@ -2103,7 +2103,7 @@ span.text-red {
                 margin-left: 20px;
                 background-color: #fff;
                 color: #333;
-                border: 2px solid #9be9a8;
+                border: 2px solid #35dd51;
               }
               &:hover {
                 transform: scale(1.02);
@@ -2241,15 +2241,15 @@ span.text-red {
     .load-2 {
       .line:nth-last-child(1) {
         animation: loadingB 1.5s 1s infinite;
-        box-shadow: 5px 5px 5px #ccc;
+        box-shadow: 5px 5px 5px 2px #e3e3e3;
       }
       .line:nth-last-child(2) {
         animation: loadingB 1.5s 0.5s infinite;
-        box-shadow: 5px 5px 5px #ccc;
+        box-shadow: 5px 5px 5px 2px #e3e3e3;
       }
       .line:nth-last-child(3) {
         animation: loadingB 1.5s 0s infinite;
-        box-shadow: 5px 5px 5px #ccc;
+        box-shadow: 5px 5px 5px 2px #e3e3e3;
       }
     }
     .line {

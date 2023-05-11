@@ -385,3 +385,20 @@ popup 창에 있는 쿠키를 관리하는 법, 리액트 상태관리에서 객
 
 유튜브에선 setCookie, 자바스크립트로 작업한 듯,
 
+
+visited 변수가 읽히지않음 반복문 다시 생성
+
+while (cnt < cookies.length) {
+      if (cookies[cnt].indexOf(name) > -1) {
+        setVisited(false);
+      }
+      cnt++;
+    }
+
+//--------------5-11-----------//
+
+반복문 생성해서 false로 뜨는 거 바로 고쳤음
+
+쿠키 생성 시 리렌더링이 안먹어서, visited 상태가 자꾸 true로 뜨길래, 
+useEffect 활용해서 popup 함수 작동 시 checkcookie를 확인해주니까 visted 상태가 true로 바뀜, 이렇게 되니
+3번정도 해당함수를 리렌더링하는 단점이 있음

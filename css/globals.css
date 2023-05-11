@@ -96,15 +96,107 @@ a {
 .popup-box {
   display: none;
   position: fixed;
-  left: 100px;
-  top: 100px;
-  border: 1px solid #ebebeb;
-  padding: 40px 60px;
+  width: 35vw;
+  height: 35vw;
+  left: 30%;
+  top: 150px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  padding: 5px 10px 20px;
   z-index: 40000;
+}
+
+.popup-box .roulette-box {
+  position: relative;
+  width: clamp(200px, 20vw, 400px);
+  height: clamp(200px, 40vh, 400px);
+  border-radius: 50%;
+  margin: 20px auto 80px;
+}
+
+.popup-box .roulette-box .rolutte-pin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  width: clamp(25px, 10vw, 50px);
+  height: clamp(25px, 10vh, 50px);
+  z-index: 1;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+}
+
+.popup-box .roulette-box .roulette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0e194e;
+  border-radius: 50%;
 }
 
 .popup-box.active {
   display: block;
+}
+
+.popup-box .close-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  padding: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup-box .close-box .close {
+  margin-left: 20px;
+}
+
+.popup-box .close-box .close .close-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+.popup-box .popup-title {
+  word-break: keep-all;
+  padding: 5px;
+}
+
+.popup-box .popup-hide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.popup-box .popup-hide .popup-check-box {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .order-search-box,

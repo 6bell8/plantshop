@@ -1,74 +1,90 @@
 import { useState, React, useEffect } from "react";
+import { GrClose } from "react-icons/gr";
 import cookie from "react-cookies";
+import { Roulette } from "./";
 
 const Popup = () => {
-  // 이름을 바꿨더니 쿠키리업로드
-
   const [visited, setVisited] = useState(true);
-  const [popupActive, setPopupActive] = useState(true);
+  const [popupActive, setPopupActive] = useState(false);
   const [popupChecked, setPopupChecked] = useState(false);
+
+  const checkCookie = (name) => {
+    const cookies = document.cookie.split(";");
+    let cnt = 0;
+
+    while (cnt < cookies.length) {
+      if (cookies[cnt].indexOf(name) > -1) {
+        setVisited(false);
+      }
+      cnt++;
+    }
+
+    console.log(visited);
+    // 처음부터 block none 처리 해놓기, 반대로 하면 찰나의 순간에 잠깐뜸
+    if (visited === true) {
+      setPopupActive(true);
+    } else {
+      setPopupActive(false);
+    }
+  };
 
   useEffect(() => {
     checkCookie("Cookiee");
-  }, []);
+
+    console.log(visited + "after");
+  }, [delCookie]);
 
   return (
-    <div className={`popup-box ${popupActive ? "active" : ""}`}>
-      <button className="delCookie" onClick={delCookie}>
-        쿠키삭제
-      </button>
-      <label>
+    <div className={`popup-box ${popupActive === true ? "active" : ""}`}>
+      <div className="close-box">
+        <div className="close" onClick={popupClose}>
+          <GrClose size={28} className="close-btn" onClick={popupClose} />
+        </div>
+      </div>
+
+      <h4 className="popup-title">
+        안녕하세요. 박진성의 포트폴리오입니다.
+        <p>
+          바쁘신 담당자분 들을 위해 룰렛을 돌리면 주요 페이지로 이동되도록
+          설계했습니다. 방문해주셔서 진심으로 감사합니다.
+        </p>
+      </h4>
+      <Roulette />
+      <label className="popup-hide">
         <input
           type="checkbox"
-          className="popup"
+          className="popup-check-box"
+          id="check1"
           checked={popupChecked}
           onChange={(e) => setPopupChecked(e.target.checked)}
         />
-        하루 안보기
+        오늘 하루 보이지않기
       </label>
-      <button className="close" onClick={popupClose}>
-        닫기
-      </button>
     </div>
   );
 
   //  함수가 실행이 되어도 바로 지워지는 것이 아님. 지워도 이따가 지워지고 새로고침하면 다시 쿠키생성 반복
   function delCookie() {
     cookie.remove("Cookiee", { path: "/" });
-    // alert(cookie.load("Cookiee"));
+
+    const expires = new Date();
+    expires.setMinutes(expires.getMinutes() + 1);
+    cookie.save("Cookiee", "pleasepassme", {
+      path: "/",
+      expires,
+    });
   }
 
   function creatCookie() {
     const expires = new Date();
     expires.setDate(expires.getDate() + 1);
-    cookie.save("Cookiee", "abc", {
+    cookie.save("Cookiee", "pleasepassme", {
       path: "/",
       expires,
     });
-
-    setTimeout(function () {
-      //   alert(cookie.load("Cookiee"));
-    }, 1000);
   }
 
   //   쿠키 일치함수
-  function checkCookie(name) {
-    const cookies = document.cookie.split(";");
-    console.log(cookies);
-    for (let i in cookies) {
-      if (cookies[i].indexOf(name) > -1) {
-        setVisited(false);
-        if (visited === true) {
-          setPopupActive(true);
-        } else {
-          //   처음이 아니면 신규
-          setPopupActive(false);
-        }
-      }
-      console.log(visited);
-    }
-  }
-  //   쿠키가 생성이 됐는데 visited부분이 계속 false로 안뜸 반복문이 잘못된 듯
 
   function popupClose() {
     if (popupChecked === true) {
@@ -77,8 +93,8 @@ const Popup = () => {
       setPopupActive(false);
     } else {
       //팝업을 계속 보겠다. 팝업을 닫고 쿠키를 제거
-      setPopupActive(false);
       delCookie();
+      setPopupActive(false);
     }
   }
 };

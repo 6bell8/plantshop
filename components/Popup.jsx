@@ -38,18 +38,26 @@ const Popup = () => {
     <div className={`popup-box ${popupActive === true ? "active" : ""}`}>
       <div className="close-box">
         <div className="close" onClick={popupClose}>
-          <GrClose size={28} className="close-btn" onClick={popupClose} />
+          <GrClose size={31} className="close-btn" onClick={popupClose} />
         </div>
       </div>
 
       <h4 className="popup-title">
         안녕하세요. 박진성의 포트폴리오입니다.
-        <p>
+        <p className="popup-title-desc">
           바쁘신 담당자분 들을 위해 룰렛을 돌리면 주요 페이지로 이동되도록
           설계했습니다. 방문해주셔서 진심으로 감사합니다.
         </p>
       </h4>
       <Roulette />
+      <div className="spin-box">
+        <button
+          className="spin-btn"
+          // onClick={spin}
+        >
+          click me
+        </button>
+      </div>
       <label className="popup-hide">
         <input
           type="checkbox"

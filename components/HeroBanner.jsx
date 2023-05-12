@@ -21,9 +21,7 @@ const HeroBanner = ({ heroBanner }) => {
         <div className="hero-banner-box-2">
           <p className="beats-solo">{heroBanner.smallText}</p>
           <h1>{heroBanner.largeText2}</h1>
-          <Link href={`/plant/${heroBanner.plant}`}>
-            <button type="button">{heroBanner.buttonText}</button>
-          </Link>
+          <button type="button">{heroBanner.buttonText}</button>
         </div>
       </div>
 

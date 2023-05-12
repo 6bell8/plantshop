@@ -41,13 +41,15 @@ const Popup = () => {
       </div>
 
       <h4 className="popup-title">
-        안녕하세요. 박진성의 포트폴리오입니다.
+        안녕하세요. 박진성의{" "}
+        <span className="popup-title-strong">포트폴리오</span>입니다.
         <p className="popup-title-desc">
-          바쁘신 담당자분 들을 위해 룰렛을 돌리면 주요 페이지로 이동되도록
-          설계했습니다. 방문해주셔서 진심으로 감사합니다.
+          바쁘신 담당자분 들을 위해 랜덤 버튼 클릭 시 주요 페이지로 이동되도록
+          설계했습니다. 편하게 보실 분들은 닫기 누르시고 구경하시면 됩니다.
+          방문해주셔서 진심으로 감사합니다.
         </p>
       </h4>
-      <Roulette />
+      <Roulette data={delCookie} />
 
       <label className="popup-hide">
         <input

@@ -97,7 +97,7 @@ a {
   display: none;
   position: fixed;
   width: 35vw;
-  height: 37vw;
+  height: 22vw;
   left: 30%;
   top: 150px;
   border: 1px solid #ccc;
@@ -108,147 +108,55 @@ a {
   z-index: 40000;
 }
 
-.popup-box .roulette-box {
-  position: relative;
-  width: clamp(200px, 20vw, 400px);
-  height: clamp(200px, 40vh, 400px);
-  border-radius: 50%;
-  margin: 0px auto 40px;
-}
-
-.popup-box .roulette-box .rolutte-pin {
+.popup-box .random-wrapper .random-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 auto;
-  position: relative;
-  width: clamp(25px, 10vw, 50px);
-  height: clamp(25px, 10vh, 50px);
-  z-index: 1;
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px 0;
+  border-top: 1px solid #fff;
 }
 
-.popup-box .roulette-box .roulette {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border-radius: 50%;
-  border: 7px solid #0e194e;
-  overflow: hidden;
-  top: 0;
-  left: 0;
+.popup-box .random-wrapper .random-box .carry-title {
+  font-weight: 500;
+  font-size: 18px;
 }
 
-.popup-box .roulette-box .roulette span {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: inline-block;
+.popup-box .random-wrapper .random-box .carry-title span {
+  color: #0b69ff;
 }
 
-.popup-box .roulette-box .roulette .box1 .span1,
-.popup-box .roulette-box .roulette .box2 .span1 {
-  -webkit-clip-path: polygon(0 17%, 0 50%, 50% 50%);
-          clip-path: polygon(0 17%, 0 50%, 50% 50%);
-  background-color: #ddffbb;
-}
-
-.popup-box .roulette-box .roulette .box1 .span1 h4,
-.popup-box .roulette-box .roulette .box2 .span1 h4 {
-  position: absolute;
-  top: 37%;
-  right: 75%;
-  -webkit-transform: rotate(200deg);
-          transform: rotate(200deg);
-  text-align: center;
-  text-shadow: 1px 1px 1px #ccc;
-}
-
-.popup-box .roulette-box .roulette .box1 .span2,
-.popup-box .roulette-box .roulette .box2 .span2 {
-  -webkit-clip-path: polygon(0 17%, 30% 0, 50% 50%);
-          clip-path: polygon(0 17%, 30% 0, 50% 50%);
-  background-color: #c7e9b0;
-}
-
-.popup-box .roulette-box .roulette .box1 .span2 h4,
-.popup-box .roulette-box .roulette .box2 .span2 h4 {
-  position: absolute;
-  top: 22%;
-  right: 63%;
-  -webkit-transform: rotate(-130deg);
-          transform: rotate(-130deg);
-  text-align: center;
-  text-shadow: 1px 1px 1px #ccc;
-}
-
-.popup-box .roulette-box .roulette .box1 .span3,
-.popup-box .roulette-box .roulette .box2 .span3 {
-  -webkit-clip-path: polygon(30% 0, 71% 0, 50% 50%);
-          clip-path: polygon(30% 0, 71% 0, 50% 50%);
-  background-color: #b3c99c;
-}
-
-.popup-box .roulette-box .roulette .box1 .span3 h4,
-.popup-box .roulette-box .roulette .box2 .span3 h4 {
-  position: absolute;
-  top: 13%;
-  right: 42%;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  text-align: center;
-  text-shadow: 1px 1px 1px #ccc;
-}
-
-.popup-box .roulette-box .roulette .box1 .span4,
-.popup-box .roulette-box .roulette .box2 .span4 {
-  -webkit-clip-path: polygon(71% 0, 100% 18%, 50% 50%);
-          clip-path: polygon(71% 0, 100% 18%, 50% 50%);
-  background-color: #a4bc92;
-}
-
-.popup-box .roulette-box .roulette .box1 .span4 h4,
-.popup-box .roulette-box .roulette .box2 .span4 h4 {
-  position: absolute;
-  top: 19%;
-  right: 18%;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  text-align: center;
-  text-shadow: 1px 1px 1px #ccc;
-}
-
-.popup-box .roulette-box .roulette .box1 .span5,
-.popup-box .roulette-box .roulette .box2 .span5 {
-  -webkit-clip-path: polygon(100% 18%, 100% 50%, 50% 50%);
-          clip-path: polygon(100% 18%, 100% 50%, 50% 50%);
-  background-color: #83764f;
-}
-
-.popup-box .roulette-box .roulette .box1 .span5 h4,
-.popup-box .roulette-box .roulette .box2 .span5 h4 {
-  position: absolute;
-  top: 36%;
-  right: 7%;
-  -webkit-transform: rotate(-15deg);
-          transform: rotate(-15deg);
-  text-align: center;
-  text-shadow: 1px 1px 1px #ccc;
-}
-
-.popup-box .roulette-box .roulette .box1 .font,
-.popup-box .roulette-box .roulette .box2 .font {
+.popup-box .random-wrapper .random-box .random-title {
   color: #fff;
-  font-size: 20px;
+  padding-top: 15px;
+  text-shadow: 0px 0px 4px #999;
 }
 
-.popup-box .roulette-box .roulette .box2 {
-  width: 100%;
-  height: 100%;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  z-index: -1;
+.popup-box .random-wrapper .random-box .random-btn {
+  margin-top: 30px;
+  background-color: #e3e3e3;
+  border: 2px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-box .random-wrapper .random-box .random-btn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  border: 2px solid #0b69ff;
 }
 
 .popup-box.active {
@@ -288,38 +196,12 @@ a {
   padding: 5px;
 }
 
+.popup-box .popup-title .popup-title-strong {
+  color: #0b69ff;
+}
+
 .popup-box .popup-title .popup-title-desc {
   margin-top: 10px;
-}
-
-.popup-box .spin-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.popup-box .spin-box .spin-btn {
-  font-size: 21px;
-  font-weight: 500;
-  margin-top: 30px;
-  border-radius: 15px;
-  width: 150px;
-  height: 40px;
-  border: 1px solid #c4c4c4;
-  cursor: pointer;
-}
-
-.popup-box .spin-box .spin-btn:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
 
 .popup-box .popup-hide {
@@ -3343,14 +3225,16 @@ span.text-red {
   }
 }
 
-@-webkit-keyframes animateArrow {
-  50% {
-    right: -50px;
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
-@keyframes animateArrow {
-  50% {
-    right: -50px;
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }

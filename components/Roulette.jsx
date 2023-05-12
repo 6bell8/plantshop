@@ -1,107 +1,73 @@
 import { React, useState } from "react";
-import { Chart as ChartJS, ArcElement, Legend, Tooltip } from "chart.js";
-import { Pie } from "react-chartjs-2";
-import { TbTriangleInvertedFilled } from "react-icons/tb";
+import { useRouter } from "next/router";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+const Roulette = ({ data }) => {
+  const router = useRouter();
+  const [carry, setCarry] = useState(false);
+  const [page, setPage] = useState("");
 
-const Roulette = () => {
-  const [rolutteActive, setRolutteActive] = useState(false);
-  const [spinActive, setSpinActive] = useState(false);
-  const [guideActive, setGuideActive] = useState(false);
-  const [rotationValues, setRotationValues] = useState(
-    {
-      minDegree: 0,
-      maxDegree: 30,
-      value: 2,
-    },
-    {
-      minDegree: 31,
-      maxDegree: 90,
-      value: 1,
-    },
-    {
-      minDegree: 91,
-      maxDegree: 150,
-      value: 6,
-    },
-    {
-      minDegree: 151,
-      maxDegree: 310,
-      value: 5,
-    },
-    {
-      minDegree: 211,
-      maxDegree: 270,
-      value: 4,
-    },
-    {
-      minDegree: 271,
-      maxDegree: 330,
-      value: 3,
-    },
-    {
-      minDegree: 331,
-      maxDegree: 360,
-      value: 2,
+  const getRandomNumber = () => {
+    const number = Math.ceil(Math.random() * 50);
+
+    if (number <= 10) {
+      setCarry(true);
+      setPage("홈");
+      setTimeout(() => {
+        router.push("/");
+        data();
+      }, 1000);
+    } else if (number <= 20) {
+      setCarry(true);
+      setPage("거래내역");
+      setTimeout(() => {
+        router.push("/ecommerce");
+        data();
+      }, 1000);
+    } else if (number <= 30) {
+      setCarry(true);
+      setPage("주문내역");
+      setTimeout(() => {
+        router.push("/orders");
+        data();
+      }, 1000);
+    } else if (number <= 40) {
+      setCarry(true);
+      setPage("게시판");
+      setTimeout(() => {
+        router.push("/board");
+        data();
+      }, 1000);
+    } else if (number <= 50) {
+      setCarry(true);
+      setPage("게시판 작성");
+      setTimeout(() => {
+        router.push("/board/empcreate");
+        data();
+      }, 1000);
     }
-  );
-
-  // 피스들
-  const partData = [1, 1, 1, 1, 1, 1];
-  let pieColors = [
-    "#F6FFDE",
-    "#ddffbb",
-    "#c7e9b0",
-    "#b3c99c",
-    "#a4bc92",
-    "#83764f",
-  ];
-
-  const data = {
-    // labels: ["1", "2", "3", "4", "5", "6"],
-    datasets: [
-      {
-        label: "00으로 연결",
-        data: partData,
-        backgroundColor: pieColors,
-        borderColor: "white",
-        borderWidth: 3,
-      },
-    ],
-    // options: {
-    //   responsive: true,
-    //   animation: { duration: 0 },
-    //   plugins: {
-    //     datalabels: {
-    //       fontColor: "black",
-    //       color: "black",
-    //       fontSize: 15,
-    //     },
-    //   },
-    // },
   };
 
   return (
-    <div className="roulette-box">
-      <TbTriangleInvertedFilled color="deepskyblue" className="rolutte-pin" />
+    <div className="random-wrapper">
+      <div className="random-box">
+        <h1 className="random-title">Random page move</h1>
 
-      <Pie data={data} />
-      <div className="guide-box">
-        {/* {guideActive ? (
-          <p className="guide-desc">{`${} 링크로 이동합니다.`}</p>
+        {carry ? (
+          <p className="carry-title">
+            <span>{page}</span>으로 이동 중입니다.
+          </p>
         ) : (
-         ""
-        )} */}
-      </div>
-      <div className="spin-box">
-        <button
-          className="spin-btn"
-          // onClick={spin}
-        >
-          click me
+          <p className="carry-title">클릭 시 랜덤 페이지로 이동됩니다.</p>
+        )}
+        <button className="random-btn" onClick={getRandomNumber}>
+          Click me
         </button>
       </div>
+      {/* {carry ? (
+        <p className="random-carry">{`${carry}페이지로 이동됩니다.`}</p>
+      ) : (
+        ""
+      )} */}
     </div>
   );
 };

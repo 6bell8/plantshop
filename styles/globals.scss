@@ -137,7 +137,7 @@ a {
     height: clamp(200px, 40vh, 400px);
     border-radius: 50%;
     margin: 0px auto 40px;
-    .rolutte-pin {
+    .roulette-pin {
       display: flex;
       margin: 0 auto;
       position: relative;
@@ -155,7 +155,9 @@ a {
       overflow: hidden;
       top: 0;
       left: 0;
-      // span 기본값 지정해서 형태를 잡아줌
+      &.start-rotate{
+        animation: start-rotate 1s linear
+      }
       span {
         width: 100%;
         height: 100%;

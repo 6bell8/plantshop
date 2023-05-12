@@ -30,8 +30,6 @@ const Popup = () => {
 
   useEffect(() => {
     checkCookie("Cookiee");
-
-    console.log(visited + "after");
   }, [delCookie]);
 
   return (
@@ -50,14 +48,7 @@ const Popup = () => {
         </p>
       </h4>
       <Roulette />
-      <div className="spin-box">
-        <button
-          className="spin-btn"
-          // onClick={spin}
-        >
-          click me
-        </button>
-      </div>
+
       <label className="popup-hide">
         <input
           type="checkbox"

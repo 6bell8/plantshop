@@ -24,7 +24,7 @@ const faq = () => {
         <div className="faq-accordion">
           {/* 함수는 {}지만 xml 에서는 () 괄호를 치기 주의*/}
           {faqData.map((item, i) => (
-            <div className="item">
+            <div className="item" key={i}>
               <div className="faq-title" onClick={() => toggle(i)}>
                 <h2>{item.question}</h2>
                 {selected === i ? (

@@ -7,13 +7,13 @@ const Roulette = ({ data }) => {
   const [page, setPage] = useState("");
 
   const getRandomNumber = () => {
-    const number = Math.ceil(Math.random() * 50);
+    const number = Math.ceil(Math.random() * 40);
 
     if (number <= 10) {
       setCarry(true);
-      setPage("홈");
+      setPage("게시판 작성");
       setTimeout(() => {
-        router.push("/");
+        router.push("/board/empcreate");
         data();
       }, 1000);
     } else if (number <= 20) {
@@ -35,13 +35,6 @@ const Roulette = ({ data }) => {
       setPage("게시판");
       setTimeout(() => {
         router.push("/board");
-        data();
-      }, 1000);
-    } else if (number <= 50) {
-      setCarry(true);
-      setPage("게시판 작성");
-      setTimeout(() => {
-        router.push("/board/empcreate");
         data();
       }, 1000);
     }

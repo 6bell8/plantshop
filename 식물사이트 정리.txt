@@ -436,3 +436,10 @@ urlfor에서 이미지 찾아서 가져오기,
 1. useEffect를 통해서 localstorage에 올리고, urlfor를 통해 해당 이미지를 전역변수로 보내주어야함 
 
 일단 useEffect 통해서 client에서 localstorage를 받았고, watched생성 완료 
+
+
+watched 생성은 되는데, useEffect에서 localstorage를 꺼낼 수 있는 수단이 없음, 
+
+왜냐하면 useEffect는 csr 전용 훅이기 때문에, ssr 상황이 아니라는 확실한 상황에서 마운트하기 때문,
+하지만 useEffect 밖을 벗어나면, localstorage가 실행이 되지않음, 때문에 localstorage보다는 next js안에서
+IndexedDB를 사용해서 묶어주어야 함

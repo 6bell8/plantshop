@@ -24,7 +24,6 @@ const ProductDesc = ({ plant, plants }) => {
 
   useEffect(() => {
     let viewedProduct = localStorage.getItem("watched");
-    console.log(viewedProduct);
     viewedProduct = JSON.parse(viewedProduct);
     viewedProduct.unshift(plant.name);
     viewedProduct = new Set(viewedProduct);

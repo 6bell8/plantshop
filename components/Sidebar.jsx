@@ -120,13 +120,6 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
-              title="달력"
-              to="/calendar"
-              icon={<AiOutlineCalendar />}
-              selected={selected}
-              setSelected={setSelected}
-            />
 
             <p className="sidebar-title">Charts</p>
             <Item

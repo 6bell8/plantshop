@@ -83,7 +83,6 @@ const Home = ({
             loop={true}
             direction="vertical"
             slidesPerView={4}
-            // spaceBetween={50}
             modules={[Navigation, Thumbs]}
           >
             {plant?.map((plant, i) => (

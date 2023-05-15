@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { client, urlFor } from "../../lib/client";
 import {
   AiOutlineMinus,
@@ -21,6 +21,17 @@ const ProductDesc = ({ plant, plants }) => {
     onAdd(plant, qty);
     setShowCart(true);
   };
+
+  useEffect(() => {
+    let viewedProduct = localStorage.getItem("watched");
+    console.log(viewedProduct);
+    viewedProduct = JSON.parse(viewedProduct);
+    viewedProduct.unshift(plant.name);
+    viewedProduct = new Set(viewedProduct);
+    viewedProduct = Array.from(viewedProduct);
+    localStorage.setItem("watched", JSON.stringify(viewedProduct));
+  });
+
   return (
     <div>
       <div className="product-detail-container">

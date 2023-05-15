@@ -127,7 +127,6 @@ a {
   top: 150px;
   border: 1px solid #ccc;
   border-radius: 15px;
-  // background-color: #ebebeb;
   backdrop-filter: blur(7px);
   padding: 5px 10px 20px;
   z-index: 40000;
@@ -139,7 +138,6 @@ a {
       align-items: center;
       margin: 30px 0;
       border-top: 1px solid #fff;
-      // box-shadow: 0px 4px 16px 0 #dfdfdf;
       .carry-title {
         font-weight: 500;
         font-size: 18px;
@@ -166,24 +164,6 @@ a {
         }
       }
     }
-    // .random-carry {
-    //   width: 34vw;
-    //   height: 10vw;
-    //   top: 10%;
-    //   color: #0b69ff;
-    //   position: absolute;
-    //   background: #fff;
-    //   z-index: 50001;
-    //   padding: 20px 20px;
-    //   text-align: center;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    //   border-radius: 15px;
-    //   font-size: 2em;
-    //   font-weight: 500;
-    //   box-shadow: 0px 4px 16px 0 #dfdfdf;
-    // }
   }
   &.active {
     display: block;
@@ -1586,8 +1566,9 @@ span.text-red {
 }
 
 // sidebar - container
-
-.board-container,
+.calendar-container,
+.line-container,
+.area-container,
 .ecommerce-container,
 .order-container,
 .board-container,

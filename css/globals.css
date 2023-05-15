@@ -154,8 +154,6 @@ a {
 }
 
 .popup-box .random-wrapper .random-box .random-btn:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
   border: 2px solid #0b69ff;
 }
 
@@ -1980,7 +1978,9 @@ span.text-red {
   color: #ccc;
 }
 
-.board-container,
+.calendar-container,
+.line-container,
+.area-container,
 .ecommerce-container,
 .order-container,
 .board-container,
@@ -1989,7 +1989,9 @@ span.text-red {
   width: 100%;
 }
 
-.board-container .page-title-box,
+.calendar-container .page-title-box,
+.line-container .page-title-box,
+.area-container .page-title-box,
 .ecommerce-container .page-title-box,
 .order-container .page-title-box,
 .board-container .page-title-box,
@@ -1997,7 +1999,9 @@ span.text-red {
   margin: 40px 70px;
 }
 
-.board-container .page-title-box .page-title,
+.calendar-container .page-title-box .page-title,
+.line-container .page-title-box .page-title,
+.area-container .page-title-box .page-title,
 .ecommerce-container .page-title-box .page-title,
 .order-container .page-title-box .page-title,
 .board-container .page-title-box .page-title,
@@ -2006,7 +2010,9 @@ span.text-red {
   line-height: 0.9;
 }
 
-.board-container .page-title-box .page-subtitle,
+.calendar-container .page-title-box .page-subtitle,
+.line-container .page-title-box .page-subtitle,
+.area-container .page-title-box .page-subtitle,
 .ecommerce-container .page-title-box .page-subtitle,
 .order-container .page-title-box .page-subtitle,
 .board-container .page-title-box .page-subtitle,

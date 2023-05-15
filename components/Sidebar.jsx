@@ -130,8 +130,8 @@ const Sidebar = () => {
 
             <p className="sidebar-title">Charts</p>
             <Item
-              title="막대 차트"
-              to="/bar"
+              title="유선형 차트"
+              to="/area"
               icon={<AiOutlineStock />}
               selected={selected}
               setSelected={setSelected}

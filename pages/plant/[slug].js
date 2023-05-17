@@ -22,6 +22,7 @@ const ProductDesc = ({ plant, plants }) => {
     setShowCart(true);
   };
 
+  // localstorage 참조용
   useEffect(() => {
     let viewedProduct = localStorage.getItem("watched");
     viewedProduct = JSON.parse(viewedProduct);
@@ -29,6 +30,20 @@ const ProductDesc = ({ plant, plants }) => {
     viewedProduct = new Set(viewedProduct);
     viewedProduct = Array.from(viewedProduct);
     localStorage.setItem("watched", JSON.stringify(viewedProduct));
+    //
+    // let viewedProduct02 = localStorage.getItem("watched2");
+    // viewedProduct02 = JSON.parse(viewedProduct02);
+    // viewedProduct02.unshift(plant.details);
+    // viewedProduct02 = new Set(viewedProduct02);
+    // viewedProduct02 = Array.from(viewedProduct02);
+    // localStorage.setItem("watched2", JSON.stringify(viewedProduct02));
+    //
+    // let viewedProduct03 = localStorage.getItem("watched");
+    // viewedProduct03 = JSON.parse(viewedProduct03);
+    // viewedProduct03.unshift(plant.name);
+    // viewedProduct03 = new Set(viewedProduct03);
+    // viewedProduct03 = Array.from(viewedProduct03);
+    // localStorage.setItem("watched3", JSON.stringify(viewedProduct03));
   });
 
   return (
@@ -44,6 +59,7 @@ const ProductDesc = ({ plant, plants }) => {
           <div className="small-images-container">
             {image?.map((item, i) => (
               <img
+                key={i}
                 src={urlFor(item)}
                 className={
                   i === index ? "small-image selected-image" : "small-image"

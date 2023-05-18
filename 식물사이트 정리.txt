@@ -451,4 +451,22 @@ indexedDB
 
 localstorage 활용 할 때, useeffect로 csr 환경에서 정보를 받아온 뒤에, useState 배열에 리턴 시켜주니까 됨.
 
+현재 urlfor에서 못 내려 주고 있는 거 같음
 그리고 뒤에 map 떄려 주고, leng값 4개 정도로 조절,
+
+urlfor를 내려줄 때 localstorage에 키값을 입히고, img src 값을 map img로 반환해야함.
+
+스트링 타입이 왜 배열안으로 안들어가지는지 if문 사용해서 null로 변환 시 들어가게 했음, 
+
+이후 router push같은 props 함수를 사용 할때에는 ()=> 화살표 함수를 작성해서 사용 해야됨.
+그게 아니면 warning 발생
+
+//
+그리고 식물 쇼핑 리스트 페이지가 있었으면 좋을 듯
+
+// 최근 본 상품 하나 더 만들어놓은 slidebanner로 해결ㅋㅋ
+
+// 최근 본 상품 토글 및 사진 추가 및 삭제 기능 (del 함수 인용해서 만들기)
+- 이미지 만들 때 뒤배경도 필요함 이미지만 있다고 되는게 아님
+- 처음에 display none 이였다가 hover 시 display 생기고, 삭제함수 추가
+- 토글 시 리액트 icon 에서 가져온 걸로다가 상태관리해서 접어버리기 (아코디언 참조)

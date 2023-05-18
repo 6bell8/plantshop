@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { client, urlFor } from "../../lib/client";
 import {
   AiOutlineMinus,
@@ -21,6 +21,43 @@ const ProductDesc = ({ flowerpot, flowerpots }) => {
     onAdd(flowerpot, qty);
     setShowCart(true);
   };
+
+  useEffect(() => {
+    let viewedProduct = localStorage.getItem("watched");
+    viewedProduct = JSON.parse(viewedProduct);
+    // watched에 추가
+    if (viewedProduct === null) {
+      let viewedProduct = [];
+      viewedProduct.unshift(flowerpot.name);
+      // 배열 중복 제거
+      viewedProduct = new Set(viewedProduct);
+      // 해당하는 객체를 복사해서 새로운 객체로 만듦
+      viewedProduct = Array.from(viewedProduct);
+      // localStorage 읽어오기
+      localStorage.setItem("watched", JSON.stringify(viewedProduct));
+    } else {
+      viewedProduct.push(flowerpot.name);
+      viewedProduct = new Set(viewedProduct);
+      viewedProduct = Array.from(viewedProduct);
+      localStorage.setItem("watched", JSON.stringify(viewedProduct));
+    }
+
+    let viewedProduct02 = localStorage.getItem("watched02");
+    viewedProduct02 = JSON.parse(viewedProduct02);
+    if (viewedProduct02 === null) {
+      let viewedProduct02 = [];
+      viewedProduct02.unshift(flowerpot.slug.current);
+      viewedProduct02 = new Set(viewedProduct02);
+      viewedProduct02 = Array.from(viewedProduct02);
+      localStorage.setItem("watched02", JSON.stringify(viewedProduct02));
+    } else {
+      viewedProduct02.push(flowerpot.slug.current);
+      viewedProduct02 = new Set(viewedProduct02);
+      viewedProduct02 = Array.from(viewedProduct02);
+      localStorage.setItem("watched02", JSON.stringify(viewedProduct02));
+    }
+  }, []);
+
   return (
     <div>
       <div className="product-detail-container">

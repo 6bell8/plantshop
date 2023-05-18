@@ -137,11 +137,22 @@ a {
       font-weight: 300;
       border-bottom: 1px solid #ccc;
     }
-    .viewed-name {
-      text-align: center;
-      font-size: 18px;
-      padding: 7px;
-      font-weight: 500;
+    .viewed-products {
+      margin-top: 10px;
+      .viewed-product {
+        cursor: pointer;
+        &:hover {
+          color: #35dd51;
+          font-weight: 500;
+          transition: all 0.3s ease-in-out;
+        }
+        .viewed-name {
+          text-align: center;
+          font-size: 18px;
+          padding: 7px;
+          font-weight: 500;
+        }
+      }
     }
   }
 }
@@ -367,7 +378,7 @@ a {
   position: relative;
   height: 400px;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .track {
@@ -1234,7 +1245,7 @@ span.text-red {
 }
 
 .maylike-products-wrapper {
-  margin-top: 80px;
+  margin: 80px 0;
 }
 .maylike-products-wrapper h2 {
   text-align: center;

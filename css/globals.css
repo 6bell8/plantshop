@@ -116,7 +116,22 @@ a {
   border-bottom: 1px solid #ccc;
 }
 
-.viewed-wrapper .viewed-box .viewed-name {
+.viewed-wrapper .viewed-box .viewed-products {
+  margin-top: 10px;
+}
+
+.viewed-wrapper .viewed-box .viewed-products .viewed-product {
+  cursor: pointer;
+}
+
+.viewed-wrapper .viewed-box .viewed-products .viewed-product:hover {
+  color: #35dd51;
+  font-weight: 500;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.viewed-wrapper .viewed-box .viewed-products .viewed-product .viewed-name {
   text-align: center;
   font-size: 18px;
   padding: 7px;
@@ -470,7 +485,7 @@ a {
   position: relative;
   height: 400px;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .track {
@@ -1598,7 +1613,7 @@ span.text-red {
 }
 
 .maylike-products-wrapper {
-  margin-top: 80px;
+  margin: 80px 0;
 }
 
 .maylike-products-wrapper h2 {

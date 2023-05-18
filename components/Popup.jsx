@@ -19,7 +19,6 @@ const Popup = () => {
       cnt++;
     }
 
-    console.log(visited);
     // 처음부터 block none 처리 해놓기, 반대로 하면 찰나의 순간에 잠깐뜸
     if (visited === true) {
       setPopupActive(true);
@@ -41,7 +40,7 @@ const Popup = () => {
       </div>
 
       <h4 className="popup-title">
-        안녕하세요. 박진성의{" "}
+        안녕하세요. 박진성의
         <span className="popup-title-strong">포트폴리오</span>입니다.
         <p className="popup-title-desc">
           바쁘신 담당자분 들을 위해 랜덤 버튼 클릭 시 주요 페이지로 이동되도록

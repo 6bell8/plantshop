@@ -11,25 +11,35 @@ const Localviewed = () => {
 
   useEffect(() => {
     const title = localStorage.getItem("watched");
-    const img = localStorage.getItem("watched2");
-    // const link = localStorage.getItem("watched3");
+    const img = localStorage.getItem("watched02");
     setTitle(JSON.parse(title));
     setImg(JSON.parse(img));
-    // setLink(JSON.parse(item));
-  }, []);
+  }, [router]);
 
-  console.log(title);
-  console.log(img);
+  if (title == null) {
+    undefined;
+  } else if (title.length >= 4) {
+    title.shift();
+  }
 
   return (
     <div className="viewed-wrapper">
       <div className="viewed-box">
         <p className="viewed-title">최근 본 상품</p>
-        {title.map((item, i) => (
-          <p className="viewed-name" key={i}>
-            {item}
-          </p>
-        ))}
+        <div className="viewed-products">
+          {title?.map((item, i) => (
+            <div
+              className="viewed-product"
+              key={i}
+              // props로 받을 경우 화살표 함수 function으로 받을 때는 그냥 사용해도 무방함
+              onClick={() => router.push("/slideBanner/" + img[i])}
+            >
+              {/* <img className="viewed-img" src={`${img[i]}`} /> */}
+
+              <p className="viewed-name">{item}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -6,14 +6,16 @@ import { urlFor } from "../lib/client";
 const Localviewed = () => {
   const router = useRouter();
   const [title, setTitle] = useState([]);
-  const [img, setImg] = useState([]);
-  // const [link, setLink] = useState([]);
+  const [link, setLink] = useState([]);
+  const [viewedImg, setViewedImg] = useState([]);
 
   useEffect(() => {
     const title = localStorage.getItem("watched");
-    const img = localStorage.getItem("watched02");
+    const link = localStorage.getItem("watched02");
+    const viewedImg = localStorage.getItem("watched03");
     setTitle(JSON.parse(title));
-    setImg(JSON.parse(img));
+    setLink(JSON.parse(link));
+    setViewedImg(JSON.parse(viewedImg));
   }, [router]);
 
   if (title == null) {
@@ -32,9 +34,12 @@ const Localviewed = () => {
               className="viewed-product"
               key={i}
               // props로 받을 경우 화살표 함수 function으로 받을 때는 그냥 사용해도 무방함
-              onClick={() => router.push("/slideBanner/" + img[i])}
+              onClick={() => router.push("/slideBanner/" + link[i])}
             >
-              {/* <img className="viewed-img" src={`${img[i]}`} /> */}
+              <img
+                className="viewed-img"
+                src={`https://cdn.sanity.io/images/vi5m7ynh/production/${viewedImg[i]}`}
+              />
 
               <p className="viewed-name">{item}</p>
             </div>

@@ -141,10 +141,17 @@ a {
       margin-top: 10px;
       .viewed-product {
         cursor: pointer;
+        margin: 10px 0;
         &:hover {
           color: #35dd51;
           font-weight: 500;
           transition: all 0.3s ease-in-out;
+        }
+        .viewed-img {
+          width: 7em;
+          height: 7em;
+          display: flex;
+          margin: 0 auto;
         }
         .viewed-name {
           text-align: center;

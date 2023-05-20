@@ -118,46 +118,85 @@ a {
   text-decoration: none;
 }
 
-.viewed-wrapper {
+.viewed-container {
   position: fixed;
   top: 15%;
   left: 2%;
   z-index: 50000;
-  padding: 20px 25px;
-  opacity: 0.7;
-  background-color: #fff;
-  border-radius: 15px;
-  border: 1px solid #ccc;
-  .viewed-box {
+  .viewed-toggle {
+    display: flex;
+    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin: 0 0 10px 0;
+    opacity: 0.7;
+    .viewed-arrow {
+      cursor: pointer;
+      margin: 10px 0;
+      .viewed-arrow-icon {
+        &:hover {
+          color: #35dd51;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
     .viewed-title {
       font-size: 18px;
       text-align: center;
-      display: flex;
       padding: 0 20px 5px;
       font-weight: 300;
-      border-bottom: 1px solid #ccc;
     }
-    .viewed-products {
-      margin-top: 10px;
-      .viewed-product {
-        cursor: pointer;
-        margin: 10px 0;
-        &:hover {
-          color: #35dd51;
-          font-weight: 500;
-          transition: all 0.3s ease-in-out;
-        }
-        .viewed-img {
-          width: 7em;
-          height: 7em;
-          display: flex;
-          margin: 0 auto;
-        }
-        .viewed-name {
-          text-align: center;
-          font-size: 18px;
-          padding: 7px;
-          font-weight: 500;
+  }
+  .viewed-wrapper {
+    padding: 20px 25px;
+    opacity: 0.7;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    &.active {
+      display: none;
+    }
+    .viewed-box {
+      .viewed-products {
+        margin-top: 10px;
+        .viewed-product {
+          cursor: pointer;
+          margin: 15px 0;
+          .viewed-product-btn {
+            display: none;
+          }
+          &:hover {
+            visibility: visible;
+            color: #35dd51;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+            .viewed-product-btn {
+              display: flex;
+              margin: 0 0 0 auto;
+              color: red;
+              justify-content: end;
+              transition: all 0.3s ease-in-out;
+              &:hover {
+                transform: scale(1.15);
+              }
+            }
+          }
+          .viewed-img {
+            width: 7em;
+            height: 7em;
+            display: flex;
+            margin: 0 auto;
+          }
+          .viewed-name {
+            text-align: center;
+            font-size: 18px;
+            padding: 7px;
+            font-weight: 500;
+          }
         }
       }
     }
@@ -168,7 +207,7 @@ a {
   display: none;
   position: fixed;
   width: 35vw;
-  height: 22vw;
+  height: 24vw;
   left: 30%;
   top: 150px;
   border: 1px solid #ccc;

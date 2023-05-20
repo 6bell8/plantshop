@@ -41,7 +41,7 @@ const Popup = () => {
 
       <h4 className="popup-title">
         안녕하세요. 박진성의
-        <span className="popup-title-strong">포트폴리오</span>입니다.
+        <span className="popup-title-strong"> 포트폴리오</span>입니다.
         <p className="popup-title-desc">
           바쁘신 담당자분 들을 위해 랜덤 버튼 클릭 시 주요 페이지로 이동되도록
           설계했습니다. 편하게 보실 분들은 닫기 누르시고 구경하시면 됩니다.

@@ -93,11 +93,54 @@ a {
   text-decoration: none;
 }
 
-.viewed-wrapper {
+.viewed-container {
   position: fixed;
   top: 15%;
   left: 2%;
   z-index: 50000;
+}
+
+.viewed-container .viewed-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  margin: 0 0 10px 0;
+  opacity: 0.7;
+}
+
+.viewed-container .viewed-toggle .viewed-arrow {
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.viewed-container .viewed-toggle .viewed-arrow .viewed-arrow-icon:hover {
+  color: #35dd51;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.viewed-container .viewed-toggle .viewed-arrow.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.viewed-container .viewed-toggle .viewed-title {
+  font-size: 18px;
+  text-align: center;
+  padding: 0 20px 5px;
+  font-weight: 300;
+}
+
+.viewed-container .viewed-wrapper {
   padding: 20px 25px;
   opacity: 0.7;
   background-color: #fff;
@@ -105,34 +148,50 @@ a {
   border: 1px solid #ccc;
 }
 
-.viewed-wrapper .viewed-box .viewed-title {
-  font-size: 18px;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0 20px 5px;
-  font-weight: 300;
-  border-bottom: 1px solid #ccc;
+.viewed-container .viewed-wrapper.active {
+  display: none;
 }
 
-.viewed-wrapper .viewed-box .viewed-products {
+.viewed-container .viewed-wrapper .viewed-box .viewed-products {
   margin-top: 10px;
 }
 
-.viewed-wrapper .viewed-box .viewed-products .viewed-product {
+.viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product {
   cursor: pointer;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
-.viewed-wrapper .viewed-box .viewed-products .viewed-product:hover {
+.viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product .viewed-product-btn {
+  display: none;
+}
+
+.viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product:hover {
+  visibility: visible;
   color: #35dd51;
   font-weight: 500;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-.viewed-wrapper .viewed-box .viewed-products .viewed-product .viewed-img {
+.viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product:hover .viewed-product-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 0 auto;
+  color: red;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product:hover .viewed-product-btn:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product .viewed-img {
   width: 7em;
   height: 7em;
   display: -webkit-box;
@@ -141,7 +200,7 @@ a {
   margin: 0 auto;
 }
 
-.viewed-wrapper .viewed-box .viewed-products .viewed-product .viewed-name {
+.viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product .viewed-name {
   text-align: center;
   font-size: 18px;
   padding: 7px;
@@ -152,7 +211,7 @@ a {
   display: none;
   position: fixed;
   width: 35vw;
-  height: 22vw;
+  height: 24vw;
   left: 30%;
   top: 150px;
   border: 1px solid #ccc;

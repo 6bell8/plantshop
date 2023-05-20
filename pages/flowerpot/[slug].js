@@ -23,25 +23,22 @@ const ProductDesc = ({ flowerpot, flowerpots }) => {
   };
 
   useEffect(() => {
+    //-----------title-----------//
     let viewedProduct = localStorage.getItem("watched");
     viewedProduct = JSON.parse(viewedProduct);
-    // watched에 추가
     if (viewedProduct === null) {
       let viewedProduct = [];
       viewedProduct.unshift(flowerpot.name);
-      // 배열 중복 제거
       viewedProduct = new Set(viewedProduct);
-      // 해당하는 객체를 복사해서 새로운 객체로 만듦
       viewedProduct = Array.from(viewedProduct);
-      // localStorage 읽어오기
       localStorage.setItem("watched", JSON.stringify(viewedProduct));
     } else {
-      viewedProduct.push(flowerpot.name);
+      viewedProduct.unshift(flowerpot.name);
       viewedProduct = new Set(viewedProduct);
       viewedProduct = Array.from(viewedProduct);
       localStorage.setItem("watched", JSON.stringify(viewedProduct));
     }
-
+    //-----------link-----------//
     let viewedProduct02 = localStorage.getItem("watched02");
     viewedProduct02 = JSON.parse(viewedProduct02);
     if (viewedProduct02 === null) {
@@ -51,10 +48,41 @@ const ProductDesc = ({ flowerpot, flowerpots }) => {
       viewedProduct02 = Array.from(viewedProduct02);
       localStorage.setItem("watched02", JSON.stringify(viewedProduct02));
     } else {
-      viewedProduct02.push(flowerpot.slug.current);
+      viewedProduct02.unshift(flowerpot.slug.current);
       viewedProduct02 = new Set(viewedProduct02);
       viewedProduct02 = Array.from(viewedProduct02);
       localStorage.setItem("watched02", JSON.stringify(viewedProduct02));
+    }
+
+    //-----------img-----------//
+    let viewedProduct03 = localStorage.getItem("watched03");
+    viewedProduct03 = JSON.parse(viewedProduct03);
+
+    if (viewedProduct03 === null) {
+      let viewedProduct03 = [];
+      let beforeSplit = flowerpot.image[0].asset._ref;
+      let split = [...beforeSplit].reverse();
+      const found = split.indexOf("-");
+      let reverseStr = split.join("").replace(split[found], ".");
+      let str = [...reverseStr].reverse();
+      str.splice(0, 6);
+      let strArray = str.join("");
+      viewedProduct03.unshift(strArray);
+      viewedProduct03 = new Set(viewedProduct03);
+      viewedProduct03 = Array.from(viewedProduct03);
+      localStorage.setItem("watched03", JSON.stringify(viewedProduct03));
+    } else {
+      let beforeSplit = flowerpot.image[0].asset._ref;
+      let split = [...beforeSplit].reverse();
+      const found = split.indexOf("-");
+      let reverseStr = split.join("").replace(split[found], ".");
+      let str = [...reverseStr].reverse();
+      str.splice(0, 6);
+      let strArray = str.join("");
+      viewedProduct03.unshift(strArray);
+      viewedProduct03 = new Set(viewedProduct03);
+      viewedProduct03 = Array.from(viewedProduct03);
+      localStorage.setItem("watched03", JSON.stringify(viewedProduct03));
     }
   }, []);
 

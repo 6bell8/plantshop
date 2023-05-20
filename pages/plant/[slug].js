@@ -25,6 +25,7 @@ const ProductDesc = ({ plant, plants }) => {
   // localstorage 참조용
   // setItem() - key, value 추가
   // getItem() - value 읽어 오기
+
   useEffect(() => {
     //-----------title-----------//
     let viewedProduct = localStorage.getItem("watched");

@@ -466,7 +466,20 @@ urlfor를 내려줄 때 localstorage에 키값을 입히고, img src 값을 map 
 
 // 최근 본 상품 하나 더 만들어놓은 slidebanner로 해결ㅋㅋ
 
+urlfor 원본으로 출력이 하도 안돼서, 내가 원하는대로 replace통해서 바꿨음
+
 // 최근 본 상품 토글 및 사진 추가 및 삭제 기능 (del 함수 인용해서 만들기)
-- 이미지 만들 때 뒤배경도 필요함 이미지만 있다고 되는게 아님
+
 - 처음에 display none 이였다가 hover 시 display 생기고, 삭제함수 추가
 - 토글 시 리액트 icon 에서 가져온 걸로다가 상태관리해서 접어버리기 (아코디언 참조)
+
+앞에 글자 5개 지우기
+
+vercel 서버 사이드 렌더링이 안되기 시작함., useeffect에서 나오는 문제인듯 일단 되는 사이트로 이전 시켜놨음
+
+
+viewed-arrow onclick 시 active 처리하기
+
+viewed-wrapper
+
+최근 본 상품 delete 함수 만들어서 지우기

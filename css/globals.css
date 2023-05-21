@@ -174,9 +174,7 @@ a {
 }
 
 .viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product:hover .viewed-product-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   margin: 0 0 0 auto;
   color: red;
   -webkit-box-pack: end;
@@ -187,8 +185,8 @@ a {
 }
 
 .viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product:hover .viewed-product-btn:hover {
-  -webkit-transform: scale(1.15);
-          transform: scale(1.15);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product .viewed-img {

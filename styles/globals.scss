@@ -175,13 +175,13 @@ a {
             font-weight: 500;
             transition: all 0.3s ease-in-out;
             .viewed-product-btn {
-              display: flex;
+              display: block;
               margin: 0 0 0 auto;
               color: red;
               justify-content: end;
               transition: all 0.3s ease-in-out;
               &:hover {
-                transform: scale(1.15);
+                transform: scale(1.1);
               }
             }
           }

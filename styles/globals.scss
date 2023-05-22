@@ -166,8 +166,10 @@ a {
         .viewed-product {
           cursor: pointer;
           margin: 15px 0;
-          .viewed-product-btn {
-            display: none;
+          .viewed-product-btnBox {
+            .viewed-product-btn {
+              display: none;
+            }
           }
           &:hover {
             visibility: visible;

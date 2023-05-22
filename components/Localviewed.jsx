@@ -19,8 +19,24 @@ const Localviewed = () => {
     setViewedImg(JSON.parse(viewedImg));
   }, [router]);
 
+  // const RemoveViewed = (id) => {
+  //   // title안에 있는 data를 거르고, 다시 거르는 함수(인자값 넣기 중요)
+  //   setTitle((data) => data.filter((item) => item.id !== id));
+  //   setLink((data) => data.filter((item) => item.id !== id));
+  //   setViewedImg((data) => data.filter((item) => item.id !== id));
+
+  //   console.log(title);
+  // };
+
+  // useEffect(() => {
+  //   localStorage.setItem("watched", JSON.stringify(title));
+  //   localStorage.setItem("watched02", JSON.stringify(link));
+  //   localStorage.setItem("watched03", JSON.stringify(viewedImg));
+  // }, [router]);
+
   if (title == null) {
     undefined;
+    console.log("없다");
   } else if (title.length >= 4) {
     title.pop();
     link.pop();
@@ -48,8 +64,18 @@ const Localviewed = () => {
                 // props로 받을 경우 화살표 함수 function으로 받을 때는 그냥 사용해도 무방함
                 onClick={() => router.push("/slideBanner/" + link[i])}
               >
-                <AiFillDelete size={20} className="viewed-product-btn" />
-
+                <span
+                  className="viewed-product-btnBox"
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  <AiFillDelete
+                    size={20}
+                    className="viewed-product-btn"
+                    // onClick={() => {
+                    //   RemoveViewed(item.id);
+                    // }}
+                  />
+                </span>
                 <img
                   className="viewed-img"
                   src={`https://cdn.sanity.io/images/vi5m7ynh/production/${viewedImg[i]}`}

@@ -483,3 +483,20 @@ viewed-arrow onclick 시 active 처리하기
 viewed-wrapper
 
 최근 본 상품 delete 함수 만들어서 지우기
+
+최근 본 상품, mapping 때린, 문자열 찾아서 문자열을 filter((id)=>id !== id) 지우기, 이것도 한번에 세개, 삭제해버리기,
+
+
+아 key 값 찾아서 전체 삭제해버리기로 변경
+
+
+  function RemoveViewed(id) {
+    // title안에 있는 data를 거르고, 다시 거르는 함수(인자값 넣기 중요)
+    setTitle((data) => data.filter((item) => item.id !== id));
+    setLink((data) => data.filter((item) => item.id !== id));
+    setViewedImg((data) => data.filter((item) => item.id !== id));
+  }
+
+일단 싹다 localstorage가 삭제되는 설정으로 만듦 콜백함수로 때리니까 이렇게 삭제됨 원인아는 게 중요할 듯
+
+일단 useEffect 제외 시켜놨더니 전부 다 사라짐,, 다른 페이지로 이동 할때 전부다 사라지는 버그있음 이거 수정해야될듯

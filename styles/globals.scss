@@ -176,16 +176,6 @@ a {
             color: #35dd51;
             font-weight: 500;
             transition: all 0.3s ease-in-out;
-            .viewed-product-btn {
-              display: block;
-              margin: 0 0 0 auto;
-              color: red;
-              justify-content: end;
-              transition: all 0.3s ease-in-out;
-              &:hover {
-                transform: scale(1.1);
-              }
-            }
           }
           .viewed-img {
             width: 7em;
@@ -404,7 +394,7 @@ a {
   .profile-box {
     display: flex;
     align-items: center;
-    margin-right: 30px;
+    margin-right: 100px;
     .user {
       margin-right: 20px;
       .user-desc {
@@ -412,6 +402,28 @@ a {
       }
       .user-name {
         font-weight: 700;
+      }
+    }
+    .signUp-box {
+      border: none;
+      background-color: #fff;
+      display: flex;
+      cursor: pointer;
+      margin-right: 30px;
+      .signUp-title {
+        width: 90px;
+        border: 1px solid #aaa;
+        border-radius: 15px;
+        padding: 7px 15px;
+        font-size: 14px;
+        &.signup,
+        &.login {
+          margin-left: 10px;
+        }
+        &:hover {
+          border: 1px solid #35dd51;
+          transition: all 0.3s ease-in-out;
+        }
       }
     }
   }
@@ -474,7 +486,7 @@ span.text-red {
   margin-right: 15px;
 }
 .cart-icon {
-  margin-right: 50px;
+  margin-right: 20px;
 }
 
 .nav-icon:hover,
@@ -1659,6 +1671,8 @@ span.text-red {
 .ecommerce-container,
 .order-container,
 .board-container,
+.board-edit-container,
+.board-create-container,
 .faq-container {
   padding: 50px 120px 50px 40px;
   width: 100%;
@@ -1675,25 +1689,74 @@ span.text-red {
   }
 }
 
-.board-edit-container,
-.board-create-container {
-  padding: 5rem 30rem 5rem 25rem;
-  width: 100%;
-  .page-title-box {
-    margin: 40px 0px;
-    .page-title {
-      font-size: 45px;
+//------------- signup, login ----------------//
+
+.signup-create-container {
+  width: 600px;
+  margin: 50px auto;
+  box-shadow: 1px -2px 10px 0px #ccc;
+  .signup-icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 10px 0;
+  }
+  .sign-title-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0px;
+    .sign-title,
+    .sign-title-desc {
+      font-size: 21px;
       line-height: 0.9;
-    }
-    .page-subtitle {
-      color: #9be9a8;
+      font-weight: 300;
       margin-top: 20px;
-      input {
-        border: none;
-        height: 30px;
-        &::placeholder {
-          font-size: 22px;
-          color: #35dd51;
+    }
+    .sign-title-desc {
+      font-size: 20x;
+      margin-top: 10px;
+    }
+  }
+  .signup-create-wrapper {
+    padding: 30px 50px;
+
+    .card {
+      color: #333;
+      margin-top: 20px;
+      .row-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .form-label {
+          width: 80px;
+        }
+        input {
+          border: 2px solid #ccc;
+          height: 50px;
+          width: 100%;
+          margin: 20px 0;
+          border-radius: 5px;
+          &::placeholder {
+            margin-left: 10px;
+            font-size: 18px;
+            color: #ccc;
+          }
+        }
+      }
+      .row-col-btn {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+        .form-group {
+          .form-btn {
+            cursor: pointer;
+            font-size: 14px;
+            padding: 8px 25px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin: 0 20px;
+          }
         }
       }
     }

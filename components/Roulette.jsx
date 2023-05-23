@@ -7,7 +7,7 @@ const Roulette = ({ data }) => {
   const [page, setPage] = useState("");
 
   const getRandomNumber = () => {
-    const number = Math.ceil(Math.random() * 40);
+    const number = Math.ceil(Math.random() * 50);
 
     if (number <= 10) {
       setCarry(true);
@@ -35,6 +35,13 @@ const Roulette = ({ data }) => {
       setPage("게시판");
       setTimeout(() => {
         router.push("/board");
+        data();
+      }, 1000);
+    } else if (number <= 50) {
+      setCarry(true);
+      setPage("회원가입");
+      setTimeout(() => {
+        router.push("/signup");
         data();
       }, 1000);
     }

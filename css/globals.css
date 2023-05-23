@@ -173,22 +173,6 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product:hover .viewed-product-btn {
-  display: block;
-  margin: 0 0 0 auto;
-  color: red;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product:hover .viewed-product-btn:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
 .viewed-container .viewed-wrapper .viewed-box .viewed-products .viewed-product .viewed-img {
   width: 7em;
   height: 7em;
@@ -526,7 +510,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 30px;
+  margin-right: 100px;
 }
 
 .navbar-container .profile-box .user {
@@ -539,6 +523,34 @@ a {
 
 .navbar-container .profile-box .user .user-name {
   font-weight: 700;
+}
+
+.navbar-container .profile-box .signUp-box {
+  border: none;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.navbar-container .profile-box .signUp-box .signUp-title {
+  width: 90px;
+  border: 1px solid #aaa;
+  border-radius: 15px;
+  padding: 7px 15px;
+  font-size: 14px;
+}
+
+.navbar-container .profile-box .signUp-box .signUp-title.signup, .navbar-container .profile-box .signUp-box .signUp-title.login {
+  margin-left: 10px;
+}
+
+.navbar-container .profile-box .signUp-box .signUp-title:hover {
+  border: 1px solid #35dd51;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .marquee-text {
@@ -622,7 +634,7 @@ span.text-red {
 }
 
 .cart-icon {
-  margin-right: 50px;
+  margin-right: 20px;
 }
 
 .nav-icon:hover,
@@ -2096,6 +2108,8 @@ span.text-red {
 .ecommerce-container,
 .order-container,
 .board-container,
+.board-edit-container,
+.board-create-container,
 .faq-container {
   padding: 50px 120px 50px 40px;
   width: 100%;
@@ -2107,6 +2121,8 @@ span.text-red {
 .ecommerce-container .page-title-box,
 .order-container .page-title-box,
 .board-container .page-title-box,
+.board-edit-container .page-title-box,
+.board-create-container .page-title-box,
 .faq-container .page-title-box {
   margin: 40px 70px;
 }
@@ -2117,6 +2133,8 @@ span.text-red {
 .ecommerce-container .page-title-box .page-title,
 .order-container .page-title-box .page-title,
 .board-container .page-title-box .page-title,
+.board-edit-container .page-title-box .page-title,
+.board-create-container .page-title-box .page-title,
 .faq-container .page-title-box .page-title {
   font-size: 45px;
   line-height: 0.9;
@@ -2128,62 +2146,130 @@ span.text-red {
 .ecommerce-container .page-title-box .page-subtitle,
 .order-container .page-title-box .page-subtitle,
 .board-container .page-title-box .page-subtitle,
+.board-edit-container .page-title-box .page-subtitle,
+.board-create-container .page-title-box .page-subtitle,
 .faq-container .page-title-box .page-subtitle {
   font-size: 22px;
   color: #9be9a8;
 }
 
-.board-edit-container,
-.board-create-container {
-  padding: 5rem 30rem 5rem 25rem;
+.signup-create-container {
+  width: 600px;
+  margin: 50px auto;
+  -webkit-box-shadow: 1px -2px 10px 0px #ccc;
+          box-shadow: 1px -2px 10px 0px #ccc;
+}
+
+.signup-create-container .signup-icon {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 0 10px 0;
 }
 
-.board-edit-container .page-title-box,
-.board-create-container .page-title-box {
-  margin: 40px 0px;
+.signup-create-container .sign-title-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  padding: 10px 0px;
 }
 
-.board-edit-container .page-title-box .page-title,
-.board-create-container .page-title-box .page-title {
-  font-size: 45px;
+.signup-create-container .sign-title-box .sign-title,
+.signup-create-container .sign-title-box .sign-title-desc {
+  font-size: 21px;
   line-height: 0.9;
-}
-
-.board-edit-container .page-title-box .page-subtitle,
-.board-create-container .page-title-box .page-subtitle {
-  color: #9be9a8;
+  font-weight: 300;
   margin-top: 20px;
 }
 
-.board-edit-container .page-title-box .page-subtitle input,
-.board-create-container .page-title-box .page-subtitle input {
-  border: none;
-  height: 30px;
+.signup-create-container .sign-title-box .sign-title-desc {
+  font-size: 20x;
+  margin-top: 10px;
 }
 
-.board-edit-container .page-title-box .page-subtitle input::-webkit-input-placeholder,
-.board-create-container .page-title-box .page-subtitle input::-webkit-input-placeholder {
-  font-size: 22px;
-  color: #35dd51;
+.signup-create-container .signup-create-wrapper {
+  padding: 30px 50px;
 }
 
-.board-edit-container .page-title-box .page-subtitle input:-ms-input-placeholder,
-.board-create-container .page-title-box .page-subtitle input:-ms-input-placeholder {
-  font-size: 22px;
-  color: #35dd51;
+.signup-create-container .signup-create-wrapper .card {
+  color: #333;
+  margin-top: 20px;
 }
 
-.board-edit-container .page-title-box .page-subtitle input::-ms-input-placeholder,
-.board-create-container .page-title-box .page-subtitle input::-ms-input-placeholder {
-  font-size: 22px;
-  color: #35dd51;
+.signup-create-container .signup-create-wrapper .card .row-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.board-edit-container .page-title-box .page-subtitle input::placeholder,
-.board-create-container .page-title-box .page-subtitle input::placeholder {
-  font-size: 22px;
-  color: #35dd51;
+.signup-create-container .signup-create-wrapper .card .row-col .form-label {
+  width: 80px;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col input {
+  border: 2px solid #ccc;
+  height: 50px;
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col input::-webkit-input-placeholder {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col input:-ms-input-placeholder {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col input::-ms-input-placeholder {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col input::placeholder {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 15px 0;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col-btn .form-group .form-btn {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 25px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin: 0 20px;
 }
 
 .ecommerce-container .ecommerce-wrap {

@@ -68,13 +68,7 @@ const Localviewed = () => {
                   className="viewed-product-btnBox"
                   onClick={(event) => event.stopPropagation()}
                 >
-                  <AiFillDelete
-                    size={20}
-                    className="viewed-product-btn"
-                    // onClick={() => {
-                    //   RemoveViewed(item.id);
-                    // }}
-                  />
+                  <AiFillDelete size={20} className="viewed-product-btn" />
                 </span>
                 <img
                   className="viewed-img"

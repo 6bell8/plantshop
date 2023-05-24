@@ -3,20 +3,27 @@ import { PjsIcon } from "../../components";
 import { useRouter } from "next/router";
 import { useStateContext } from "../../context/StateContext";
 import { CgDanger } from "react-icons/cg";
+import { AiFillCheckCircle } from "react-icons/ai";
 import swal from "sweetalert";
+import { render } from "react-dom";
 
-const EmpCreate = () => {
+const Signup = () => {
   const router = useRouter();
   const [id, idChange] = useState("");
   // e.target.value
   const [username, usernameChange] = useState("");
   const [name, nameChange] = useState("");
-  // const [qa, qaChange] = useState("");
+  const [password, passwordChange] = useState("");
+  const [passwordCheck, passwordCheckChange] = useState("");
   const [phone, phoneChange] = useState("");
   const [active, activeChange] = useState(true);
   const [validation, validationChange] = useState(false);
+  const [passwordValidation, passwordValidationChange] = useState(false);
+  const [passCheckvalidation, passCheckvalidationChange] = useState(false);
   //length state
   const [usernameActive, usernameChangeActive] = useState(false);
+  const [passwordActive, passwordChangeActive] = useState(false);
+  const [passwordCheckActive, passwordCheckChangeActive] = useState(false);
   const [nameActive, nameChangeActive] = useState(false);
   // const [qaActive, qaChangeActive] = useState(false);
   const [phoneActive, phoneChangeActive] = useState(false);
@@ -89,91 +96,101 @@ const EmpCreate = () => {
         <form className="signup-create-wrapper" onSubmit={handleSubmit}>
           <div className="card">
             <div className="row-col">
-              <label className="form-label">닉네임</label>
-              <input
-                value={username}
-                maxLength={30}
-                minLength={3}
-                onChange={(e) => formlengthUsername(e)}
-                className={`form-control ${usernameActive ? "active" : ""}`}
-                placeholder="3글자 이상 입력해주세요."
-              />
-              {/* 사용 할 것 */}
-              {/* {name.length == 0 && validation && (
+              <div className="row-col-inputBox">
+                <label className="form-label">닉네임</label>
+                <input
+                  value={username}
+                  maxLength={12}
+                  minLength={3}
+                  onChange={(e) => formlengthUsername(e)}
+                  className={`form-control ${usernameActive ? "active" : ""}`}
+                  placeholder="3글자 이상 입력해주세요."
+                />
+                {/* 사용 할 것 */}
+                {/* {name.length == 0 && validation && (
                     <span className="text-danger">
                       <CgDanger size="20" color="#35dd51" />
                       사용 가능한 아이디입니다.
                     </span>
                   )} */}
+              </div>
             </div>
             <div className="row-col">
-              <label className="form-label">비밀번호</label>
-              <input
-                value={username}
-                maxLength={30}
-                minLength={3}
-                onChange={(e) => formlengthUsername(e)}
-                className={`form-control ${usernameActive ? "active" : ""}`}
-                placeholder="3글자 이상 입력해주세요."
-              />
-              {/* 사용 할 것 */}
-              {/* {name.length == 0 && validation && (
+              <div className="row-col-inputBox">
+                <label className="form-label">비밀번호</label>
+                <input
+                  value={password}
+                  type="password"
+                  maxLength={30}
+                  minLength={5}
+                  onChange={(e) => formlengthPassword(e)}
+                  onMouseDown={() => passwordValidationChange(true)}
+                  className={`form-control ${passwordActive ? "active" : ""}`}
+                  placeholder="5글자 이상 입력해주세요."
+                />
+                {/* <PasswordComponent /> */}
+              </div>
+            </div>
+            <div className="row-col">
+              <div className="row-col-inputBox">
+                <label className="form-label">비밀번호 확인</label>
+                <input
+                  value={passwordCheck}
+                  type="password"
+                  maxLength={30}
+                  minLength={3}
+                  onChange={(e) => formlengthPasswordCheck(e)}
+                  onMouseDown={() => passCheckvalidationChange(true)}
+                  className={`form-control ${
+                    passwordCheckActive ? "active" : ""
+                  }`}
+                  placeholder="5글자 이상 입력해주세요."
+                />
+                {/* 사용 할 것 */}
+                {/* {name.length == 0 && passCheckvalidation && (
                     <span className="text-danger">
                       <CgDanger size="20" color="#35dd51" />
                       사용 가능한 아이디입니다.
                     </span>
                   )} */}
+              </div>
             </div>
             <div className="row-col">
-              <label className="form-label">비밀번호 확인</label>
-              <input
-                value={username}
-                maxLength={30}
-                minLength={3}
-                onChange={(e) => formlengthUsername(e)}
-                className={`form-control ${usernameActive ? "active" : ""}`}
-                placeholder="3글자 이상 입력해주세요."
-              />
-              {/* 사용 할 것 */}
-              {/* {name.length == 0 && validation && (
-                    <span className="text-danger">
-                      <CgDanger size="20" color="#35dd51" />
-                      사용 가능한 아이디입니다.
-                    </span>
-                  )} */}
-            </div>
-            <div className="row-col">
-              <label className="form-label">이름</label>
-              {/* input 값으로 namechange변경 */}
-              <input
-                required
-                value={name}
-                maxLength={30}
-                minLength={3}
-                onMouseDown={() => validationChange(true)}
-                onChange={(e) => formlengtName(e)}
-                className={`form-control ${nameActive ? "active" : ""}`}
-                placeholder="3글자 이상 입력해주세요."
-              />
-              {name.length == 0 && validation && (
-                <span className="text-danger">
-                  <CgDanger size="20" color="red" />
-                  이름을 입력하세요.
-                </span>
-              )}
+              <div className="row-col-inputBox">
+                <label className="form-label">이름</label>
+                {/* input 값으로 namechange변경 */}
+                <input
+                  required
+                  value={name}
+                  maxLength={30}
+                  minLength={3}
+                  onMouseDown={() => validationChange(true)}
+                  onChange={(e) => formlengtName(e)}
+                  className={`form-control ${nameActive ? "active" : ""}`}
+                  placeholder="3글자 이상 입력해주세요."
+                />
+                {name.length == 0 && validation && (
+                  <span className="text-danger">
+                    <CgDanger size="20" color="red" />
+                    이름을 입력하세요.
+                  </span>
+                )}
+              </div>
             </div>
 
-            <div className="row-col">
-              <label className="form-label">연락처</label>
-              <input
-                type="number"
-                value={phone}
-                maxLength={20}
-                minLength={3}
-                onChange={(e) => formlengtPhone(e)}
-                className={`form-control ${phoneActive ? "active" : ""}`}
-                placeholder="010-0000-0000"
-              />
+            <div className="row-col last-row">
+              <div className="row-col-inputBox">
+                <label className="form-label">연락처</label>
+                <input
+                  type="number"
+                  value={phone}
+                  maxLength={20}
+                  minLength={8}
+                  onChange={(e) => formlengtPhone(e)}
+                  className={`form-control ${phoneActive ? "active" : ""}`}
+                  placeholder="010-0000-0000"
+                />
+              </div>
             </div>
 
             <div className="row-col">
@@ -216,20 +233,68 @@ const EmpCreate = () => {
     usernameChange(e.target.value);
   }
 
+  function formlengthPassword(e) {
+    password.length > 1
+      ? passwordChangeActive(true)
+      : passwordChangeActive(false);
+    passwordChange(e.target.value);
+  }
+
+  function formlengthPasswordCheck(e) {
+    passwordCheck.length > 1
+      ? passwordCheckChangeActive(true)
+      : passwordCheckChangeActive(false);
+    passwordCheckChange(e.target.value);
+  }
+
   function formlengtName(e) {
     nameChange(e.target.value);
     name.length > 1 ? nameChangeActive(true) : nameChangeActive(false);
-  }
-
-  function formlengtQa(e) {
-    qaChange(e.target.value);
-    qa.length > 1 ? qaChangeActive(true) : qaChangeActive(false);
   }
 
   function formlengtPhone(e) {
     phoneChange(e.target.value);
     phone.length > 1 ? phoneChangeActive(true) : phoneChangeActive(false);
   }
+
+  // 비밀번호 보안 컴포넌트
+
+  // function PasswordComponent() {
+  //   if (password.length < 3 && passwordValidation) {
+  //     return (
+  //       <span className="text-danger">
+  //         <CgDanger size="20" color="red" />
+  //         패스워드를 입력해주세요.
+  //       </span>
+  //     );
+  //   } else if (password.length < 6 && passwordValidation) {
+  //     return (
+  //       <span className="text-danger">
+  //         <CgDanger size="20" color="#35dd51" />
+  //         보안등급 낮음
+  //         <AiFillCheckCircle size="18" color="#35dd51" />
+  //       </span>
+  //     );
+  //   } else if (password.length < 8 && passwordValidation) {
+  //     return (
+  //       <span className="text-danger">
+  //         <CgDanger size="20" color="#35dd51" />
+  //         보안등급 보통
+  //         <AiFillCheckCircle size="18" color="#35dd51" />
+  //       </span>
+  //     );
+  //   } else if (password.length && passwordValidation) {
+  //     return (
+  //       <span className="text-danger">
+  //         <CgDanger size="20" color="#35dd51" />
+  //         보안등급 높음
+  //         <AiFillCheckCircle size="18" color="#35dd51" />
+  //       </span>
+  //     );
+  //   } else {
+  //     undefined;
+  //   }
+  // }
 };
 
-export default EmpCreate;
+export default Signup;

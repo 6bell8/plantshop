@@ -1671,8 +1671,6 @@ span.text-red {
 .ecommerce-container,
 .order-container,
 .board-container,
-.board-edit-container,
-.board-create-container,
 .faq-container {
   padding: 50px 120px 50px 40px;
   width: 100%;
@@ -1705,7 +1703,9 @@ span.text-red {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 10px 0px;
+    padding: 10px 0px 30px 0px;
+    border-bottom: 1px solid #ccc;
+    margin: 0 3rem;
     .sign-title,
     .sign-title-desc {
       font-size: 21px;
@@ -1726,21 +1726,42 @@ span.text-red {
       margin-top: 20px;
       .row-col {
         display: flex;
-        justify-content: center;
         align-items: center;
-        .form-label {
-          width: 80px;
-        }
-        input {
-          border: 2px solid #ccc;
-          height: 50px;
+        .row-col-inputBox {
           width: 100%;
-          margin: 20px 0;
-          border-radius: 5px;
-          &::placeholder {
-            margin-left: 10px;
-            font-size: 18px;
-            color: #ccc;
+          .text-danger {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            svg {
+              margin-right: 7px;
+            }
+          }
+          .form-label {
+            font-weight: 500;
+            width: 80px;
+          }
+          .form-control {
+            &.active {
+              box-shadow: 0 0 0 2px #9be9a8;
+            }
+          }
+          input {
+            border: 2px solid #ccc;
+            padding: 10px;
+            height: 50px;
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 5px;
+            &::placeholder {
+              padding: 7px;
+              font-size: 16px;
+              color: #ccc;
+            }
+          }
+          &.last-row {
+            padding-bottom: 50px;
+            border-bottom: 1px solid #ccc;
           }
         }
       }
@@ -1751,10 +1772,10 @@ span.text-red {
         .form-group {
           .form-btn {
             cursor: pointer;
-            font-size: 14px;
-            padding: 8px 25px;
+            font-size: 15px;
+            padding: 12px 25px;
             border: 2px solid #ccc;
-            border-radius: 5px;
+            border-radius: 10px;
             margin: 0 20px;
           }
         }
@@ -2259,6 +2280,26 @@ span.text-red {
 
 .board-edit-container,
 .board-create-container {
+  padding: 50px 25rem 50px 20rem;
+  .page-title-box {
+    margin: 40px 0px;
+    border-bottom: 2px solid #35dd51;
+    .page-title {
+      font-size: 45px;
+      line-height: 0.9;
+    }
+    .page-subtitle {
+      margin: 20px 0;
+      input {
+        border: none;
+        height: 30px;
+        &::placeholder {
+          font-size: 22px;
+          color: #333;
+        }
+      }
+    }
+  }
   .board-edit-wrapper,
   .board-create-wrapper {
     width: 100%;

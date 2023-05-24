@@ -2179,15 +2179,19 @@ span.text-red {
 
 .signup-create-container .sign-title-box .sign-title,
 .signup-create-container .sign-title-box .sign-title-desc {
-  font-size: 21px;
+  font-size: 30px;
+  font-weight: 900;
+  color: #ddd;
   line-height: 0.9;
-  font-weight: 300;
+  font-weight: 900;
   margin-top: 20px;
 }
 
 .signup-create-container .sign-title-box .sign-title-desc {
-  font-size: 20x;
+  font-size: 15px;
+  font-weight: 300;
   margin-top: 10px;
+  color: #aaa;
 }
 
 .signup-create-container .signup-create-wrapper {
@@ -2222,13 +2226,26 @@ span.text-red {
   margin-bottom: 20px;
 }
 
-.signup-create-container .signup-create-wrapper .card .row-col .row-col-inputBox .text-danger svg {
-  margin-right: 7px;
+.signup-create-container .signup-create-wrapper .card .row-col .row-col-inputBox .text-danger .text-danger-desc {
+  margin: 0 5px 0 7px;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
 }
 
 .signup-create-container .signup-create-wrapper .card .row-col .row-col-inputBox .form-label {
   font-weight: 500;
   width: 80px;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col .row-col-inputBox .form-label::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  background-color: red;
+  border-radius: 10px;
+  -webkit-transform: translate(3px, 1px);
+          transform: translate(3px, 1px);
 }
 
 .signup-create-container .signup-create-wrapper .card .row-col .row-col-inputBox .form-control.active {
@@ -2269,9 +2286,23 @@ span.text-red {
   color: #ccc;
 }
 
-.signup-create-container .signup-create-wrapper .card .row-col .row-col-inputBox.last-row {
+.signup-create-container .signup-create-wrapper .card .row-col.last-row {
   padding-bottom: 50px;
   border-bottom: 1px solid #ccc;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col.check-box {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col.check-box .form-check .form-check-label {
+  margin-left: 10px;
 }
 
 .signup-create-container .signup-create-wrapper .card .row-col-btn {
@@ -2281,7 +2312,7 @@ span.text-red {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 15px 0;
+  margin: 30px 0;
 }
 
 .signup-create-container .signup-create-wrapper .card .row-col-btn .form-group .form-btn {

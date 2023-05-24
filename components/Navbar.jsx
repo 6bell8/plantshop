@@ -30,7 +30,9 @@ const Navbar = () => {
         }}
       >
         <Link href="/">
-          <PjsIcon />
+          <a href="">
+            <PjsIcon />
+          </a>
         </Link>
       </p>
       <div className="profile-box">

@@ -18,8 +18,9 @@ const Signup = () => {
   const [phone, phoneChange] = useState("");
   const [active, activeChange] = useState(true);
   const [validation, validationChange] = useState(false);
+  const [usernameValidation, usernameValidationChange] = useState(false);
   const [passwordValidation, passwordValidationChange] = useState(false);
-  const [passCheckvalidation, passCheckvalidationChange] = useState(false);
+  const [passCheckvalidation, passCheckValidationChange] = useState(false);
   //length state
   const [usernameActive, usernameChangeActive] = useState(false);
   const [passwordActive, passwordChangeActive] = useState(false);
@@ -89,7 +90,7 @@ const Signup = () => {
           <PjsIcon />
         </div>
         <div className="sign-title-box">
-          <h1 className="sign-title">Sign up</h1>
+          <h1 className="sign-title">회원가입</h1>
           <h1 className="sign-title-desc">(준비 중입니다.)</h1>
           <p className="sign-subtitle"></p>
         </div>
@@ -102,17 +103,12 @@ const Signup = () => {
                   value={username}
                   maxLength={12}
                   minLength={3}
+                  onMouseDown={() => usernameValidationChange(true)}
                   onChange={(e) => formlengthUsername(e)}
                   className={`form-control ${usernameActive ? "active" : ""}`}
                   placeholder="3글자 이상 입력해주세요."
                 />
-                {/* 사용 할 것 */}
-                {/* {name.length == 0 && validation && (
-                    <span className="text-danger">
-                      <CgDanger size="20" color="#35dd51" />
-                      사용 가능한 아이디입니다.
-                    </span>
-                  )} */}
+                {usernameCheckComponent()}
               </div>
             </div>
             <div className="row-col">
@@ -128,7 +124,8 @@ const Signup = () => {
                   className={`form-control ${passwordActive ? "active" : ""}`}
                   placeholder="5글자 이상 입력해주세요."
                 />
-                {/* <PasswordComponent /> */}
+                {/* if문 function은 즉시 실행 함수를 사용하여 배치 */}
+                {PasswordComponent()}
               </div>
             </div>
             <div className="row-col">
@@ -140,19 +137,14 @@ const Signup = () => {
                   maxLength={30}
                   minLength={3}
                   onChange={(e) => formlengthPasswordCheck(e)}
-                  onMouseDown={() => passCheckvalidationChange(true)}
+                  onMouseDown={() => passCheckValidationChange(true)}
                   className={`form-control ${
                     passwordCheckActive ? "active" : ""
                   }`}
                   placeholder="5글자 이상 입력해주세요."
                 />
                 {/* 사용 할 것 */}
-                {/* {name.length == 0 && passCheckvalidation && (
-                    <span className="text-danger">
-                      <CgDanger size="20" color="#35dd51" />
-                      사용 가능한 아이디입니다.
-                    </span>
-                  )} */}
+                {PasswordCheckComponent()}
               </div>
             </div>
             <div className="row-col">
@@ -193,7 +185,7 @@ const Signup = () => {
               </div>
             </div>
 
-            <div className="row-col">
+            <div className="row-col check-box">
               <div className="form-check">
                 <input
                   checked={active}
@@ -209,7 +201,7 @@ const Signup = () => {
             <div className="row-col-btn">
               <div className="form-group">
                 <button type="submit" className="form-btn left">
-                  저장하기
+                  가입하기
                 </button>
                 <button
                   className="form-btn right"
@@ -257,44 +249,88 @@ const Signup = () => {
     phone.length > 1 ? phoneChangeActive(true) : phoneChangeActive(false);
   }
 
-  // 비밀번호 보안 컴포넌트
+  //닉네임 컴포넌트
 
-  // function PasswordComponent() {
-  //   if (password.length < 3 && passwordValidation) {
-  //     return (
-  //       <span className="text-danger">
-  //         <CgDanger size="20" color="red" />
-  //         패스워드를 입력해주세요.
-  //       </span>
-  //     );
-  //   } else if (password.length < 6 && passwordValidation) {
-  //     return (
-  //       <span className="text-danger">
-  //         <CgDanger size="20" color="#35dd51" />
-  //         보안등급 낮음
-  //         <AiFillCheckCircle size="18" color="#35dd51" />
-  //       </span>
-  //     );
-  //   } else if (password.length < 8 && passwordValidation) {
-  //     return (
-  //       <span className="text-danger">
-  //         <CgDanger size="20" color="#35dd51" />
-  //         보안등급 보통
-  //         <AiFillCheckCircle size="18" color="#35dd51" />
-  //       </span>
-  //     );
-  //   } else if (password.length && passwordValidation) {
-  //     return (
-  //       <span className="text-danger">
-  //         <CgDanger size="20" color="#35dd51" />
-  //         보안등급 높음
-  //         <AiFillCheckCircle size="18" color="#35dd51" />
-  //       </span>
-  //     );
-  //   } else {
-  //     undefined;
-  //   }
-  // }
+  function usernameCheckComponent() {
+    if (username.length >= 3 && usernameValidation) {
+      return (
+        <span className="text-danger">
+          <CgDanger size="20" color="#35dd51" />
+          <span className="text-danger-desc">사용가능한 닉네임입니다.</span>
+        </span>
+      );
+    }
+  }
+
+  // 비밀번호 보안 컴포넌트
+  function PasswordComponent() {
+    if (password.length < 3 && passwordValidation) {
+      return (
+        <span className="text-danger">
+          <CgDanger size="20" color="red" />
+          <span className="text-danger-desc">비밀번호를 입력해주세요.</span>
+        </span>
+      );
+    } else if (password.length < 6 && passwordValidation) {
+      return (
+        <span className="text-danger">
+          <CgDanger size="20" color="red" />
+          <span className="text-danger-desc">보안등급 낮음</span>
+          <AiFillCheckCircle size="18" color="red" />
+        </span>
+      );
+    } else if (password.length < 8 && passwordValidation) {
+      return (
+        <span className="text-danger">
+          <CgDanger size="20" color="orange" />
+          <span className="text-danger-desc">보안등급 보통</span>
+          <AiFillCheckCircle size="18" color="orange" />
+          <AiFillCheckCircle size="18" color="orange" />
+        </span>
+      );
+    } else if (password.length && passwordValidation) {
+      return (
+        <span className="text-danger">
+          <CgDanger size="20" color="#35dd51" />
+          <span className="text-danger-desc">보안등급 높음</span>
+          <AiFillCheckCircle size="18" color="#35dd51" />
+          <AiFillCheckCircle size="18" color="#35dd51" />
+          <AiFillCheckCircle size="18" color="#35dd51" />
+        </span>
+      );
+    } else {
+      undefined;
+    }
+  }
+
+  function PasswordCheckComponent() {
+    if (passwordCheck.length < 1 && passCheckvalidation) {
+      return (
+        <span className="text-danger">
+          <CgDanger size="20" color="red" />
+          <span className="text-danger-desc">비밀번호를 재입력 해주세요.</span>
+        </span>
+      );
+    } else if (passwordCheck != password && passCheckvalidation) {
+      return (
+        <span className="text-danger">
+          <CgDanger size="20" color="red" />
+          <span className="text-danger-desc">
+            패스워드가 일치하지 않습니다.
+          </span>
+        </span>
+      );
+    } else if (passwordCheck == password && passCheckvalidation) {
+      return (
+        <span className="text-danger">
+          <CgDanger size="20" color="#35dd51" />
+          <span className="text-danger-desc">패스워드가 일치합니다.</span>
+        </span>
+      );
+    }
+    // console.log(passwordCheck, password, passCheckvalidation);
+    console.log(passwordCheck == password);
+  }
 };
 
 export default Signup;

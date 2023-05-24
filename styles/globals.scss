@@ -1708,14 +1708,18 @@ span.text-red {
     margin: 0 3rem;
     .sign-title,
     .sign-title-desc {
-      font-size: 21px;
+      font-size: 30px;
+      font-weight: 900;
+      color: #ddd;
       line-height: 0.9;
-      font-weight: 300;
+      font-weight: 900;
       margin-top: 20px;
     }
     .sign-title-desc {
-      font-size: 20x;
+      font-size: 15px;
+      font-weight: 300;
       margin-top: 10px;
+      color: #aaa;
     }
   }
   .signup-create-wrapper {
@@ -1724,6 +1728,7 @@ span.text-red {
     .card {
       color: #333;
       margin-top: 20px;
+
       .row-col {
         display: flex;
         align-items: center;
@@ -1733,13 +1738,24 @@ span.text-red {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
-            svg {
-              margin-right: 7px;
+            .text-danger-desc {
+              margin: 0 5px 0 7px;
+              transform: translateY(-1px);
             }
+    
           }
           .form-label {
             font-weight: 500;
             width: 80px;
+            &::after {
+              content: "";
+              width: 5px;
+              height: 5px;
+              position: absolute;
+              background-color: red;
+              border-radius: 10px;
+              transform: translate(3px, 1px);
+            }
           }
           .form-control {
             &.active {
@@ -1759,16 +1775,26 @@ span.text-red {
               color: #ccc;
             }
           }
-          &.last-row {
-            padding-bottom: 50px;
-            border-bottom: 1px solid #ccc;
+        }
+        &.last-row {
+          padding-bottom: 50px;
+          border-bottom: 1px solid #ccc;
+        }
+        &.check-box {
+          margin-top: 50px;
+          display: flex;
+          justify-content: center;
+          .form-check {
+            .form-check-label {
+              margin-left: 10px;
+            }
           }
         }
       }
       .row-col-btn {
         display: flex;
         justify-content: center;
-        margin: 15px 0;
+        margin: 30px 0;
         .form-group {
           .form-btn {
             cursor: pointer;

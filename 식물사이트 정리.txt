@@ -536,3 +536,5 @@ function exampleFun(){
 if문에서 객체안에서 return 안때리면 오류남 까먹지 않고 return 때리기,
 
 // 자세히보기 팝업 열기하고 , 버튼 호버 시 색상 들어가는 거 적용하고, 그 다음 서밋
+
+ className={`detail-popupBox ${detailPopup === false ? active : ""} `}

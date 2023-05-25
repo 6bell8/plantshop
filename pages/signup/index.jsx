@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PjsIcon } from "../../components";
+import { DetailPopup } from "../../components";
 import { useRouter } from "next/router";
 import { useStateContext } from "../../context/StateContext";
 import { CgDanger } from "react-icons/cg";
@@ -10,6 +11,7 @@ import { render } from "react-dom";
 const Signup = () => {
   const router = useRouter();
   const [id, idChange] = useState("");
+  const [detailPopup, setDetailPopup] = useState(false);
   // e.target.value
   const [username, usernameChange] = useState("");
   const [name, nameChange] = useState("");
@@ -79,14 +81,14 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSave(formData);
-    console.log(formData);
   };
+
+  // console.log(detailPopup);
 
   return (
     <div>
       <div className="signup-create-container">
         <div className="signup-icon">
-          {" "}
           <PjsIcon />
         </div>
         <div className="sign-title-box">
@@ -100,6 +102,7 @@ const Signup = () => {
               <div className="row-col-inputBox">
                 <label className="form-label">닉네임</label>
                 <input
+                  required
                   value={username}
                   maxLength={12}
                   minLength={3}
@@ -115,6 +118,7 @@ const Signup = () => {
               <div className="row-col-inputBox">
                 <label className="form-label">비밀번호</label>
                 <input
+                  required
                   value={password}
                   type="password"
                   maxLength={30}
@@ -132,6 +136,7 @@ const Signup = () => {
               <div className="row-col-inputBox">
                 <label className="form-label">비밀번호 확인</label>
                 <input
+                  required
                   value={passwordCheck}
                   type="password"
                   maxLength={30}
@@ -172,7 +177,7 @@ const Signup = () => {
 
             <div className="row-col last-row">
               <div className="row-col-inputBox">
-                <label className="form-label">연락처</label>
+                <label className="form-label-contact">연락처</label>
                 <input
                   type="number"
                   value={phone}
@@ -194,19 +199,24 @@ const Signup = () => {
                   className="form-check-input"
                 />
                 <label className="form-check-label">
-                  개인정보 이용정책에 동의 하십니까? (사실 아무 것도 아님)
+                  개인정보 이용정책에 동의 하십니까?
+                  <strong className="detail-popup" onClick={closeBtn}>
+                    {detailPopup === false ? (
+                      <span>[자세히보기]</span>
+                    ) : (
+                      <span>[접기]</span>
+                    )}
+                  </strong>
                 </label>
+                {detailPopup && <DetailPopup closeBtn={closeBtn} />}
               </div>
             </div>
             <div className="row-col-btn">
               <div className="form-group">
-                <button type="submit" className="form-btn left">
+                <button type="submit" className="form-btn">
                   가입하기
                 </button>
-                <button
-                  className="form-btn right"
-                  onClick={() => router.push("/")}
-                >
+                <button className="form-btn" onClick={() => router.push("/")}>
                   뒤로가기
                 </button>
               </div>
@@ -328,8 +338,11 @@ const Signup = () => {
         </span>
       );
     }
-    // console.log(passwordCheck, password, passCheckvalidation);
-    console.log(passwordCheck == password);
+  }
+
+  function closeBtn() {
+    setDetailPopup((detailPopup) => !detailPopup);
+    console.log(detailPopup);
   }
 };
 

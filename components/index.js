@@ -14,5 +14,6 @@ export { default as ProductCustom02 } from "./ProductCustom02";
 export { default as PlantDetail } from "./PlantDetail";
 export { default as Localviewed } from "./Localviewed";
 export { default as PjsIcon } from "./PjsIcon";
+export { default as DetailPopup } from "./DetailPopup";
 export { default as SparkLine } from "./Charts/SparkLine";
 export { default as Stacked } from "./Charts/Stacked";

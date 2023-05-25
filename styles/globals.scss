@@ -1742,11 +1742,9 @@ span.text-red {
               margin: 0 5px 0 7px;
               transform: translateY(-1px);
             }
-    
           }
           .form-label {
             font-weight: 500;
-            width: 80px;
             &::after {
               content: "";
               width: 5px;
@@ -1756,6 +1754,9 @@ span.text-red {
               border-radius: 10px;
               transform: translate(3px, 1px);
             }
+          }
+          .form-label-contact {
+            font-weight: 500;
           }
           .form-control {
             &.active {
@@ -1785,8 +1786,22 @@ span.text-red {
           display: flex;
           justify-content: center;
           .form-check {
+            text-align: center;
             .form-check-label {
               margin-left: 10px;
+              strong {
+                margin: 0 10px;
+                cursor: pointer;
+              }
+            }
+            .detail-agreement {
+              text-align: initial;
+              margin: 20px 0;
+              font-size: 16px;
+              font-weight: 500;
+              .popup-title {
+                margin-bottom: 20px;
+              }
             }
           }
         }
@@ -1803,6 +1818,10 @@ span.text-red {
             border: 2px solid #ccc;
             border-radius: 10px;
             margin: 0 20px;
+            &:hover {
+              transition: all 0.3s ease-in-out;
+              border: 2px solid #35dd51;
+            }
           }
         }
       }

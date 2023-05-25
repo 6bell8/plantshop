@@ -2234,7 +2234,6 @@ span.text-red {
 
 .signup-create-container .signup-create-wrapper .card .row-col .row-col-inputBox .form-label {
   font-weight: 500;
-  width: 80px;
 }
 
 .signup-create-container .signup-create-wrapper .card .row-col .row-col-inputBox .form-label::after {
@@ -2246,6 +2245,10 @@ span.text-red {
   border-radius: 10px;
   -webkit-transform: translate(3px, 1px);
           transform: translate(3px, 1px);
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col .row-col-inputBox .form-label-contact {
+  font-weight: 500;
 }
 
 .signup-create-container .signup-create-wrapper .card .row-col .row-col-inputBox .form-control.active {
@@ -2301,8 +2304,28 @@ span.text-red {
           justify-content: center;
 }
 
+.signup-create-container .signup-create-wrapper .card .row-col.check-box .form-check {
+  text-align: center;
+}
+
 .signup-create-container .signup-create-wrapper .card .row-col.check-box .form-check .form-check-label {
   margin-left: 10px;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col.check-box .form-check .form-check-label strong {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col.check-box .form-check .detail-agreement {
+  text-align: initial;
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col.check-box .form-check .detail-agreement .popup-title {
+  margin-bottom: 20px;
 }
 
 .signup-create-container .signup-create-wrapper .card .row-col-btn {
@@ -2322,6 +2345,12 @@ span.text-red {
   border: 2px solid #ccc;
   border-radius: 10px;
   margin: 0 20px;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col-btn .form-group .form-btn:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid #35dd51;
 }
 
 .ecommerce-container .ecommerce-wrap {

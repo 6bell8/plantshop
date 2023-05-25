@@ -22,6 +22,7 @@ export const StateContext = ({ children }) => {
 
   const router = useRouter();
 
+  const [detailPopup, setDetailPopup] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [cartItems, setCartItems] = useState([]);
@@ -230,6 +231,8 @@ export const StateContext = ({ children }) => {
         setSelected,
         handleSave,
         handleEditSubmit,
+        detailPopup,
+        setDetailPopup,
       }}
     >
       {/* context api 인자값 */}

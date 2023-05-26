@@ -2289,8 +2289,13 @@ span.text-red {
   color: #ccc;
 }
 
+.signup-create-container .signup-create-wrapper .card .row-col .row-col-double {
+  margin: 0 10px;
+  height: 10rem;
+}
+
 .signup-create-container .signup-create-wrapper .card .row-col.last-row {
-  padding-bottom: 50px;
+  padding: 30px 0;
   border-bottom: 1px solid #ccc;
 }
 

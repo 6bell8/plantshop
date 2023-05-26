@@ -538,3 +538,15 @@ if문에서 객체안에서 return 안때리면 오류남 까먹지 않고 retur
 // 자세히보기 팝업 열기하고 , 버튼 호버 시 색상 들어가는 거 적용하고, 그 다음 서밋
 
  className={`detail-popupBox ${detailPopup === false ? active : ""} `}
+
+다음 회원가입 폼을 몽고디비에 전송해서, 로그인 내역에 확인하면서 뿌려줌, 로그인은 shop 프로젝트 참고
+
+passwordpass가 false면 회원가입 return 시키기
+
+
+useState로 상태관리가 이상해서  const passwordPass = useref() passwordPass.current = false,
+useref.current로 조회해서  바꿔줌
+
+그래서 비밀번호가 맞으면 router.push("/머시기") 및 함수실행, 아니면 e.preventdefault
+
+이렇게되면 몽고디비에서 패스워드만 확인해서 보관하면 되긴함.

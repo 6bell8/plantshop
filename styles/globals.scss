@@ -1763,6 +1763,7 @@ span.text-red {
               box-shadow: 0 0 0 2px #9be9a8;
             }
           }
+
           input {
             border: 2px solid #ccc;
             padding: 10px;
@@ -1777,8 +1778,12 @@ span.text-red {
             }
           }
         }
+        .row-col-double {
+          margin: 0 10px;
+          height: 10rem;
+        }
         &.last-row {
-          padding-bottom: 50px;
+          padding: 30px 0;
           border-bottom: 1px solid #ccc;
         }
         &.check-box {

@@ -11,7 +11,7 @@ import swal from "sweetalert";
 const Signup = () => {
   const router = useRouter();
   const [detailPopup, setDetailPopup] = useState(false);
-  // 비밀번호 pass
+  // 비밀번호 일치 시 pass변수
   const passwordPass = useRef();
   passwordPass.current = false;
   // e.target.value
@@ -26,28 +26,20 @@ const Signup = () => {
   const [passwordCheckActive, passwordCheckChangeActive] = useState(false);
   const [nameActive, nameChangeActive] = useState(false);
   const [phoneActive, phoneChangeActive] = useState(false);
+  // error 관리
+  const [error, setError] = useState("");
 
   // usestate 상태관리를 담은 객체
   const [formData, setFormData] = useState({
-    id: "", //id
+    id: "",
     password: "",
     passwordCheck: "",
     name: "",
     phone: "",
   });
 
-  // error 관리
-  const [error, setError] = useState("");
-  // 폼제어
-  const handleChange = ({ currentTarget: input }) => {
-    setFormData({ ...formData, [input.name]: input.value });
-  };
-
   // 객체를 함수에 넣어서 리턴
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleSave(formData);
-  };
+  const handleSubmit = async (e) => {};
 
   const PasswordCheckComponent = () => {
     if (formData.passwordCheck.length < 1 && passCheckvalidation) {
@@ -215,12 +207,12 @@ const Signup = () => {
             </div>
             <div className="row-col-btn">
               <div className="form-group">
+                {/* {error && <div className="">{error}</div>} */}
+
                 <button
                   type="submit"
                   className="form-btn"
-                  onClick={(e) =>
-                    passwordPass ? e.preventDefault() : e.preventDefault()
-                  }
+                  onClick={(e) => (passwordPass ? "" : e.preventDefault())}
                 >
                   가입하기
                 </button>
@@ -325,7 +317,6 @@ const Signup = () => {
 
   function closeBtn() {
     setDetailPopup((detailPopup) => !detailPopup);
-    console.log(detailPopup);
   }
 };
 

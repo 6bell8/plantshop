@@ -549,4 +549,13 @@ useref.current로 조회해서  바꿔줌
 
 그래서 비밀번호가 맞으면 router.push("/머시기") 및 함수실행, 아니면 e.preventdefault
 
-이렇게되면 몽고디비에서 패스워드만 확인해서 보관하면 되긴함.
+자 다시, next js에서 nodemon 생성해서 서버 만들어서, 구현 해야됨.
+
+일단, 서버운영에 필요한 파일 다 생성하고, server 명령어는 package.json 들어가서 명령어 입력 후 경로지정해야됨
+
+// cors 오타 ㅅㅂ 
+
+mysql에 username password 같은 테이블네임 잘 기억해두었다가 바꾸기
+
+myspl 벡엔드부분에서 작업 완료 이제 프론트엔드에서 mysql로 데이터를 전송해서 회원정보를 맞춰보는 것을 해야됨
+20:57

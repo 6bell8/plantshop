@@ -559,3 +559,32 @@ mysql에 username password 같은 테이블네임 잘 기억해두었다가 바�
 
 myspl 벡엔드부분에서 작업 완료 이제 프론트엔드에서 mysql로 데이터를 전송해서 회원정보를 맞춰보는 것을 해야됨
 20:57
+
+가입 하기 이전버튼
+      <button
+                  type="submit"
+                  className="form-btn"
+                  onClick={(e) => (passwordPass ? "" : e.preventDefault())}
+                >
+                  가입하기
+                </button>
+
+패스워드 일치 인증을 axios 위에다가 넣고 다시 해보기
+
+  // 객체를 함수에 넣어서 리턴
+  const register = (e) => {
+    axios({
+      method: "post",
+      data: {
+        username: formData.id,
+        password: formData.password,
+        name: formData.name,
+      },
+      //서로 다른 도메인에 요청을 보낼 때 인증정보를 담아서 보낼 지 사용하는 것
+      withCredentials: true,
+      url: "http://localhost:3000/signup",
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    e.preventDefault();
+  };

@@ -38,9 +38,6 @@ const Signup = () => {
     phone: "",
   });
 
-  // 객체를 함수에 넣어서 리턴
-  const handleSubmit = async (e) => {};
-
   const PasswordCheckComponent = () => {
     if (formData.passwordCheck.length < 1 && passCheckvalidation) {
       return (
@@ -86,7 +83,7 @@ const Signup = () => {
           <h1 className="sign-title-desc">(준비 중입니다.)</h1>
           <p className="sign-subtitle"></p>
         </div>
-        <form className="signup-create-wrapper" onSubmit={handleSubmit}>
+        <form className="signup-create-wrapper">
           <div className="card">
             <div className="row-col">
               <div className="row-col-inputBox">

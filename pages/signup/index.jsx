@@ -7,6 +7,7 @@ import { CgDanger } from "react-icons/cg";
 import { AiFillCheckCircle } from "react-icons/ai";
 import axios from "axios";
 import swal from "sweetalert";
+import { RiCoinsLine } from "react-icons/ri";
 
 const Signup = () => {
   const router = useRouter();
@@ -72,6 +73,25 @@ const Signup = () => {
     }
   };
 
+  // form 전송 제어 함수
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const url = "http://localhost:8080/api/users";
+      const { data: res } = await axios.post(url, formData);
+      console.log(res.message);
+      router.push("/login");
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
+  };
+
   return (
     <div>
       <div className="signup-create-container">
@@ -83,7 +103,7 @@ const Signup = () => {
           <h1 className="sign-title-desc">(준비 중입니다.)</h1>
           <p className="sign-subtitle"></p>
         </div>
-        <form className="signup-create-wrapper">
+        <form className="signup-create-wrapper" onSubmit={handleSubmit}>
           <div className="card">
             <div className="row-col">
               <div className="row-col-inputBox">
@@ -166,7 +186,7 @@ const Signup = () => {
                 )}
               </div>
               <div className="row-col-inputBox row-col-double">
-                <label className="form-label-contact">연락처</label>
+                <label className="form-label">연락처</label>
                 <input
                   type="number"
                   name="phone"
@@ -204,13 +224,8 @@ const Signup = () => {
             </div>
             <div className="row-col-btn">
               <div className="form-group">
-                {/* {error && <div className="">{error}</div>} */}
-
-                <button
-                  type="submit"
-                  className="form-btn"
-                  onClick={(e) => (passwordPass ? "" : e.preventDefault())}
-                >
+                {error && <div className="">{error}</div>}
+                <button type="submit" className="form-btn">
                   가입하기
                 </button>
                 <button className="form-btn" onClick={() => router.back()}>

@@ -588,3 +588,52 @@ myspl 벡엔드부분에서 작업 완료 이제 프론트엔드에서 mysql로 
       .catch((err) => console.log(err));
     e.preventDefault();
   };
+
+https://www.youtube.com/watch?v=HGgyd1bYWsE&t=601s 
+
+express js 서버 개발로 돌아가서,, 
+
+next js 에서도 express js가 사용 가능 하긴 함,, 포트 두개로 돌려서 실행하면 됨.
+
+만약 서버에 배포할 때, next js로 동시에 배포가 안되면, 서버파트는 따로 뺴서 네트리파이에 배포 후 올리면된다.
+
+일단 express js 랑 넥스트 js 랑 나눠줌, 이후 auth 작업 중.. 15:53
+
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true },
+  password: { type: String, required: true },
+  name: { type: String, required: true },
+  contact: { type: String, required: true },
+});
+
+
+const validate = (data) => {
+  schema = Joi.object({
+    username: Joi.toString().required().label("계정"),
+    // password: passwordComplexity().required().label("패스워드"),
+    password: passwordComplexity().required().label("패스워드"),
+    name: Joi.toString().required().label("성함"),
+    contact: Joi.required().label("연락처"),
+  });
+  return schema.validate("data");
+};
+
+서버랑 클라이언트 같이 올려놔야될 듯
+
+지금 문제가 되는건 server가 몽고 디비랑 연결이 제대로 되어있는지 모른다는 것
+
+차라리 클라이언트 문제인지 아닌지, 유튜브 처음부터 다시보면서 조회해보기
+
+몽고 db에서 test 컬렉션을 따로 만들지않아도, 알아서 컬렉션이 생성이 되는거였어,,
+
+const { data: res } = await axios.post(url, formData);
+
+data받아오는 거 삽질했다.. const {data : res} 인데 formData : res 변수값 받아오다가 존나 애먹음
+formData는 그냥 보내기만 할 떄 쓰자
+
+
+이후 swal 중간에 껴서 사용자 등록 완료, 넣기
+
+1. handleSumbit으로 합칠 때 local부문 뺴버리기 page 서버로 통합
+1-2. 로그인 페이지 signup 부분 긁어와서 구현
+2. 방문객도 user.id로 바꿔주기

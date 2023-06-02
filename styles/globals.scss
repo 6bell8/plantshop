@@ -416,7 +416,7 @@ a {
         border-radius: 15px;
         padding: 7px 15px;
         font-size: 14px;
-        &.signup,
+        &.login,
         &.login {
           margin-left: 10px;
         }
@@ -1827,6 +1827,159 @@ span.text-red {
               transition: all 0.3s ease-in-out;
               border: 2px solid #35dd51;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+//------------------ login ---------------///
+
+.login-create-container {
+  width: 500px;
+  margin: 50px auto;
+  box-shadow: 1px -2px 10px 0px #ccc;
+  .login-icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 10px 0;
+  }
+  .login-title-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0px 30px 0px;
+    border-bottom: 1px solid #ccc;
+    margin: 0 3rem;
+    .login-title,
+    .login-title-desc {
+      font-size: 30px;
+      font-weight: 900;
+      color: #ddd;
+      line-height: 0.9;
+      font-weight: 900;
+      margin-top: 20px;
+    }
+    .login-title-desc {
+      font-size: 15px;
+      font-weight: 300;
+      margin-top: 10px;
+      color: #aaa;
+    }
+  }
+  .login-create-wrapper {
+    padding: 30px 50px;
+
+    .card {
+      color: #333;
+      margin-top: 20px;
+      .row-col {
+        display: flex;
+        align-items: center;
+        .row-col-inputBox {
+          width: 100%;
+          .text-danger {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            .text-danger-desc {
+              margin: 0 5px 0 7px;
+              transform: translateY(-1px);
+            }
+          }
+          .form-label {
+            font-weight: 500;
+          }
+          .form-label-contact {
+            font-weight: 500;
+          }
+          .form-control {
+            &.active {
+              box-shadow: 0 0 0 2px #9be9a8;
+            }
+          }
+
+          input {
+            border: 2px solid #ccc;
+            padding: 10px;
+            height: 50px;
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 5px;
+            &::placeholder {
+              padding: 7px;
+              font-size: 16px;
+              color: #ccc;
+            }
+          }
+        }
+        .row-col-double {
+          margin: 0 10px;
+          height: 10rem;
+        }
+        &.last-row {
+          padding: 30px 0;
+          border-bottom: 1px solid #ccc;
+        }
+        &.check-box {
+          margin-top: 50px;
+          display: flex;
+          justify-content: center;
+          .form-check {
+            text-align: center;
+            .form-check-label {
+              margin-left: 10px;
+              strong {
+                margin: 0 10px;
+                cursor: pointer;
+              }
+            }
+            .detail-agreement {
+              text-align: initial;
+              margin: 20px 0;
+              font-size: 16px;
+              font-weight: 500;
+              .popup-title {
+                margin-bottom: 20px;
+              }
+            }
+          }
+        }
+      }
+      .row-col-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 30px 0;
+        .login-form-btn {
+          cursor: pointer;
+          width: 80%;
+          background: #35dd51;
+          color: #fff;
+          font-size: 18px;
+          font-weight: 500;
+          padding: 12px 25px;
+          border: 2px solid #ccc;
+          border-radius: 10px;
+          margin: 0 auto;
+          &:hover {
+            transition: all 0.3s ease-in-out;
+            border: 2px solid #35dd51;
+          }
+        }
+        .form-btn {
+          cursor: pointer;
+          width: 80%;
+          font-size: 18px;
+          padding: 12px 25px;
+          border: 2px solid #ccc;
+          border-radius: 10px;
+          margin: 30px auto 0;
+          &:hover {
+            transition: all 0.3s ease-in-out;
+            border: 2px solid #35dd51;
           }
         }
       }

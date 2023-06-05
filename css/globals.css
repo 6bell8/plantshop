@@ -2469,25 +2469,25 @@ span.text-red {
 
 .login-create-container .login-create-wrapper .card .row-col .row-col-inputBox input::-webkit-input-placeholder {
   padding: 7px;
-  font-size: 16px;
+  font-size: 17px;
   color: #ccc;
 }
 
 .login-create-container .login-create-wrapper .card .row-col .row-col-inputBox input:-ms-input-placeholder {
   padding: 7px;
-  font-size: 16px;
+  font-size: 17px;
   color: #ccc;
 }
 
 .login-create-container .login-create-wrapper .card .row-col .row-col-inputBox input::-ms-input-placeholder {
   padding: 7px;
-  font-size: 16px;
+  font-size: 17px;
   color: #ccc;
 }
 
 .login-create-container .login-create-wrapper .card .row-col .row-col-inputBox input::placeholder {
   padding: 7px;
-  font-size: 16px;
+  font-size: 17px;
   color: #ccc;
 }
 

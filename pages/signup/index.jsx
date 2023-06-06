@@ -55,7 +55,7 @@ const Signup = () => {
         <span className="text-danger">
           <CgDanger size="20" color="red" />
           <span className="text-danger-desc">
-            패스워드가 일치하지 않습니다.
+            비밀번호가 일치하지 않습니다.
           </span>
         </span>
       );
@@ -77,9 +77,17 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "/api/users";
+      const url = "https://plant-shop-server.fly.dev/api/users";
+      // const url = "http://localhost:8080/api/users";
       const { data: res } = await axios.post(url, formData);
       console.log(res.message);
+
+      swal({
+        title: "등록 완료",
+        text: "확인 버튼을 눌러 닫아주세요.",
+        icon: "success",
+        button: "확인",
+      });
       router.push("/login");
     } catch (error) {
       if (
@@ -100,7 +108,6 @@ const Signup = () => {
         </div>
         <div className="sign-title-box">
           <h1 className="sign-title">회원가입</h1>
-          <h1 className="sign-title-desc">(준비 중입니다.)</h1>
           <p className="sign-subtitle"></p>
         </div>
         <form className="signup-create-wrapper" onSubmit={handleSubmit}>
@@ -119,7 +126,7 @@ const Signup = () => {
                   className={`form-control ${usernameActive ? "active" : ""}`}
                   placeholder="3글자 이상 입력해주세요."
                 />
-                {usernameCheckComponent()}
+                {/* {usernameCheckComponent()} */}
               </div>
             </div>
             <div className="row-col">
@@ -224,7 +231,7 @@ const Signup = () => {
             </div>
             <div className="row-col-btn">
               <div className="form-group">
-                {error && <div className="">{error}</div>}
+                {error && <div className="error-msg">{error}</div>}
                 <button type="submit" className="form-btn">
                   가입하기
                 </button>

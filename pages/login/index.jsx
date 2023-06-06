@@ -53,7 +53,7 @@ const Login = () => {
                   maxLength={12}
                   minLength={3}
                   className="form-control"
-                  placeholder="3글자 이상 입력해주세요."
+                  placeholder="아이디를 입력해주세요."
                 />
               </div>
             </div>
@@ -67,7 +67,7 @@ const Login = () => {
                   maxLength={20}
                   minLength={5}
                   className="form-control"
-                  placeholder="5글자 이상 입력해주세요."
+                  placeholder="비밀번호를 입력해주세요."
                 />
               </div>
             </div>

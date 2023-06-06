@@ -1697,7 +1697,7 @@ span.text-red {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 30px 0 10px 0;
+    padding: 30px 0 20px 0;
   }
   .sign-title-box {
     display: flex;
@@ -1709,10 +1709,9 @@ span.text-red {
     .sign-title,
     .sign-title-desc {
       font-size: 30px;
-      font-weight: 900;
-      color: #ddd;
+      color: #555;
       line-height: 0.9;
-      font-weight: 900;
+      font-weight: 700;
       margin-top: 20px;
     }
     .sign-title-desc {
@@ -1783,7 +1782,7 @@ span.text-red {
           height: 10rem;
         }
         &.last-row {
-          padding: 30px 0;
+          padding: 30px 0 0 0;
           border-bottom: 1px solid #ccc;
         }
         &.check-box {
@@ -1816,6 +1815,15 @@ span.text-red {
         justify-content: center;
         margin: 30px 0;
         .form-group {
+          .error-msg {
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            color: red;
+            background: #efefef;
+            border-radius: 15px;
+            margin-bottom: 20px;
+          }
           .form-btn {
             cursor: pointer;
             font-size: 15px;
@@ -2578,7 +2586,7 @@ span.text-red {
             display: flex;
             justify-content: right;
             margin-top: 40px;
-            // flex-direction: column;
+
             .form-btn {
               font-size: 20px;
               width: 250px;

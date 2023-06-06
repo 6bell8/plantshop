@@ -2160,7 +2160,7 @@ span.text-red {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 30px 0 10px 0;
+  padding: 30px 0 20px 0;
 }
 
 .signup-create-container .sign-title-box {
@@ -2180,10 +2180,9 @@ span.text-red {
 .signup-create-container .sign-title-box .sign-title,
 .signup-create-container .sign-title-box .sign-title-desc {
   font-size: 30px;
-  font-weight: 900;
-  color: #ddd;
+  color: #555;
   line-height: 0.9;
-  font-weight: 900;
+  font-weight: 700;
   margin-top: 20px;
 }
 
@@ -2295,7 +2294,7 @@ span.text-red {
 }
 
 .signup-create-container .signup-create-wrapper .card .row-col.last-row {
-  padding: 30px 0;
+  padding: 30px 0 0 0;
   border-bottom: 1px solid #ccc;
 }
 
@@ -2341,6 +2340,16 @@ span.text-red {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 30px 0;
+}
+
+.signup-create-container .signup-create-wrapper .card .row-col-btn .form-group .error-msg {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: red;
+  background: #efefef;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 .signup-create-container .signup-create-wrapper .card .row-col-btn .form-group .form-btn {

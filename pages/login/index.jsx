@@ -28,7 +28,6 @@ const Login = () => {
       const { data: res } = await axios.post(url, formData);
       localStorage.setItem("token", res.data);
       setUsers(true);
-      console.log(formData.name);
       setVisiter(formData.id);
       router.push("/");
     } catch (error) {
@@ -50,7 +49,6 @@ const Login = () => {
         </div>
         <div className="login-title-box">
           <h1 className="login-title">로그인</h1>
-          <h1 className="login-title-desc">(준비 중입니다.)</h1>
           <p className="login-subtitle"></p>
         </div>
         <form className="login-create-wrapper" onSubmit={handleSubmit}>

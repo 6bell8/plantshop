@@ -2181,7 +2181,7 @@ span.text-red {
 .signup-create-container .sign-title-box .sign-title,
 .signup-create-container .sign-title-box .sign-title-desc {
   font-size: 30px;
-  color: #555;
+  color: #333;
   line-height: 0.9;
   font-weight: 700;
   margin-top: 20px;
@@ -2404,9 +2404,9 @@ span.text-red {
 .login-create-container .login-title-box .login-title-desc {
   font-size: 30px;
   font-weight: 900;
-  color: #ddd;
+  color: #333;
   line-height: 0.9;
-  font-weight: 900;
+  font-weight: 700;
   margin-top: 20px;
 }
 

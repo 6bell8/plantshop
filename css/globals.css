@@ -519,6 +519,7 @@ a {
 
 .navbar-container .profile-box .user .user-desc {
   color: #333;
+  margin-right: 5px;
 }
 
 .navbar-container .profile-box .user .user-name {
@@ -532,7 +533,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
 .navbar-container .profile-box .signUp-box .signUp-title {
@@ -2432,6 +2433,19 @@ span.text-red {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-create-container .login-create-wrapper .card .row-col .error-msg {
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 14px;
+  color: red;
+  background: #efefef;
+  border-radius: 15px;
 }
 
 .login-create-container .login-create-wrapper .card .row-col .row-col-inputBox {

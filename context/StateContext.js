@@ -31,6 +31,8 @@ export const StateContext = ({ children }) => {
   const [qty, setQty] = useState(1);
   const [selected, setSelected] = useState(router.pathname);
   const [empData, setEmpData] = useState([]);
+  const [users, setUsers] = useState(false);
+  const [visiter, setVisiter] = useState("방문자");
   const nextId = useRef(31);
 
   let foundProduct;
@@ -233,6 +235,10 @@ export const StateContext = ({ children }) => {
         handleEditSubmit,
         detailPopup,
         setDetailPopup,
+        users,
+        setUsers,
+        visiter,
+        setVisiter,
       }}
     >
       {/* context api 인자값 */}

@@ -80,7 +80,6 @@ const Signup = () => {
       const url = "https://plant-shop-server.fly.dev/api/users";
       // const url = "http://localhost:8080/api/users";
       const { data: res } = await axios.post(url, formData);
-      console.log(res.message);
 
       swal({
         title: "등록 완료",
@@ -197,6 +196,7 @@ const Signup = () => {
                 <input
                   type="number"
                   name="phone"
+                  required
                   value={formData.phone}
                   maxLength={20}
                   minLength={8}
@@ -279,18 +279,6 @@ const Signup = () => {
     formData.phone.length > 1
       ? phoneChangeActive(true)
       : phoneChangeActive(false);
-  }
-
-  //닉네임 체크 컴포넌트
-  function usernameCheckComponent() {
-    if (formData.id.length >= 3 && usernameValidation) {
-      return (
-        <span className="text-danger">
-          <CgDanger size="20" color="#35dd51" />
-          <span className="text-danger-desc">사용가능한 닉네임입니다.</span>
-        </span>
-      );
-    }
   }
 
   // 비밀번호 보안 컴포넌트

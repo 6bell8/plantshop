@@ -1,14 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PjsIcon } from "../../components";
-import { DetailPopup } from "../../components";
 import { useRouter } from "next/router";
 import { useStateContext } from "../../context/StateContext";
-import { CgDanger } from "react-icons/cg";
-import { AiFillCheckCircle } from "react-icons/ai";
+import axios from "axios";
 
 const Login = () => {
   const router = useRouter();
-  const [detailPopup, setDetailPopup] = useState(false);
+  // 전역변수
+  const { users, setUsers, visiter, setVisiter } = useStateContext();
+  const [formData, setFormData] = useState({
+    id: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  // 아이디,패스워드 함수
+  const [usernameActive, usernameChangeActive] = useState(false);
+  const [passwordActive, passwordChangeActive] = useState(false);
   // 비밀번호 일치 시 pass변수
 
   // usestate 상태관리를 담은 객체
@@ -16,10 +23,14 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/api/auth";
-      const { data: res } = await axios.post(url, data);
+      const url = "https://plant-shop-server.fly.dev/api/auth";
+      // const url = "http://localhost:8080/api/auth";
+      const { data: res } = await axios.post(url, formData);
       localStorage.setItem("token", res.data);
-      window.location = "/";
+      setUsers(true);
+      console.log(formData.name);
+      setVisiter(formData.id);
+      router.push("/");
     } catch (error) {
       if (
         error.response &&
@@ -42,7 +53,7 @@ const Login = () => {
           <h1 className="login-title-desc">(준비 중입니다.)</h1>
           <p className="login-subtitle"></p>
         </div>
-        <form className="login-create-wrapper">
+        <form className="login-create-wrapper" onSubmit={handleSubmit}>
           <div className="card">
             <div className="row-col">
               <div className="row-col-inputBox">
@@ -50,10 +61,12 @@ const Login = () => {
                 <input
                   required
                   name="id"
+                  value={formData.id}
                   maxLength={12}
                   minLength={3}
                   className="form-control"
                   placeholder="아이디를 입력해주세요."
+                  onChange={(e) => formlengthUsername(e)}
                 />
               </div>
             </div>
@@ -64,19 +77,24 @@ const Login = () => {
                   required
                   name="password"
                   type="password"
+                  value={formData.password}
                   maxLength={20}
                   minLength={5}
                   className="form-control"
                   placeholder="비밀번호를 입력해주세요."
+                  onChange={(e) => formlengthPassword(e)}
                 />
               </div>
+              {error && <div className="error-msg">{error}</div>}
             </div>
-
             <div className="row-col-btn">
               <button type="submit" className="login-form-btn">
                 로그인
               </button>
-              <button className="form-btn" onClick={() => router.back()}>
+              <button
+                className="form-btn"
+                onClick={() => router.push("/signup")}
+              >
                 회원가입
               </button>
             </div>
@@ -86,7 +104,19 @@ const Login = () => {
     </div>
   );
 
-  // 글자 제한 모션
+  function formlengthUsername({ currentTarget: input }) {
+    setFormData({ ...formData, [input.name]: input.value });
+    formData.id.length > 1
+      ? usernameChangeActive(true)
+      : usernameChangeActive(false);
+  }
+
+  function formlengthPassword({ currentTarget: input }) {
+    setFormData({ ...formData, [input.name]: input.value });
+    formData.password.length > 1
+      ? passwordChangeActive(true)
+      : passwordChangeActive(false);
+  }
 };
 
 export default Login;

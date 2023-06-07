@@ -399,6 +399,7 @@ a {
       margin-right: 20px;
       .user-desc {
         color: #333;
+        margin-right: 5px;
       }
       .user-name {
         font-weight: 700;
@@ -409,7 +410,7 @@ a {
       background-color: #fff;
       display: flex;
       cursor: pointer;
-      margin-right: 30px;
+      margin-right: 20px;
       .signUp-title {
         width: 90px;
         border: 1px solid #aaa;
@@ -1886,6 +1887,15 @@ span.text-red {
       .row-col {
         display: flex;
         align-items: center;
+        flex-direction: column;
+        .error-msg {
+          text-align: center;
+          padding: 15px 20px;
+          font-size: 14px;
+          color: red;
+          background: #efefef;
+          border-radius: 15px;
+        }
         .row-col-inputBox {
           width: 100%;
           .text-danger {

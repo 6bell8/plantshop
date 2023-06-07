@@ -10,22 +10,24 @@ import { useStateContext } from "../context/StateContext";
 
 const Navbar = () => {
   // useStateContext 전역변수에서 가져옴
-  const { showCart, setShowCart, totalQuantities, selected, setSelected } =
-    useStateContext();
+  const {
+    showCart,
+    setShowCart,
+    totalQuantities,
+    selected,
+    setSelected,
+    users,
+    setUsers,
+    visiter,
+    setVisiter,
+  } = useStateContext();
   const router = useRouter();
-  const [users, setUsers] = useState(false);
 
-  useEffect(() => {
-    const users = localStorage.getItem("token");
-  }, [router]);
-
-  console.log(users);
   // 로그아웃의 주요 기능 localstorage에 토큰이 있으면 로그인 상태 없으면 로그아웃
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.reload();
   };
-
   return (
     <div className="navbar-container">
       <p
@@ -43,12 +45,6 @@ const Navbar = () => {
       <div className="profile-box">
         <button className="signUp-box">
           <p
-            className="signUp-title signup"
-            onClick={() => router.push("/signup")}
-          >
-            회원가입
-          </p>
-          <p
             className="signUp-title login"
             onClick={() => router.push("/login")}
           >
@@ -61,7 +57,7 @@ const Navbar = () => {
         </button>
         <p className="user">
           <span className="user-desc">안녕하세요, </span>
-          <span className="user-name"> 방문자 님</span>
+          <span className="user-name"> {visiter} 님</span>
         </p>
         <button type="button" className="noti-icon nav-icon">
           <RiNotification3Line />

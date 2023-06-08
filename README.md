@@ -134,7 +134,7 @@ https://github.com/6bell8/plantshop/assets/98573471/f0f40cb3-c8b6-4365-adbf-33ea
 
 ## 사용 기술
 
-+ Fronted
++ Frontend
   + <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
   + <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
   + <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
@@ -150,14 +150,14 @@ https://github.com/6bell8/plantshop/assets/98573471/f0f40cb3-c8b6-4365-adbf-33ea
   
 <br/>
 
-+ Fronted & Backend
++ Frontend & Backend
   + <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
   
 
 <br/>
 
 
-+ Server 
++ eploy 
   + <img src="https://img.shields.io/badge/vercel-333?style=for-the-badge&logo=&logoColor=white">
   + <img src="https://img.shields.io/badge/fly.io-blue?style=for-the-badge&logo=&logoColor=white">  
   

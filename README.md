@@ -157,7 +157,7 @@ https://github.com/6bell8/plantshop/assets/98573471/f0f40cb3-c8b6-4365-adbf-33ea
 <br/>
 
 
-+ eploy 
++ Deploy 
   + <img src="https://img.shields.io/badge/vercel-333?style=for-the-badge&logo=&logoColor=white">
   + <img src="https://img.shields.io/badge/fly.io-blue?style=for-the-badge&logo=&logoColor=white">  
   

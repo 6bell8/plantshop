@@ -133,6 +133,7 @@ https://github.com/6bell8/plantshop/assets/98573471/f0f40cb3-c8b6-4365-adbf-33ea
 ## 프로젝트에 사용 된 툴
 
 + Fronted
+  + <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
   + javascript(ES6)
   + react(context api)
   + scss

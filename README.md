@@ -3,7 +3,8 @@
 ```
 #### https://plantshop-git-master-6bell8.vercel.app/
 
-<br/>
+<br/>![prk - plantshop (1)](https://github.com/6bell8/plantshop/assets/98573471/600ab1a6-e6ca-4f8d-b6be-8854d67ea181)
+
 
 ## 화분과 식물을 커스텀하여, 결제할 수 있는 쇼핑몰 개인 프로젝트입니다.
 

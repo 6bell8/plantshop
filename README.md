@@ -57,6 +57,13 @@ https://github.com/6bell8/plantshop/assets/98573471/a49e2aff-a264-4243-ac8e-4ca7
 + jwt 토큰을 활용하여, 회원계정 전송 시 서버에서 토큰 서명을 통해 위변조 여부를 검증하게끔 하였습니다.
 
 
+
+
+https://github.com/6bell8/plantshop/assets/98573471/43f77357-ae24-437c-8a31-cc69f5ec23d3
+
+
+
+
 ## 프로젝트 구성 및 화면설계 (서버)
 
 

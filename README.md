@@ -13,7 +13,9 @@
 
 ## 화분과 식물을 커스텀하여, 결제할 수 있는 쇼핑몰 개인 프로젝트입니다.
 
+<br/><br/>
 
+## 프로젝트 
 
 > #### Project nickname : Plant-shop
 > #### Project Hosting : 박진성 (개인 사이드 프로젝트)
@@ -130,39 +132,48 @@ https://github.com/6bell8/plantshop/assets/98573471/f0f40cb3-c8b6-4365-adbf-33ea
 
 <br/><br/>
 
-## 프로젝트에 사용 된 툴
+## 사용 기술
 
 + Fronted
   + <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-  + javascript(ES6)
-  + react(context api)
-  + scss
+  + <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+  + <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
+  + <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
 
 
 <br/>
 
 + Backend 
-  + next.js 
-  + node.js (express.js)
-  + json server(gist 및 다른 도메인 활용)
-  + mongoDB
+  + <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
+  + <img src="https://img.shields.io/badge/mongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
   
   
 <br/>
 
++ Fronted & Backend
+  + <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
+  
+
+<br/>
+
+
 + Server 
-  + vercel  
-  + fly.io를 통한 배포 
+  + <img src="https://img.shields.io/badge/vercel-333?style=for-the-badge&logo=&logoColor=white">
+  + <img src="https://img.shields.io/badge/fly.io-blue?style=for-the-badge&logo=&logoColor=white">  
   
   
 <br/>  
+
++ Version Control
+  + <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> 
   
 ## 아쉬운 점
 
 <br/>
 
-
-+ 
++ next js 기반으로 작업하였지만, 버젼이 낮은 관계로 자체기능인 auth를 사용 하지못하고, 불가피하게 node js로 작업 후 별도의 서버를 구성하여 배포한 점  
++ 반응형 퍼블리싱 미비
++ 이미지 자료 부족
   
 <br/>  
 

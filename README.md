@@ -51,7 +51,9 @@ https://github.com/6bell8/plantshop/assets/98573471/2f32ffe8-072d-4704-bc22-9667
 https://github.com/6bell8/plantshop/assets/98573471/a49e2aff-a264-4243-ac8e-4ca7b947b909
 
 <br/>
+
 <br/>
+
 ##### 회원가입 및 로그인 서비스
 + 별도 node js 서버를 구축하여, mongoDB로 데이터를 연결. 해당되는 데이터를 대조하여 로그인하도록 설계하였습니다.
 + 방문자 계정을 전역변수로 설정하여, 로그인 직후 방문자의 계정이 전역변수에 보관 되도록 하였습니다.
@@ -64,6 +66,9 @@ https://github.com/6bell8/plantshop/assets/98573471/a49e2aff-a264-4243-ac8e-4ca7
 
 https://github.com/6bell8/plantshop/assets/98573471/004455a2-525b-4586-a1de-7acb90824000
 
+<br/>
+<br/>
+
 ##### 장바구니 활용 및 결제
 + 전역변수를 통해서 장바구니에 해당하는 물건을 선택하고 Navbar에서 장바구니 아이콘을통해 결제 할 수 있도록 하였습니다.
 + 이전 상품 조회 기록을 로컬 스토리지에 저장하고, 해당 데이터를 토대로 클릭 시 링크로 연결 할 수 있도록 하였습니다.  
@@ -72,6 +77,9 @@ https://github.com/6bell8/plantshop/assets/98573471/004455a2-525b-4586-a1de-7acb
 <br/>
 
 https://github.com/6bell8/plantshop/assets/98573471/c53172d6-e795-4a89-a949-2d213f45803f
+
+<br/>
+<br/>
 
 ##### chart 및 부가서비스
 + syncfusion 라이브러리를 기반으로 chart 서비스를 제공하였습니다.    
@@ -83,6 +91,10 @@ https://github.com/6bell8/plantshop/assets/98573471/c53172d6-e795-4a89-a949-2d21
 
 
 https://github.com/6bell8/plantshop/assets/98573471/19d20584-69fe-4dff-bd32-cab09948ecba
+
+<br/>
+<br/>
+
 
 ##### crud 게시판
 + 게시글 수정, 삭제, 생성, 더보기 기능을 탑재하였습니다.

@@ -7,7 +7,7 @@ import axios from "axios";
 const Login = () => {
   const router = useRouter();
   // 전역변수
-  const { users, setUsers, visiter, setVisiter } = useStateContext();
+  const { users, setUsers, visitor, setVisitor } = useStateContext();
   const [formData, setFormData] = useState({
     id: "",
     password: "",
@@ -28,7 +28,7 @@ const Login = () => {
       const { data: res } = await axios.post(url, formData);
       localStorage.setItem("token", res.data);
       setUsers(true);
-      setVisiter(formData.id);
+      setVisitor(formData.id);
       router.push("/");
     } catch (error) {
       if (

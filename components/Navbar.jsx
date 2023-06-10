@@ -18,8 +18,8 @@ const Navbar = () => {
     setSelected,
     users,
     setUsers,
-    visiter,
-    setVisiter,
+    visitor,
+    setVisitor,
   } = useStateContext();
   const router = useRouter();
 
@@ -57,7 +57,7 @@ const Navbar = () => {
         </button>
         <p className="user">
           <span className="user-desc">안녕하세요, </span>
-          <span className="user-name"> {visiter} 님</span>
+          <span className="user-name"> {visitor} 님</span>
         </p>
         <button type="button" className="noti-icon nav-icon">
           <RiNotification3Line />

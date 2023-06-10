@@ -32,7 +32,7 @@ export const StateContext = ({ children }) => {
   const [selected, setSelected] = useState(router.pathname);
   const [empData, setEmpData] = useState([]);
   const [users, setUsers] = useState(false);
-  const [visiter, setVisiter] = useState("방문자");
+  const [visitor, setVisitor] = useState("방문자");
   const nextId = useRef(31);
 
   let foundProduct;
@@ -237,8 +237,8 @@ export const StateContext = ({ children }) => {
         setDetailPopup,
         users,
         setUsers,
-        visiter,
-        setVisiter,
+        visitor,
+        setVisitor,
       }}
     >
       {/* context api 인자값 */}

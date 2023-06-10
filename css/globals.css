@@ -3018,8 +3018,8 @@ span.text-red {
 }
 
 .faq-container .faq-wrapper .faq-accordion .item .faq-title:hover svg {
-  -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
 }

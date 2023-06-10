@@ -39,7 +39,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
-  const { selected, setSelected } = useStateContext();
+  const { selected, setSelected, visitor, setVisitor } = useStateContext();
 
   return (
     <>
@@ -68,7 +68,7 @@ const Sidebar = () => {
                 <figure className="profile-user-img"></figure>
               </div>
               <div className="profile-info">
-                <p className="profile-name">박진성</p>
+                <p className="profile-name">{visitor}</p>
                 <p className="profile-mode">관리자모드</p>
               </div>
             </div>
